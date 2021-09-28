@@ -154,7 +154,7 @@ namespace DBlock_Game
 
             /** joys desk and the options for searching */
             Desk joysdesk;
-            joysdesk.drawer1 = "key 0###";
+            joysdesk.drawer1 = "You have found a key 0###";
             joysdesk.drawer2 = "You have found a Keyboard shield";
             joysdesk.drawer3 = "This draw is empty";
             joysdesk.topofdesk = " There appears to be a a few family photos, her laptop isnt here but there is a note sticking out, as well as 3 draws.";
@@ -164,10 +164,16 @@ namespace DBlock_Game
             Console.WriteLine("You have arrived in joys office");
             Console.WriteLine("there is her desk on one side of the room, a window overlooking the construction workers and a poster on the wall. nothing else of notice");
             Console.WriteLine("what would you like to do?");
+
+            // options list for anyone that wants to test code later on
+            Console.WriteLine("options 1 2 3 4");
             temp = Console.ReadLine();
             choices = Convert.ToInt32(temp);
+            /* a do while loop to continue running until a player decides to leave the room
+             */
             do
             {
+                // switch case to run through the multiple choices
                 switch (choices)
                 {
                     case 1:
@@ -184,53 +190,89 @@ namespace DBlock_Game
                     case 3:
                         Console.WriteLine($"You take a closer look at the desk. {joysdesk.topofdesk}");
                         Console.WriteLine("What would you like to do?");
-                        temp = Console.ReadLine();
-                        choice = Convert.ToInt32(temp);
-                        /** need a way to loop back through the other options */
-                        switch (choice)
-                        {
-                            case 1:
-                                Console.WriteLine("you search the first draw");
-                                Console.WriteLine($"{joysdesk.drawer1}");
-                                Console.WriteLine("Press enter to return");
-                                Console.ReadLine();
-                                break;
-                            case 2:
-                                if (keyboardshield == true)
-                                {
-                                    Console.WriteLine("You have already searched this draw");
-                                    Console.WriteLine("Press enter to return");
-                                    Console.ReadLine();
-                                }
-                                else
-                                {
-                                    Console.WriteLine("You search the second draw");
-                                    Console.WriteLine($"{joysdesk.drawer2}");
-                                    Console.WriteLine("Press enter to return");
-                                    keyboardshield = true;
-                                    Console.ReadLine();
-                                }
-                                break;
-                            case 3:
-                                Console.WriteLine($"{joysdesk.drawer3}");
-                                Console.WriteLine("Press enter to return");
-                                Console.ReadLine();
-                                break;
-                            case 4:
-                                Console.WriteLine($"{joysdesk.note}");
-                                Console.WriteLine("Press enter to return");
-                                Console.ReadLine();
-                                break;
 
-                        }
+                        /** a do while loop asking if the player would like to search the area of the desk
+                         * as well a while loop to run through the options if they do want to search the area
+                         * Switch case to deal with the players options'
+                         */
+                        do
+                        {
+                            Console.WriteLine("would you like to search (y or n)");
+                            temp = Console.ReadLine();
+                            search = temp;
+
+                            while (search == "y")
+                            {
+                                Console.WriteLine("What would you like to search? \n 1: first draw \n 2: second draw" +
+                                    "\n 3: third draw  \n 4: Note on desk \n 5: leave");
+                                temp = Console.ReadLine();
+                                choice = Convert.ToInt32(temp);
+
+                                switch (choice)
+                                {
+                                    case 1:
+                                        Console.WriteLine("you search the first draw");
+                                        Console.WriteLine($"{joysdesk.drawer1}");
+                                        Console.WriteLine("Press enter to return");
+                                        Console.ReadLine();
+                                        break;
+                                    case 2:
+                                        if (keyboardshield == true)
+                                        {
+                                            Console.WriteLine("You have already searched this draw");
+                                            Console.WriteLine("Press enter to return");
+                                            Console.ReadLine();
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("You search the second draw");
+                                            Console.WriteLine($"{joysdesk.drawer2}");
+                                            Console.WriteLine("Press enter to return");
+                                            keyboardshield = true;
+                                            Console.ReadLine();
+                                        }
+                                        break;
+                                    case 3:
+                                        Console.WriteLine($"{joysdesk.drawer3}");
+                                        Console.WriteLine("Press enter to return");
+                                        Console.ReadLine();
+                                        break;
+                                    case 4:
+                                        Console.WriteLine($"{joysdesk.note}");
+                                        Console.WriteLine("Press enter to return");
+                                        Console.ReadLine();
+                                        break;
+                                    case 5:
+                                        search = "n";
+                                        break;
+                                }
+                            }
+                        } while (search == "y");
                         break;
                     case 4:
                         // Leaving the room method will be places here eg ( WestWingHallWay())
                         break;
                 }
-            } while (search == "y");
+            } while (choices != 4);
 
+        }
+        
+        public static void WestCode()
+            /* a method for calling the classroom on the westwing. This room will have another code to the end boss room
+             * a do while loop will be used to give player the room layout and if they want to search or leave room
+             */
+        {
+            string stay = "y";
+            do
+            {
+                Console.WriteLine("You have entered the Classroom D212");
+
+
+            } while (stay == "y");
+
+            // a method back to the westwinghall to be placed here
         }
 
     }
 }
+
