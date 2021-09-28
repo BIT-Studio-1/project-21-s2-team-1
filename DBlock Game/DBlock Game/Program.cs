@@ -24,11 +24,127 @@ namespace DBlock_Game
             public string topofdesk;
             public string note;
         }
-        
+
+        public static void IntroCutscene()
+        {
+            //enter building
+            //enter homeroom
+
+            //dialouge
+            //something happens
+            //kicked out of homeroom
+
+            //homeroom is locked
+
+            //now in north hallway
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Joy: I hope you finished your binary homework");
+            Console.ReadLine();
+
+            NorthHallway();
+
+        }
+
+        public static void NorthHallway()
+        {
+            //start of game
+
+            //basic info
+        }
+
+        public static void CodeRoom1()
+        {
+            /*
+            Console.WriteLine(" ");
+            Console.ReadLine();
+            Console.Clear();
+            */
+            string userAnswer;
+
+            //enter room info
+            Console.WriteLine("I enter room D202. Theres no one in here. ");
+            Console.ReadLine();
+            Console.Clear();
+
+            //look around?
+
+
+
+            Console.Write("What would you like to do:");
+
+            userAnswer = Console.ReadLine(); //user answer
+
+            //view
+            Console.Write("What would you like to look at: ");
+            userAnswer = Console.ReadLine();
+            switch (userAnswer)
+            {
+                case "1":
+                case "whiteboard": //view whiteboard
+                    Console.WriteLine(" ");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+
+                case "2":
+                case "room":
+                    Console.WriteLine("There isn't much out of the ordinary here. Its just a regular classroom. There are about 20 desks all facing a whiteboard");
+                    Console.WriteLine("Theres also a teachers desk at the front of the room");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+
+                case "3":
+                case "teachers desk":
+                    Console.WriteLine(" ");
+                    Console.ReadLine();
+                    Console.Clear();
+                    break;
+
+                    /*default:
+                        Console.WriteLine("didn't understand that command");
+                        break;*/
+            }
+
+            else
+            {
+                Console.WriteLine("didn't understand that command");
+                //type again
+            }
+
+
+            //leave room
+            Console.WriteLine("I leave the room");
+            Console.ReadLine();
+            Console.Clear();
+
+            //help
+            Console.WriteLine("List of commands");
+            Console.WriteLine("When propted to, type these commands in and press enter");
+            Console.WriteLine("Search: ");
+            Console.WriteLine("View: view an area/object, view room is a good option when you're stuck");
+            Console.WriteLine("Use: ");
+            Console.WriteLine("Leave: Leave the room you're currently in");
+
+            Console.ReadLine();
+            Console.Clear();
+
+
+            Console.ReadLine();
+        }
+
+
+
+
+
+
+
         /** Method for joys Office 
          * still needing a method call to leave room
          * method calling for a help menu for player
          */
+
         public static void JoysOffice()
         {
             int choice;
