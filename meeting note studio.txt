@@ -1,0 +1,26 @@
+
+
+Meeting notes for the Dblock Game
+
+27/09/2021
+
+Storyline so far - Players Starts in class and has a teacher (joy) breakdown in front of them, Finds ID card and checks that teachers office
+in that office finds a note referencing a party in the "battle room" with a number for joys keypad password. Leaving the room has a suggestion 
+for the player that it may be dangerous and hints for a player that they should possibly arm themselves with objects they find throughout
+the level. We thought a cool idea would be to have a binary number for the key code to get to last room referencing the note left for joy
+since she taught us binary. In the battle room players a left with a choice of would they like vaughn to replace them with a robot
+in class so they can join in the party or do they snitch them out and have to fight them.
+
+Ideas for how it should be coded.
+Each room will be its seperate method that can be called on when a player decides to enter.
+We had originally thought of using an array for using as a backpack(inventory) but have decided it may be easier to use booleans for all the items
+We have decided for the bare minium for a floor (map) layout will be 10 rooms. ( hallway is broken up into 3 wings north east west which make
+3 rooms, 3 rooms for the different parts of the keycode, 2 rooms for joys office and battle room. Last room is a start sequence class room where player 
+starts journey.)
+This is wat we liked so far and we can add extra rooms/levels depending on how much extra work people want to get in.
+
+If anyone goes to do anywork in the holidays just put on teams/discord any questions or problems you have 
+everyone is going to try log in on the wed class during the break jus so we have a time everyone can ask any quick questions and get update on where we are at
+
+We had a rough idea on what people were going to be left to work on but ill try get floor plan up 28/09 with what people were looking at doing. Can change 
+if we need to. please add anything u think i have missed.
