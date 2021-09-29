@@ -13,6 +13,10 @@ namespace DBlock_Game
             Console.WriteLine("Hello World!");
         }
         public static Boolean keyboardshield = false;
+        public static Boolean mousenunchuck = false;
+        public static Boolean screwdriver = false;
+        public static Boolean hdmichain = false;
+        public static Boolean keybgun = false;
 
 
         /** a Struct for desks if anyone needs to use one for their room */
@@ -256,22 +260,151 @@ namespace DBlock_Game
             } while (choices != 4);
 
         }
-        
+
+        public struct Cabin
+        {
+            public string cabin1;
+            public string cabin2;
+            public string cabin3;
+            public string cabin4;
+        }
+        public struct desks
+        {
+            public string topdesk;
+            public string drawer1;
+            public string drawer2;
+            public string drawer3;
+            public string drawer4;
+        }
+
         public static void WestCode()
             /* a method for calling the classroom on the westwing. This room will have another code to the end boss room
              * a do while loop will be used to give player the room layout and if they want to search or leave room
              */
         {
-            string stay = "y";
+            string search = "y";
             do
             {
                 Console.WriteLine("You have entered the Classroom D212");
 
 
-            } while (stay == "y");
+            } while (search == "y");
 
             // a method back to the westwinghall to be placed here
         }
+        public static void janitorsroom()
+        {
+            string temp, search = "n";
+            int option, options;
+
+            Cabin janitorscabin;
+            janitorscabin.cabin1 = "You have found a keyb gun";
+            janitorscabin.cabin2 = "You have found a mousenunchuck";
+            janitorscabin.cabin3 = "There is nothing in here";
+            janitorscabin.cabin4 = "You have found a hdmichain";
+
+            desks janitorsdesk;
+            janitorsdesk.topdesk = "There a muffin and a cup of coffee";
+            janitorsdesk.drawer1 = "There is nothing in here";
+            janitorsdesk.drawer2 = "You have found a key";
+            janitorsdesk.drawer3 = "You have found a mug";
+            janitorsdesk.drawer4 = "You have found a lighter";
+
+            Console.WriteLine("Welcome to the janitors room");
+            Console.WriteLine("There is a desk in the middle of the room, two cabin on the left side, two cabin on the right side, a window overlooking the carpark and a picture on the wall.");
+            Console.WriteLine("What would you like to look at ");
+            temp = Console.ReadLine();
+
+            Console.WriteLine("options 1 2 3 4 5 6 7 8");
+            temp = Console.ReadLine();
+            option = Convert.ToInt32(temp);
+            do
+            { 
+                switch (option)
+                {
+                    case 1:
+                        Console.WriteLine("You have looked at the poster, there appears to be a picture of the janitor's family photo");
+                        Console.WriteLine("Press enter to return");
+                        Console.ReadLine();
+                        break;
+                    case 2:
+                        Console.WriteLine(" Looking out the window it appears to be a bright day in the parking lot. The loud noise of construction workers distracts you from noticing anything useful");
+                        Console.WriteLine("Press enter to return");
+                        Console.ReadLine();
+
+                        break;
+                    case 3:
+                        Console.WriteLine($"You take a closer look at the desk. {janitorsdesk.topdesk}");
+                        Console.WriteLine("What would you like to do?");
+
+                        do
+                        {
+                            while (search == "y")
+                            {
+                                Console.WriteLine("What would you like to search? \n 1: first drawer \n 2: second drawer \n 3: third drawer  \n 4: fouth drawer \n 5: first cabin on the right \n 6: second cabin on the right \n 7: first cabin on the left \n 8: second cabin on the left \n 9: leave");
+                                temp = Console.ReadLine();
+                                options = Convert.ToInt32(temp);
+
+                                switch (options)
+                                {
+                  
+                                    case 1:
+                                        Console.WriteLine("you search the first draw");
+                                        Console.WriteLine($"{janitorsdesk.drawer1}");
+                                        Console.WriteLine("Press enter to return");
+                                        Console.ReadLine();
+                                        break;
+                                    case 2:
+                                        Console.WriteLine("you search the second draw");
+                                        Console.WriteLine($"{janitorsdesk.drawer2}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        Console.ReadLine();
+                                        break;
+                                    case 3:
+                                        Console.WriteLine("you search the third draw");
+                                        Console.WriteLine($"{janitorsdesk.drawer3}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        Console.ReadLine();
+                                        break;
+                                    case 4:
+                                        Console.WriteLine("you search the fouth draw");
+                                        Console.WriteLine($"{janitorsdesk.drawer4}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 5:
+                                        Console.WriteLine("You search the first cabin on the right");
+                                        Console.WriteLine($"{janitorscabin.cabin1}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 6:
+                                        Console.WriteLine("You search the second cabin on the right");
+                                        Console.WriteLine($"{janitorscabin.cabin2}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 7:
+                                        Console.WriteLine("You search the first cabin on the left");
+                                        Console.WriteLine($"{janitorscabin.cabin3}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 8:
+                                        Console.WriteLine("You search the second cabin on the left");
+                                        Console.WriteLine($"{janitorscabin.cabin4}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 9:
+                                        search = "n";
+                                        break;
+                                }
+                            }
+                        } while (search == "y");
+                        break;
+                    case 4:
+                        break;
+                }
+            } while (option != 4);
+
+        }
+    }
 
     }
 }
