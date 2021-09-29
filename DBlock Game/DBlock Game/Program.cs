@@ -12,10 +12,10 @@ namespace DBlock_Game
 
             Console.WriteLine("Hello World!");
 
-            IntroCutscene();
+            Menu();
         }
         //Menu screen ascii
-        public void Menu()
+        public static void Menu()
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(@"
@@ -174,7 +174,7 @@ namespace DBlock_Game
             //something happens
             //kicked out of homeroom
 
-            TextBox("test");
+            TextBox("test", ConsoleColor.Magenta);
 
 
 
@@ -182,30 +182,32 @@ namespace DBlock_Game
 
             //now in north hallway
 
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Joy: I hope you finished your binary homework");
-            Console.ReadLine();
+            
 
             NorthHallway();
 
         }
 
-        public static void TextBox(string text)
+        public static void TextBox(string text, ConsoleColor color)
         {
 
             string dialouge;
             ConsoleColor textColor;
 
             dialouge = text;
-                //"Joy: I hope you finished your binary homework";
+            //"Joy: I hope you finished your binary homework";
 
-            textColor = ConsoleColor.Red;
+            textColor = color;
 
             Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
 
             Console.Write("║");
             Console.ForegroundColor = textColor;
-            Console.Write($"{dialouge}                                                                       ");
+
+            Console.Write($"{dialouge}");
+            for (int i = 0; i < 117 - dialouge.Length; i++)
+                Console.Write(" ");
+
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("║");
 
@@ -559,7 +561,7 @@ namespace DBlock_Game
                         temp = Console.ReadLine();
                         if (temp == "0111")
                         {
-                            BreakRoom();
+                            //BreakRoom();
                         }
                         else
                         {
