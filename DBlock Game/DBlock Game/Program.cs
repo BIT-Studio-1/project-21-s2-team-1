@@ -11,8 +11,8 @@ namespace DBlock_Game
 
 
             Console.WriteLine("Hello World!");
-
-            IntroCutscene();
+            
+           IntroCutscene();
         }
         public static Boolean keyboardshield = false;
 
@@ -290,7 +290,7 @@ namespace DBlock_Game
             string temp;
             string search = "n";
 
-            /** joys desk and the options for searching */
+            /* joys desk and the options for searching */
             Desk joysdesk;
             joysdesk.drawer1 = "You have found a key 0###";
             joysdesk.drawer2 = "You have found a Keyboard shield";
@@ -298,19 +298,21 @@ namespace DBlock_Game
             joysdesk.topofdesk = " There appears to be a a few family photos, her laptop isnt here but there is a note sticking out, as well as 3 draws.";
             joysdesk.note = " Hey Joy, Bombay club is meeting in break room dont forget your code 7";
 
-
+            Console.Clear();
             Console.WriteLine("You have arrived in joys office");
             Console.WriteLine("there is her desk on one side of the room, a window overlooking the construction workers and a poster on the wall. nothing else of notice");
             Console.WriteLine("what would you like to do?");
 
-            // options list for anyone that wants to test code later on
-            Console.WriteLine("options 1 2 3 4");
-            temp = Console.ReadLine();
-            choices = Convert.ToInt32(temp);
+          
+  
             /* a do while loop to continue running until a player decides to leave the room
              */
             do
             {
+                // options list for anyone that wants to test code later on
+                Console.WriteLine("options 1 2 3 4");
+                temp = Console.ReadLine();
+                choices = Convert.ToInt32(temp);
                 // switch case to run through the multiple choices
                 switch (choices)
                 {
@@ -388,7 +390,8 @@ namespace DBlock_Game
                         } while (search == "y");
                         break;
                     case 4:
-                        // Leaving the room method will be places here eg ( WestWingHallWay())
+                        choices = 4;
+                        WestHallWay();
                         break;
                 }
             } while (choices != 4);
@@ -413,6 +416,7 @@ namespace DBlock_Game
             string search = "y";
             string desksearch = "y";
 
+            Console.Clear();
             Console.WriteLine("You have entered the Classroom D212");
             Console.WriteLine("You enter the room and the blinds are shut");
             Console.WriteLine("There is nothing put darkness as far as you can see");
@@ -423,12 +427,14 @@ namespace DBlock_Game
             {
                 Console.WriteLine("What would you like to do?");
                 temp = Console.ReadLine();
+                choices = temp;
                 
                 switch (choices)
                 {
                     case "1":
-                        //Leave method
                         stay = "n";
+                        WestHallWay();
+                        
                         break;
 
                     case "2":
@@ -496,12 +502,16 @@ namespace DBlock_Game
         {
             string attempts = "y";
             string temp;
+
+            Console.Clear();
             Console.WriteLine();
             Console.WriteLine("You enter the west hallway you have another 2 rooms you can enter.");
             Console.WriteLine("There is a keypad that you have never noticed before beside a vending machine you normally get your lunch from.");
             Console.WriteLine("there is Joys office first room to the right as you move down \n There is the last classroom for this hallway 2nd room to the right");
             Console.WriteLine("The hallway bends round the corner leading into the south hallway");
             Console.WriteLine("What would you like to do now?");
+
+            Console.WriteLine("1: north hallway \n 2: Joys Office \n 3: Classroom \n 4: southhallway");
 
             temp = Console.ReadLine();
             switch (temp)
@@ -530,7 +540,7 @@ namespace DBlock_Game
                         temp = Console.ReadLine();
                         if (temp == "0111")
                         {
-                            BreakRoom();
+                            //BreakRoom();
                         }
                         else
                         {
