@@ -264,7 +264,7 @@ namespace DBlock_Game
         {
       
             Desk randomdesk;
-            randomdesk.drawer1 = "Bottles of bombay sapphire gin";
+            randomdesk.drawer1 = "Bottles of Scrape Grace gin";
             randomdesk.drawer2 = "Key #1##";
             randomdesk.drawer3 = "Another note referencing for the teachers to go to the bombay club meet up in the break room. the code is scratched out";
             randomdesk.topofdesk = "You find a computer without the log in though it is of no use. There is a 3d printer waiting for use on the desk. You also find 3 draws";
@@ -353,6 +353,55 @@ namespace DBlock_Game
             } while (stay == "y");
 
             // a method back to the westwinghall to be placed here
+        }
+        public static void WestHallWay()
+        {
+            string attempts = "y";
+            string temp;
+            Console.WriteLine();
+            Console.WriteLine("You enter the west hallway you have another 2 rooms you can enter.");
+            Console.WriteLine("There is a keypad that you have never noticed before beside a vending machine you normally get your lunch from.");
+            Console.WriteLine("there is Joys office first room to the right as you move down \n There is the last classroom for this hallway 2nd room to the right");
+            Console.WriteLine("The hallway bends round the corner leading into the south hallway");
+            Console.WriteLine("What would you like to do now?");
+
+            temp = Console.ReadLine();
+            switch (temp)
+            {
+                case "1":
+                    NorthHallway();
+                    break;
+                case "2":
+                    JoysOffice();
+                    break;
+                case "3":
+                    WestCode();
+                    break;
+                case "4":
+                    /*
+                     * 
+                     * 
+                     * 
+                     * 
+                     * next hallway method to be placed here
+                    */
+                    break;
+                case "5":
+                    
+                        Console.WriteLine("You approach the key pad, try entering a key");
+                        temp = Console.ReadLine();
+                        if (temp == "0111")
+                        {
+                            BreakRoom();
+                        }
+                        else
+                        {
+                            Console.WriteLine("The machine beeps and nothing else happens (the code you have entered is wrong)");
+                        }
+                        break;
+                    
+            }
+
         }
 
     }
