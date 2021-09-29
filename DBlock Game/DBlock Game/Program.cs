@@ -14,6 +14,35 @@ namespace DBlock_Game
             
            IntroCutscene();
         }
+        //Menu screen ascii
+        public void Menu()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(@"
+
+           ▄████████  ▄████████    ▄████████    ▄███████▄    ▄████████    ▄██████▄     ▄████████    ▄████████  ▄████████    ▄████████ 
+          ███    ███ ███    ███   ███    ███   ███    ███   ███    ███   ███    ███   ███    ███   ███    ███ ███    ███   ███    ███ 
+          ███    █▀  ███    █▀    ███    ███   ███    ███   ███    █▀    ███    █▀    ███    ███   ███    ███ ███    █▀    ███    █▀  
+          ███        ███          ███    ███   ███    ███  ▄███▄▄▄      ▄███         ▄███▄▄▄▄██▀   ███    ███ ███         ▄███▄▄▄     
+        ▀███████████ ███        ▀███████████ ▀█████████▀  ▀▀███▀▀▀     ▀▀███ ████▄  ▀▀███▀▀▀▀▀   ▀███████████ ███        ▀▀███▀▀▀     
+                 ███ ███    █▄    ███    ███   ███          ███    █▄    ███    ███ ▀███████████   ███    ███ ███    █▄    ███    █▄  
+           ▄█    ███ ███    ███   ███    ███   ███          ███    ███   ███    ███   ███    ███   ███    ███ ███    ███   ███    ███ 
+         ▄████████▀  ████████▀    ███    █▀   ▄████▀        ██████████   ████████▀    ███    ███   ███    █▀  ████████▀    ██████████ 
+                                                                                        
+");
+            Console.WriteLine("                                                         ╔════════════════════════╗");
+            Console.WriteLine("                                                         ║                        ║");
+            Console.WriteLine("                                                         ║    PRESS 1 START GAME  ║");
+            Console.WriteLine("                                                         ║                        ║");
+            Console.WriteLine("                                                         ║    PRESS 2 LOAD SAVE   ║");
+            Console.WriteLine("                                                         ║                        ║");
+            Console.WriteLine("                                                         ║    PRESS 3 EXIT GAME   ║");
+            Console.WriteLine("                                                         ║                        ║");
+            Console.WriteLine("                                                         ╚════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
+        }
         public static Boolean keyboardshield = false;
 
 
