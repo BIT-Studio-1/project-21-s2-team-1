@@ -147,7 +147,7 @@ namespace DBlock_Game
             Console.Clear();
 
             Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
-            
+
             Console.Write("║");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.Write("vaughn comes in, he tells us to leave the room                                                                       ");
@@ -191,7 +191,7 @@ namespace DBlock_Game
 
             //now in north hallway
 
-            
+
 
             NorthHallway();
 
@@ -286,9 +286,9 @@ namespace DBlock_Game
                     Console.Clear();
                     break;
 
-                    default:
-                        Console.WriteLine("didn't understand that command");
-                        break;
+                default:
+                    Console.WriteLine("didn't understand that command");
+                    break;
             }
 
 
@@ -343,8 +343,8 @@ namespace DBlock_Game
             Console.WriteLine("there is her desk on one side of the room, a window overlooking the construction workers and a poster on the wall. nothing else of notice");
             Console.WriteLine("what would you like to do?");
 
-          
-  
+
+
             /* a do while loop to continue running until a player decides to leave the room
              */
             do
@@ -455,35 +455,48 @@ namespace DBlock_Game
         }
 
         public static void WestCode()
-            /* a method for calling the classroom on the westwing. This room will have another code to the end boss room
-             * a do while loop will be used to give player the room layout and if they want to search or leave room
-             */
+        /* a method for calling the classroom on the westwing. This room will have another code to the end boss room
+         * a do while loop will be used to give player the room layout and if they want to search or leave room
+         */
         {
-         
+
+            Desk randomdesk;
+            randomdesk.drawer1 = "Bottles of Scrape Grace gin";
+            randomdesk.drawer2 = "Key #1##";
+            randomdesk.drawer3 = "Another note referencing for the teachers to go to the bombay club meet up in the break room. the code is scratched out";
+            randomdesk.topofdesk = "You find a computer without the log in though it is of no use. There is a 3d printer waiting for use on the desk. You also find 3 draws";
+            randomdesk.note = "there is no note";
+            string temp;
+            string choices = "y";
+            string search = "y";
+            string desksearch = "y";
+            Console.Clear();
+            Console.WriteLine("You have entered the Classroom D212");
+            Console.WriteLine("You enter the room and the blinds are shut");
+            Console.WriteLine("There is nothing put darkness as far as you can see");
+
+            string stay = "y";
             do
             {
                 Console.WriteLine("What would you like to do?");
                 temp = Console.ReadLine();
                 choices = temp;
-                
+
                 switch (choices)
                 {
                     case "1":
                         stay = "n";
                         WestHallWay();
-                        
-                        break;
 
+                        break;
                     case "2":
-                        
+
                         Console.WriteLine("You have turned on the lights, Congrats");
                         Console.WriteLine(" In the room you have found a desks and computers");
                         Console.WriteLine("What would you like to do?");
-
                         do
                         {
                             temp = Console.ReadLine();
-
                             switch (temp)
                             {
                                 case "1":
@@ -494,14 +507,11 @@ namespace DBlock_Game
                                     do
                                     {
                                         Console.WriteLine("What would you like to do?");
-
-
                                         switch (temp)
                                         {
                                             case "1":
                                                 desksearch = "n";
                                                 break;
-
                                             case "2":
                                                 Console.WriteLine($"You search first drawer  {randomdesk.drawer1}");
                                                 Console.WriteLine("Press enter to continue");
@@ -523,12 +533,62 @@ namespace DBlock_Game
                             }
                         } while (search == "y");
                         break;
+                }
 
-            
-
+            } while (stay == "y");
             // a method back to the westwinghall to be placed here
         }
+        public static void WestHallWay()
+        {
+            string attempts = "y";
+            string temp;
+            Console.Clear();
+            Console.WriteLine();
+            Console.WriteLine("You enter the west hallway you have another 2 rooms you can enter.");
+            Console.WriteLine("There is a keypad that you have never noticed before beside a vending machine you normally get your lunch from.");
+            Console.WriteLine("there is Joys office first room to the right as you move down \n There is the last classroom for this hallway 2nd room to the right");
+            Console.WriteLine("The hallway bends round the corner leading into the south hallway");
+            Console.WriteLine("What would you like to do now?");
+            Console.WriteLine("1: north hallway \n 2: Joys Office \n 3: Classroom \n 4: southhallway");
+            temp = Console.ReadLine();
+            switch (temp)
+            {
+                case "1":
+                    NorthHallway();
+                    break;
+                case "2":
+                    JoysOffice();
+                    break;
+                case "3":
+                    WestCode();
+                    break;
+                case "4":
+                    /*
+                     * 
+                     * 
+                     * 
+                     * 
+                     * next hallway method to be placed here
+                    */
+                    break;
+                case "5":
 
+                    Console.WriteLine("You approach the key pad, try entering a key");
+                    temp = Console.ReadLine();
+                    if (temp == "0111")
+                    {
+                        //BreakRoom();
+                    }
+                    else
+                    {
+                        Console.WriteLine("The machine beeps and nothing else happens (the code you have entered is wrong)");
+                    }
+                    break;
+
+            }
+
+        }
     }
 }
+
 
