@@ -262,10 +262,92 @@ namespace DBlock_Game
              * a do while loop will be used to give player the room layout and if they want to search or leave room
              */
         {
+      
+            Desk randomdesk;
+            randomdesk.drawer1 = "Bottles of bombay sapphire gin";
+            randomdesk.drawer2 = "Key #1##";
+            randomdesk.drawer3 = "Another note referencing for the teachers to go to the bombay club meet up in the break room. the code is scratched out";
+            randomdesk.topofdesk = "You find a computer without the log in though it is of no use. There is a 3d printer waiting for use on the desk. You also find 3 draws";
+            randomdesk.note = "there is no note";
+
+        string temp;
+            string choices = "y";
+            string search = "y";
+            string desksearch = "y";
+
+            Console.WriteLine("You have entered the Classroom D212");
+            Console.WriteLine("You enter the room and the blinds are shut");
+            Console.WriteLine("There is nothing put darkness as far as you can see");
+          
+
             string stay = "y";
             do
             {
-                Console.WriteLine("You have entered the Classroom D212");
+                Console.WriteLine("What would you like to do?");
+                temp = Console.ReadLine();
+                
+                switch (choices)
+                {
+                    case "1":
+                        //Leave method
+                        stay = "n";
+                        break;
+
+                    case "2":
+                        
+                        Console.WriteLine("You have turned on the lights, Congrats");
+                        Console.WriteLine(" In the room you have found a desks and computers");
+                        Console.WriteLine("What would you like to do?");
+
+                        do
+                        {
+                            temp = Console.ReadLine();
+
+                            switch (temp)
+                            {
+                                case "1":
+                                    search = "n";
+                                    break;
+                                case "2":
+                                    Console.WriteLine($"You decide to take a look at the desk {randomdesk.topofdesk}");
+                                    do
+                                    {
+                                        Console.WriteLine("What would you like to do?");
+
+
+                                        switch (temp)
+                                        {
+                                            case "1":
+                                                desksearch = "n";
+                                                break;
+
+                                            case "2":
+                                                Console.WriteLine($"You search first drawer  {randomdesk.drawer1}");
+                                                Console.WriteLine("Press enter to continue");
+                                                Console.ReadLine();
+                                                break;
+                                            case "3":
+                                                Console.WriteLine($"You search first drawer  {randomdesk.drawer2}");
+                                                Console.WriteLine("Press enter to continue");
+                                                Console.ReadLine();
+                                                break;
+                                            case "4":
+                                                Console.WriteLine($"You search first drawer  {randomdesk.drawer3}");
+                                                Console.WriteLine("Press enter to continue");
+                                                Console.ReadLine();
+                                                break;
+                                        }
+                                    } while (desksearch == "y");
+                                    break;
+                            }
+                        } while (search == "y");
+                        break;
+
+                }
+
+
+
+                
 
 
             } while (stay == "y");
