@@ -11,6 +11,42 @@ namespace DBlock_Game
 
 
             Console.WriteLine("Hello World!");
+<<<<<<< HEAD
+
+            Menu();
+=======
+            
+           IntroCutscene();
+>>>>>>> refs/remotes/origin/master
+        }
+        //Menu screen ascii
+        public static void Menu()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(@"
+
+           ▄████████  ▄████████    ▄████████    ▄███████▄    ▄████████    ▄██████▄     ▄████████    ▄████████  ▄████████    ▄████████ 
+          ███    ███ ███    ███   ███    ███   ███    ███   ███    ███   ███    ███   ███    ███   ███    ███ ███    ███   ███    ███ 
+          ███    █▀  ███    █▀    ███    ███   ███    ███   ███    █▀    ███    █▀    ███    ███   ███    ███ ███    █▀    ███    █▀  
+          ███        ███          ███    ███   ███    ███  ▄███▄▄▄      ▄███         ▄███▄▄▄▄██▀   ███    ███ ███         ▄███▄▄▄     
+        ▀███████████ ███        ▀███████████ ▀█████████▀  ▀▀███▀▀▀     ▀▀███ ████▄  ▀▀███▀▀▀▀▀   ▀███████████ ███        ▀▀███▀▀▀     
+                 ███ ███    █▄    ███    ███   ███          ███    █▄    ███    ███ ▀███████████   ███    ███ ███    █▄    ███    █▄  
+           ▄█    ███ ███    ███   ███    ███   ███          ███    ███   ███    ███   ███    ███   ███    ███ ███    ███   ███    ███ 
+         ▄████████▀  ████████▀    ███    █▀   ▄████▀        ██████████   ████████▀    ███    ███   ███    █▀  ████████▀    ██████████ 
+                                                                                        
+");
+            Console.WriteLine("                                                         ╔════════════════════════╗");
+            Console.WriteLine("                                                         ║                        ║");
+            Console.WriteLine("                                                         ║    PRESS 1 START GAME  ║");
+            Console.WriteLine("                                                         ║                        ║");
+            Console.WriteLine("                                                         ║    PRESS 2 LOAD SAVE   ║");
+            Console.WriteLine("                                                         ║                        ║");
+            Console.WriteLine("                                                         ║    PRESS 3 EXIT GAME   ║");
+            Console.WriteLine("                                                         ║                        ║");
+            Console.WriteLine("                                                         ╚════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
         }
         public static Boolean keyboardshield = false;
         public static Boolean mousenunchuck = false;
@@ -29,8 +65,117 @@ namespace DBlock_Game
             public string note;
         }
 
+        //public static string text;
+
         public static void IntroCutscene()
         {
+            //color sheet
+            //Player/thoughts = white
+
+            //joy = purple
+
+            //vaughn = red 
+
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+
+            Console.Write("║");
+            Console.Write("Today is october 1st, a friday. Its currently about 7:50am, I really don't like these 8am days.                      ");
+            Console.WriteLine("║");
+
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
+
+
+
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+
+            Console.Write("║");
+            Console.Write("I make my way to my math class and take my seat near the back. Most people are here already                          ");
+            Console.WriteLine("║");
+
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+
+            Console.Write("║");
+            Console.Write("joy's already here, somethings wrong                                                                                 ");
+            Console.WriteLine("║");
+
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+
+            Console.Write("║");
+            Console.Write("start class, binary question happens, joy short circuits                                                             ");
+            Console.WriteLine("║");
+
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+
+            Console.Write("║");
+            Console.Write("we walk over and see what happened                                                                                   ");
+            Console.WriteLine("║");
+
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+            
+            Console.Write("║");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("vaughn comes in, he tells us to leave the room                                                                       ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║");
+
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+
+            Console.Write("║");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write("Vaughn:  Everyone out! Now!                                                                       ");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║");
+
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
             //enter building
             //enter homeroom
 
@@ -38,15 +183,50 @@ namespace DBlock_Game
             //something happens
             //kicked out of homeroom
 
+            TextBox("test", ConsoleColor.Magenta);
+
+
+
             //homeroom is locked
 
             //now in north hallway
 
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Joy: I hope you finished your binary homework");
-            Console.ReadLine();
+            
 
             NorthHallway();
+
+        }
+
+        public static void TextBox(string text, ConsoleColor color)
+        {
+
+            string dialouge;
+            ConsoleColor textColor;
+
+            dialouge = text;
+            //"Joy: I hope you finished your binary homework";
+
+            textColor = color;
+
+            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+
+            Console.Write("║");
+            Console.ForegroundColor = textColor;
+
+            Console.Write($"{dialouge}");
+            for (int i = 0; i < 117 - dialouge.Length; i++)
+                Console.Write(" ");
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("║");
+
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("║                                                                                                                     ║");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.ReadLine();
+            Console.Clear();
+
 
         }
 
@@ -106,15 +286,9 @@ namespace DBlock_Game
                     Console.Clear();
                     break;
 
-                    /*default:
+                    default:
                         Console.WriteLine("didn't understand that command");
-                        break;*/
-            }
-
-            else
-            {
-                Console.WriteLine("didn't understand that command");
-                //type again
+                        break;
             }
 
 
@@ -156,7 +330,7 @@ namespace DBlock_Game
             string temp;
             string search = "n";
 
-            /** joys desk and the options for searching */
+            /* joys desk and the options for searching */
             Desk joysdesk;
             joysdesk.drawer1 = "You have found a key 0###";
             joysdesk.drawer2 = "You have found a Keyboard shield";
@@ -164,19 +338,21 @@ namespace DBlock_Game
             joysdesk.topofdesk = " There appears to be a a few family photos, her laptop isnt here but there is a note sticking out, as well as 3 draws.";
             joysdesk.note = " Hey Joy, Bombay club is meeting in break room dont forget your code 7";
 
-
+            Console.Clear();
             Console.WriteLine("You have arrived in joys office");
             Console.WriteLine("there is her desk on one side of the room, a window overlooking the construction workers and a poster on the wall. nothing else of notice");
             Console.WriteLine("what would you like to do?");
 
-            // options list for anyone that wants to test code later on
-            Console.WriteLine("options 1 2 3 4");
-            temp = Console.ReadLine();
-            choices = Convert.ToInt32(temp);
+          
+  
             /* a do while loop to continue running until a player decides to leave the room
              */
             do
             {
+                // options list for anyone that wants to test code later on
+                Console.WriteLine("options 1 2 3 4");
+                temp = Console.ReadLine();
+                choices = Convert.ToInt32(temp);
                 // switch case to run through the multiple choices
                 switch (choices)
                 {
@@ -254,7 +430,8 @@ namespace DBlock_Game
                         } while (search == "y");
                         break;
                     case 4:
-                        // Leaving the room method will be places here eg ( WestWingHallWay())
+                        choices = 4;
+                        WestHallWay();
                         break;
                 }
             } while (choices != 4);
@@ -282,129 +459,75 @@ namespace DBlock_Game
              * a do while loop will be used to give player the room layout and if they want to search or leave room
              */
         {
-            string search = "y";
+         
             do
             {
-                Console.WriteLine("You have entered the Classroom D212");
-
-
-            } while (search == "y");
-
-            // a method back to the westwinghall to be placed here
-        }
-        public static void janitorsroom()
-        {
-            string temp, search = "n";
-            int option, options;
-
-            Cabin janitorscabin;
-            janitorscabin.cabin1 = "You have found a keyb gun";
-            janitorscabin.cabin2 = "You have found a mousenunchuck";
-            janitorscabin.cabin3 = "There is nothing in here";
-            janitorscabin.cabin4 = "You have found a hdmichain";
-
-            desks janitorsdesk;
-            janitorsdesk.topdesk = "There a muffin and a cup of coffee";
-            janitorsdesk.drawer1 = "There is nothing in here";
-            janitorsdesk.drawer2 = "You have found a key";
-            janitorsdesk.drawer3 = "You have found a mug";
-            janitorsdesk.drawer4 = "You have found a lighter";
-
-            Console.WriteLine("Welcome to the janitors room");
-            Console.WriteLine("There is a desk in the middle of the room, two cabin on the left side, two cabin on the right side, a window overlooking the carpark and a picture on the wall.");
-            Console.WriteLine("What would you like to look at ");
-            temp = Console.ReadLine();
-
-            Console.WriteLine("options 1 2 3 4 5 6 7 8");
-            temp = Console.ReadLine();
-            option = Convert.ToInt32(temp);
-            do
-            { 
-                switch (option)
+                Console.WriteLine("What would you like to do?");
+                temp = Console.ReadLine();
+                choices = temp;
+                
+                switch (choices)
                 {
-                    case 1:
-                        Console.WriteLine("You have looked at the poster, there appears to be a picture of the janitor's family photo");
-                        Console.WriteLine("Press enter to return");
-                        Console.ReadLine();
+                    case "1":
+                        stay = "n";
+                        WestHallWay();
+                        
                         break;
-                    case 2:
-                        Console.WriteLine(" Looking out the window it appears to be a bright day in the parking lot. The loud noise of construction workers distracts you from noticing anything useful");
-                        Console.WriteLine("Press enter to return");
-                        Console.ReadLine();
 
-                        break;
-                    case 3:
-                        Console.WriteLine($"You take a closer look at the desk. {janitorsdesk.topdesk}");
+                    case "2":
+                        
+                        Console.WriteLine("You have turned on the lights, Congrats");
+                        Console.WriteLine(" In the room you have found a desks and computers");
                         Console.WriteLine("What would you like to do?");
 
                         do
                         {
-                            while (search == "y")
-                            {
-                                Console.WriteLine("What would you like to search? \n 1: first drawer \n 2: second drawer \n 3: third drawer  \n 4: fouth drawer \n 5: first cabin on the right \n 6: second cabin on the right \n 7: first cabin on the left \n 8: second cabin on the left \n 9: leave");
-                                temp = Console.ReadLine();
-                                options = Convert.ToInt32(temp);
+                            temp = Console.ReadLine();
 
-                                switch (options)
-                                {
-                  
-                                    case 1:
-                                        Console.WriteLine("you search the first draw");
-                                        Console.WriteLine($"{janitorsdesk.drawer1}");
-                                        Console.WriteLine("Press enter to return");
-                                        Console.ReadLine();
-                                        break;
-                                    case 2:
-                                        Console.WriteLine("you search the second draw");
-                                        Console.WriteLine($"{janitorsdesk.drawer2}");
-                                        Console.WriteLine("Press spacebar to return");
-                                        Console.ReadLine();
-                                        break;
-                                    case 3:
-                                        Console.WriteLine("you search the third draw");
-                                        Console.WriteLine($"{janitorsdesk.drawer3}");
-                                        Console.WriteLine("Press spacebar to return");
-                                        Console.ReadLine();
-                                        break;
-                                    case 4:
-                                        Console.WriteLine("you search the fouth draw");
-                                        Console.WriteLine($"{janitorsdesk.drawer4}");
-                                        Console.WriteLine("Press spacebar to return");
-                                        break;
-                                    case 5:
-                                        Console.WriteLine("You search the first cabin on the right");
-                                        Console.WriteLine($"{janitorscabin.cabin1}");
-                                        Console.WriteLine("Press spacebar to return");
-                                        break;
-                                    case 6:
-                                        Console.WriteLine("You search the second cabin on the right");
-                                        Console.WriteLine($"{janitorscabin.cabin2}");
-                                        Console.WriteLine("Press spacebar to return");
-                                        break;
-                                    case 7:
-                                        Console.WriteLine("You search the first cabin on the left");
-                                        Console.WriteLine($"{janitorscabin.cabin3}");
-                                        Console.WriteLine("Press spacebar to return");
-                                        break;
-                                    case 8:
-                                        Console.WriteLine("You search the second cabin on the left");
-                                        Console.WriteLine($"{janitorscabin.cabin4}");
-                                        Console.WriteLine("Press spacebar to return");
-                                        break;
-                                    case 9:
-                                        search = "n";
-                                        break;
-                                }
+                            switch (temp)
+                            {
+                                case "1":
+                                    search = "n";
+                                    break;
+                                case "2":
+                                    Console.WriteLine($"You decide to take a look at the desk {randomdesk.topofdesk}");
+                                    do
+                                    {
+                                        Console.WriteLine("What would you like to do?");
+
+
+                                        switch (temp)
+                                        {
+                                            case "1":
+                                                desksearch = "n";
+                                                break;
+
+                                            case "2":
+                                                Console.WriteLine($"You search first drawer  {randomdesk.drawer1}");
+                                                Console.WriteLine("Press enter to continue");
+                                                Console.ReadLine();
+                                                break;
+                                            case "3":
+                                                Console.WriteLine($"You search first drawer  {randomdesk.drawer2}");
+                                                Console.WriteLine("Press enter to continue");
+                                                Console.ReadLine();
+                                                break;
+                                            case "4":
+                                                Console.WriteLine($"You search first drawer  {randomdesk.drawer3}");
+                                                Console.WriteLine("Press enter to continue");
+                                                Console.ReadLine();
+                                                break;
+                                        }
+                                    } while (desksearch == "y");
+                                    break;
                             }
                         } while (search == "y");
                         break;
-                    case 4:
-                        break;
-                }
-            } while (option != 4);
 
+            
+
+            // a method back to the westwinghall to be placed here
         }
-    }
 
     }
 }
