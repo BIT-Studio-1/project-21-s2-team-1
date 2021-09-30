@@ -7,17 +7,8 @@ namespace DBlock_Game
 
         static void Main()
         {
-
-            
-
-            Console.WriteLine("Hello World!");
-//<<<<<<< HEAD
-
             Menu();
-//=======
-            
-           IntroCutscene();
-//>>>>>>> refs/remotes/origin/master
+            IntroCutscene();
         }
         //Menu screen ascii
         public static void Menu()
@@ -84,54 +75,23 @@ namespace DBlock_Game
 
             TextBox("Today is october 1st, a friday. Its currently about 7:50am, I really don't like these 8am days.", Player, false);
 
-            TextBox("test", Player, false);
-            /*
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
-
-            Console.Write("║");
-            Console.Write("Today is october 1st, a friday. Its currently about 7:50am, I really don't like these 8am days.                      ");
-            Console.WriteLine("║");
-
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
-            Console.ReadLine();
-            Console.Clear();*/
-
-
             TextBox("I make my way to my math class and take my seat near the back. Most people are here already", Player, false);
             
             TextBox("joy's already here, somethings wrong", Player, false);
             
-            
-
-
             TextBox("start class, binary question happens, joy short circuit", Player, false);
             
-
             TextBox("we walk over and see what happened", Player, false);
             
             TextBox("Vaughn comes in.", Player, false);
 
             TextBox("Vaughn:  Everyone out!", Vaughn, false);
 
-            //enter building
-            //enter homeroom
-
-            //dialouge
-            //something happens
-            //kicked out of homeroom
-
             TextBox("we all leave", Player, false);
-
 
             //homeroom is locked
 
             //now in north hallway
-
-
 
             NorthHallway();
 
@@ -183,11 +143,57 @@ namespace DBlock_Game
 
         public static void NorthHallway()
         {
-            //start of game
-            Console.WriteLine("north hallway");
-            Console.ReadLine();
+            String temp;
+            TextBox("You have entered the North hall way", Player, false);
+            TextBox("Theres a billboard infront of me with various flyers and notes on it.", Player, false);
+            //class to left
+            //TextBox("Looking at the vending machine it doesnt look normal but appears to be able to save game in some way", Player, false);
+            TextBox("Theres also another classroom to my right", Player, false);
+            TextBox("The hallway bends round the corner leading into the west hallway", Player, false);
+            TextBox("What would you like to do \n" + "1: Joy Classroom\n2: Billboard\n3: Enter Other Classroom\n4: Move Through Hallway", Player, true);
+            
+            
+            /*
+            int numericValue; //used for int check
+            bool isNumber;
+            do
+            {
+                temp = Console.ReadLine();
+                isNumber = int.TryParse(temp, out numericValue); //creates a bool that checks if temp is a number
 
-            //basic info
+            } while (isNumber == false);*/
+
+            bool fail = false;
+
+            do
+            {
+                temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+                        //try to enter this room but its locked
+                        //later when you've collected the keycard you can enter this room
+                        fail = false;
+                        break;
+                    case "2":
+                        //you go look at the billboard
+                        fail = false;
+                        break;
+                    case "3":
+                        //enter the first coderoom
+                        fail = false;
+                        break;
+                    case "4":
+                        //move to west hallway
+                        fail = false;
+                        WestHallWay();
+                        break;
+                    default:
+                        fail = true;
+                        break;
+
+                }
+            } while (fail == true);
         }
 
         public static void CodeRoom1()
@@ -494,7 +500,6 @@ namespace DBlock_Game
             string attempts = "y";
             string temp;
             Console.Clear();
-            Console.WriteLine();
             TextBox("You enter the west hallway you have another 2 rooms you can enter.", Player,false);
             TextBox("There is a keypad that you have never noticed before beside a vending machine you normally get your lunch from.", Player,false);
             TextBox("there is Joys office first room to the right as you move down \n There is the last classroom for this hallway 2nd room to the right", Player,false);
