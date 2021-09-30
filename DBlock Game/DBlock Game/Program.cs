@@ -53,7 +53,11 @@ namespace DBlock_Game
         public static Boolean screwdriver = false;
         public static Boolean hdmichain = false;
         public static Boolean keybgun = false;
+
         public static ConsoleColor Player = ConsoleColor.White;  // Using for textbox player/narrator dialogue
+        public static ConsoleColor Vaughn = ConsoleColor.Red;  // Using for textbox vaughn dialogue
+        public static ConsoleColor Joy = ConsoleColor.Magenta;  // Using for textbox joy dialogue
+
 
 
         /** a Struct for desks if anyone needs to use one for their room */
@@ -70,6 +74,7 @@ namespace DBlock_Game
 
         public static void IntroCutscene()
         {
+
             //color sheet
             //Player/thoughts = white
 
@@ -77,7 +82,10 @@ namespace DBlock_Game
 
             //vaughn = red 
 
+            TextBox("Today is october 1st, a friday. Its currently about 7:50am, I really don't like these 8am days.", Player, false);
 
+            TextBox("test", Player, false);
+            /*
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
 
@@ -90,92 +98,24 @@ namespace DBlock_Game
             Console.WriteLine("║                                                                                                                     ║");
             Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
             Console.ReadLine();
-            Console.Clear();
+            Console.Clear();*/
 
 
+            TextBox("I make my way to my math class and take my seat near the back. Most people are here already", Player, false);
+            
+            TextBox("joy's already here, somethings wrong", Player, false);
+            
+            
 
 
-            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
+            TextBox("start class, binary question happens, joy short circuit", Player, false);
+            
 
-            Console.Write("║");
-            Console.Write("I make my way to my math class and take my seat near the back. Most people are here already                          ");
-            Console.WriteLine("║");
+            TextBox("we walk over and see what happened", Player, false);
+            
+            TextBox("Vaughn comes in.", Player, false);
 
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
-            Console.ReadLine();
-            Console.Clear();
-
-            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
-
-            Console.Write("║");
-            Console.Write("joy's already here, somethings wrong                                                                                 ");
-            Console.WriteLine("║");
-
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
-            Console.ReadLine();
-            Console.Clear();
-
-            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
-
-            Console.Write("║");
-            Console.Write("start class, binary question happens, joy short circuits                                                             ");
-            Console.WriteLine("║");
-
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
-            Console.ReadLine();
-            Console.Clear();
-
-            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
-
-            Console.Write("║");
-            Console.Write("we walk over and see what happened                                                                                   ");
-            Console.WriteLine("║");
-
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
-            Console.ReadLine();
-            Console.Clear();
-
-            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
-
-            Console.Write("║");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("vaughn comes in, he tells us to leave the room                                                                       ");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("║");
-
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
-            Console.ReadLine();
-            Console.Clear();
-
-            Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
-
-            Console.Write("║");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("Vaughn:  Everyone out! Now!                                                                       ");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("║");
-
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("║                                                                                                                     ║");
-            Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
-            Console.ReadLine();
-            Console.Clear();
+            TextBox("Vaughn:  Everyone out!", Vaughn, false);
 
             //enter building
             //enter homeroom
@@ -184,8 +124,7 @@ namespace DBlock_Game
             //something happens
             //kicked out of homeroom
 
-            TextBox("test", ConsoleColor.Magenta);
-
+            TextBox("we all leave", Player, false);
 
 
             //homeroom is locked
@@ -198,16 +137,21 @@ namespace DBlock_Game
 
         }
 
-        public static void TextBox(string text, ConsoleColor color)
+        public static void TextBox(string text, ConsoleColor color, bool readLineBool)
         {
 
             string dialouge;
             ConsoleColor textColor;
+            bool isReadLine;
+
+
+
 
             dialouge = text;
-            //"Joy: I hope you finished your binary homework";
-
             textColor = color;
+            isReadLine = readLineBool;
+
+            Console.ForegroundColor = ConsoleColor.White;
 
             Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
 
@@ -225,8 +169,14 @@ namespace DBlock_Game
             Console.WriteLine("║                                                                                                                     ║");
             Console.WriteLine("║                                                                                                                     ║");
             Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
-            Console.ReadLine();
-            Console.Clear();
+            
+            if (isReadLine == false)
+            {
+                Console.ReadLine();
+                Console.Clear();
+            }
+            
+            
 
 
         }
@@ -234,6 +184,8 @@ namespace DBlock_Game
         public static void NorthHallway()
         {
             //start of game
+            Console.WriteLine("north hallway");
+            Console.ReadLine();
 
             //basic info
         }
@@ -323,7 +275,7 @@ namespace DBlock_Game
          * still needing a method call to leave room
          * method calling for a help menu for player
          */
-
+        
         public static void JoysOffice()
         {
             int choice;
@@ -351,8 +303,9 @@ namespace DBlock_Game
             do
             {
                 // options list for anyone that wants to test code later on
-                TextBox("options 1:Poster 2:Window 3:Desk 4:Leave",Player);
+                TextBox("options 1:Poster 2:Window 3:Desk 4:Leave",Player, true);
                 temp = Console.ReadLine();
+                Console.Clear();
                 choices = Convert.ToInt32(temp);
                 // switch case to run through the multiple choices
                 switch (choices)
