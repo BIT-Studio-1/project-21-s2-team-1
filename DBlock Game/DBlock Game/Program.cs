@@ -8,16 +8,16 @@ namespace DBlock_Game
         static void Main()
         {
 
-
+            
 
             Console.WriteLine("Hello World!");
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
             Menu();
-=======
+//=======
             
            IntroCutscene();
->>>>>>> refs/remotes/origin/master
+//>>>>>>> refs/remotes/origin/master
         }
         //Menu screen ascii
         public static void Menu()
@@ -53,6 +53,7 @@ namespace DBlock_Game
         public static Boolean screwdriver = false;
         public static Boolean hdmichain = false;
         public static Boolean keybgun = false;
+        public static ConsoleColor Player = ConsoleColor.White;  // Using for textbox player/narrator dialogue
 
 
         /** a Struct for desks if anyone needs to use one for their room */
@@ -339,9 +340,9 @@ namespace DBlock_Game
             joysdesk.note = " Hey Joy, Bombay club is meeting in break room dont forget your code 7";
 
             Console.Clear();
-            Console.WriteLine("You have arrived in joys office");
-            Console.WriteLine("there is her desk on one side of the room, a window overlooking the construction workers and a poster on the wall. nothing else of notice");
-            Console.WriteLine("what would you like to do?");
+            TextBox("You have arrived in joys office", Player);
+            TextBox("there is her desk on one side of the room, a window overlooking the construction workers and a poster on the wall. nothing else of notice", Player);
+            TextBox("what would you like to do?",Player);
 
 
 
@@ -350,26 +351,26 @@ namespace DBlock_Game
             do
             {
                 // options list for anyone that wants to test code later on
-                Console.WriteLine("options 1 2 3 4");
+                TextBox("options 1:Poster 2:Window 3:Desk 4:Leave",Player);
                 temp = Console.ReadLine();
                 choices = Convert.ToInt32(temp);
                 // switch case to run through the multiple choices
                 switch (choices)
                 {
                     case 1:
-                        Console.WriteLine("You have Searched the poster, there appears to be a picture of vaughn and a robotic vaughn beside him");
-                        Console.WriteLine("Press enter to return");
+                        TextBox("You have Searched the poster, there appears to be a picture of vaughn and a robotic vaughn beside him",Player);
+                        TextBox("Press enter to return",Player);
                         Console.ReadLine();
                         break;
                     case 2:
-                        Console.WriteLine(" Looking out the window it appears to be a bright day. The loud noise of construction workers distracts you from noticing anything useful");
-                        Console.WriteLine("Press enter to return");
+                        TextBox(" Looking out the window it appears to be a bright day. The loud noise of construction workers distracts you from noticing anything useful", Player);
+                        TextBox("Press enter to return",Player);
                         Console.ReadLine();
 
                         break;
                     case 3:
-                        Console.WriteLine($"You take a closer look at the desk. {joysdesk.topofdesk}");
-                        Console.WriteLine("What would you like to do?");
+                        TextBox($"You take a closer look at the desk. {joysdesk.topofdesk}", Player);
+                        TextBox("What would you like to do?", Player);
 
                         /** a do while loop asking if the player would like to search the area of the desk
                          * as well a while loop to run through the options if they do want to search the area
@@ -383,43 +384,43 @@ namespace DBlock_Game
 
                             while (search == "y")
                             {
-                                Console.WriteLine("What would you like to search? \n 1: first draw \n 2: second draw" +
-                                    "\n 3: third draw  \n 4: Note on desk \n 5: leave");
+                                TextBox("What would you like to search? \n 1: first draw \n 2: second draw" +
+                                    "\n 3: third draw  \n 4: Note on desk \n 5: leave", Player);
                                 temp = Console.ReadLine();
                                 choice = Convert.ToInt32(temp);
 
                                 switch (choice)
                                 {
                                     case 1:
-                                        Console.WriteLine("you search the first draw");
-                                        Console.WriteLine($"{joysdesk.drawer1}");
-                                        Console.WriteLine("Press enter to return");
+                                        TextBox("you search the first draw",Player);
+                                        TextBox($"{joysdesk.drawer1}", Player);
+                                        TextBox("Press enter to return", Player);
                                         Console.ReadLine();
                                         break;
                                     case 2:
                                         if (keyboardshield == true)
                                         {
-                                            Console.WriteLine("You have already searched this draw");
-                                            Console.WriteLine("Press enter to return");
+                                            TextBox("You have already searched this draw", Player);
+                                            TextBox("Press enter to return", Player);
                                             Console.ReadLine();
                                         }
                                         else
                                         {
-                                            Console.WriteLine("You search the second draw");
-                                            Console.WriteLine($"{joysdesk.drawer2}");
-                                            Console.WriteLine("Press enter to return");
+                                            TextBox("You search the second draw", Player);
+                                            TextBox($"{joysdesk.drawer2}", Player);
+                                            TextBox("Press enter to return", Player);
                                             keyboardshield = true;
                                             Console.ReadLine();
                                         }
                                         break;
                                     case 3:
-                                        Console.WriteLine($"{joysdesk.drawer3}");
-                                        Console.WriteLine("Press enter to return");
+                                        TextBox($"{joysdesk.drawer3}", Player);
+                                        TextBox("Press enter to return", Player);
                                         Console.ReadLine();
                                         break;
                                     case 4:
-                                        Console.WriteLine($"{joysdesk.note}");
-                                        Console.WriteLine("Press enter to return");
+                                        TextBox($"{joysdesk.note}", Player);
+                                        TextBox("Press enter to return", Player);
                                         Console.ReadLine();
                                         break;
                                     case 5:
@@ -431,11 +432,11 @@ namespace DBlock_Game
                         break;
                     case 4:
                         choices = 4;
-                        WestHallWay();
+                        
                         break;
                 }
             } while (choices != 4);
-
+            WestHallWay();
         }
 
         public struct Cabin
@@ -471,14 +472,15 @@ namespace DBlock_Game
             string search = "y";
             string desksearch = "y";
             Console.Clear();
-            Console.WriteLine("You have entered the Classroom D212");
-            Console.WriteLine("You enter the room and the blinds are shut");
-            Console.WriteLine("There is nothing put darkness as far as you can see");
+            TextBox("You have entered the Classroom D212", Player);
+            TextBox("You enter the room and the blinds are shut", Player);
+            TextBox("There is nothing put darkness as far as you can see", Player);
 
             string stay = "y";
             do
             {
-                Console.WriteLine("What would you like to do?");
+                TextBox("What would you like to do?", Player);
+                TextBox("1: Leave 2: lights", Player);
                 temp = Console.ReadLine();
                 choices = temp;
 
@@ -486,16 +488,18 @@ namespace DBlock_Game
                 {
                     case "1":
                         stay = "n";
-                        WestHallWay();
+                        
 
                         break;
                     case "2":
 
-                        Console.WriteLine("You have turned on the lights, Congrats");
-                        Console.WriteLine(" In the room you have found a desks and computers");
-                        Console.WriteLine("What would you like to do?");
+                        TextBox("You have turned on the lights, Congrats", Player);
+                        TextBox(" In the room you have found a desks and computers", Player);
+                        
                         do
                         {
+                            TextBox("What would you like to do?", Player);
+                            TextBox("1: leave 2: search desk", Player);
                             temp = Console.ReadLine();
                             switch (temp)
                             {
@@ -503,28 +507,31 @@ namespace DBlock_Game
                                     search = "n";
                                     break;
                                 case "2":
-                                    Console.WriteLine($"You decide to take a look at the desk {randomdesk.topofdesk}");
+                                    TextBox($"You decide to take a look at the desk {randomdesk.topofdesk}",Player);
                                     do
                                     {
-                                        Console.WriteLine("What would you like to do?");
+                                        TextBox("What would you like to do?", Player);
+                                        TextBox("1:leave 2: first draw 3: second draw 4: third draw", Player);
+                                        temp = Console.ReadLine();
+                                        
                                         switch (temp)
                                         {
                                             case "1":
                                                 desksearch = "n";
                                                 break;
                                             case "2":
-                                                Console.WriteLine($"You search first drawer  {randomdesk.drawer1}");
-                                                Console.WriteLine("Press enter to continue");
+                                                TextBox($"You search first drawer  {randomdesk.drawer1}", Player);
+                                                TextBox("Press enter to continue", Player);
                                                 Console.ReadLine();
                                                 break;
                                             case "3":
-                                                Console.WriteLine($"You search first drawer  {randomdesk.drawer2}");
-                                                Console.WriteLine("Press enter to continue");
+                                                TextBox($"You search second drawer  {randomdesk.drawer2}", Player);
+                                                TextBox("Press enter to continue", Player);
                                                 Console.ReadLine();
                                                 break;
                                             case "4":
-                                                Console.WriteLine($"You search first drawer  {randomdesk.drawer3}");
-                                                Console.WriteLine("Press enter to continue");
+                                                TextBox($"You search third drawer  {randomdesk.drawer3}", Player);
+                                                TextBox("Press enter to continue", Player);
                                                 Console.ReadLine();
                                                 break;
                                         }
@@ -536,7 +543,7 @@ namespace DBlock_Game
                 }
 
             } while (stay == "y");
-            // a method back to the westwinghall to be placed here
+            WestHallWay();
         }
         public static void WestHallWay()
         {
@@ -544,12 +551,12 @@ namespace DBlock_Game
             string temp;
             Console.Clear();
             Console.WriteLine();
-            Console.WriteLine("You enter the west hallway you have another 2 rooms you can enter.");
-            Console.WriteLine("There is a keypad that you have never noticed before beside a vending machine you normally get your lunch from.");
-            Console.WriteLine("there is Joys office first room to the right as you move down \n There is the last classroom for this hallway 2nd room to the right");
-            Console.WriteLine("The hallway bends round the corner leading into the south hallway");
-            Console.WriteLine("What would you like to do now?");
-            Console.WriteLine("1: north hallway \n 2: Joys Office \n 3: Classroom \n 4: southhallway");
+            TextBox("You enter the west hallway you have another 2 rooms you can enter.", Player);
+            TextBox("There is a keypad that you have never noticed before beside a vending machine you normally get your lunch from.", Player);
+            TextBox("there is Joys office first room to the right as you move down \n There is the last classroom for this hallway 2nd room to the right", Player);
+            TextBox("The hallway bends round the corner leading into the south hallway", Player);
+            TextBox("What would you like to do now?", Player);
+            TextBox("1: north hallway \n 2: Joys Office \n 3: Classroom \n 4: southhallway", Player);
             temp = Console.ReadLine();
             switch (temp)
             {
@@ -563,17 +570,11 @@ namespace DBlock_Game
                     WestCode();
                     break;
                 case "4":
-                    /*
-                     * 
-                     * 
-                     * 
-                     * 
-                     * next hallway method to be placed here
-                    */
+                    SouthHallway();
                     break;
                 case "5":
 
-                    Console.WriteLine("You approach the key pad, try entering a key");
+                    TextBox("You approach the key pad, try entering a key", Player);
                     temp = Console.ReadLine();
                     if (temp == "0111")
                     {
@@ -581,14 +582,43 @@ namespace DBlock_Game
                     }
                     else
                     {
-                        Console.WriteLine("The machine beeps and nothing else happens (the code you have entered is wrong)");
+                        TextBox("The machine beeps and nothing else happens (the code you have entered is wrong)",ConsoleColor.Green);
                     }
                     break;
 
             }
 
+
+        }
+        public static void SouthHallway()
+        {
+            String temp;
+            TextBox("You have entered the Southern hall way", Player);
+            TextBox("You see another vending machine at the end of the hall way as well as a 2 more classrooms", Player);
+            TextBox("Looking at the vending machine it doesnt look normal but appears to be able to save game in some way", Player);
+            TextBox("The 2 classrooms to the right look like normal classrooms", Player);
+            TextBox("What would you like to do", Player);
+            TextBox("options 1:Classroom 2:Storage Room 3: SaveGame 4: Go back", Player);
+            temp = Console.ReadLine();
+            switch (temp)
+            {
+                case "1":
+                    //classroom 1 method
+                    break;
+                case "2":
+                    //Storage room Method
+                    break;
+                case "4":
+                    WestHallWay();
+                    break;
+                case "3":
+                    //Save Game Method
+                    break;
+                    
+            }
         }
     }
+
 }
 
 
