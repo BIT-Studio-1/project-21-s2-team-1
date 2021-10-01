@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace DBlock_Game
 {
@@ -549,6 +550,7 @@ namespace DBlock_Game
             TextBox("The 2 classrooms to the right look like normal classrooms", Player,false);
             TextBox("What would you like to do \n"+ "options 1:Classroom 2:Storage Room 3: SaveGame 4: Go back", Player,true);
             temp = Console.ReadLine();
+            Console.Clear();
             switch (temp)
             {
                 case "1":
@@ -561,7 +563,17 @@ namespace DBlock_Game
                     WestHallWay();
                     break;
                 case "3":
-                    //Save Game Method
+                    TextBox("Would you like to save?", Player, true);
+                    temp = Console.ReadLine();
+                    Console.Clear();
+                    if (temp == y)
+                    {
+                        TextBox("Give your save a name", Player, true);
+                        temp = Console.ReadLine();
+                        Console.Clear();
+                        Savegame(temp);
+                    }
+                    else;
                     break;
                     
             }
@@ -678,6 +690,23 @@ namespace DBlock_Game
             } while (option != 4);
 
         }
+        public static void Savegame(string game)
+        {
+
+            StreamWriter sw = new StreamWriter($@"{game}.txt");
+            sw.WriteLine($"{keyboardshield}");
+            sw.WriteLine($"{mousenunchuck}");
+            sw.WriteLine($"{screwdriver}");
+            sw.WriteLine($"{hdmichain}");
+            sw.WriteLine($"{keybgun}");
+
+            TextBox("you have successfully saved game", Player, false);
+        }
+        public static void Loadgame(string game)
+        {
+
+        }
+    
     }
 }
 
