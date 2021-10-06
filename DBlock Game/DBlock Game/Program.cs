@@ -690,6 +690,26 @@ namespace DBlock_Game
             } while (option != 4);
 
         }
+        public void BreakRoom()
+        {
+            //this will be the text when the room is entered
+            Console.WriteLine("Vaughn join me MWAHAHAHHAA!!");
+            Thread.Sleep(500);
+            Console.WriteLine("Make your choice");
+            Console.WriteLine("PRESS 1 : Beat them?  ");
+            Console.WriteLine("PRESS 2 : Join them?  ");
+            string temp = Console.ReadLine();
+            if (temp == "1")
+            {
+                fight();
+            }
+            else
+            {
+                AltEnd();
+
+            }
+
+        }
         public static void Savegame(string game)
         {
 
