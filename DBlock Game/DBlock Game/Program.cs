@@ -710,7 +710,24 @@ namespace DBlock_Game
             }
 
         }
-        public static void Savegame(string game)
+        public void AltEnd()
+        {
+            Console.WriteLine("you take a sip of the gin vaughn gives you and you spend the rest of your days sipping gin in the teacher lounge vowing top always keep thier club a secret.");
+            Thread.Sleep(500);
+            Console.Clear();
+            Console.WriteLine("Would you like to play again y/n");
+            string temp = Console.ReadLine();
+            if (temp == "y")
+            {
+                Main()
+            }
+
+            else
+            {
+                System.Envrionment.Exit(0);
+            }
+        }
+            public static void Savegame(string game)
         {
 
             StreamWriter sw = new StreamWriter($@"{game}.txt");
