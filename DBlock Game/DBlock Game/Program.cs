@@ -36,8 +36,23 @@ namespace DBlock_Game
             Console.WriteLine("                                                         ║    PRESS 3 EXIT GAME   ║");
             Console.WriteLine("                                                         ║                        ║");
             Console.WriteLine("                                                         ╚════════════════════════╝");
-            Console.ReadLine();
+            //switch to occompany the menu options
+            temp = Console.ReadLine();
+            input = Convert.ToChar(temp);
+            switch()
+            {
+                case '1':
+                    IntroCutscene();
+                    break;
+                case '2':
+                    Loadgame();
+                    break;
+                case '3':
+                    Enviroment.Exit;
+                    break;
+            }
             Console.Clear();
+
 
         }
         public static Boolean keyboardshield = false;
@@ -724,30 +739,33 @@ namespace DBlock_Game
 
             else
             {
-                System.Envrionment.Exit(0);
+                Environment.Exit;
             }
         }
         public void fight()
         {
             Console.WriteLine("WAHAHAHAHA YOU CAN'T DEFEAT ME AND MY ROBOTS");
+            //Andrews attempt at a bool array if you know how to fux this plz do ive never done of of these beore
             bool[] inverntory = new bool{keyboardshield, mousenunchuck, screwdriver, hdmichain, keybgun};
-            
+            // for loop to use each itam in the array
             int i = 0;
             foreach (i in inventory.Lenght)
             {
                 Console.WriteLine("What do you use now?");
-                
-                if (i == true) 
+
+                if (i == true)
                 {
-                    Console.WriteLine("Keyboard Sheild");
+                    Console.WriteLine($"You searched your pockets and you found {i} and threw it at him");
+                    Thread.Sleep(1500);
+                    Console.WriteLine($"it didnt do anything");
                     i++;
-           
-                else
-                {
-                    Console.WriteLine("You have already used that weapon he will bw expecting it.");
-                    Console.WriteLine("Best to use a different weapon to catch him off guard");
                 }
+           
+                
             }
+            // true ending
+            Console.WriteLine("Throw cup of gin on vaughn");
+            Menu();
 
         }
         public static void Savegame(string game)
