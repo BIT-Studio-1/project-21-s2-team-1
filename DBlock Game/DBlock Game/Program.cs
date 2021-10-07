@@ -727,7 +727,30 @@ namespace DBlock_Game
                 System.Envrionment.Exit(0);
             }
         }
-            public static void Savegame(string game)
+        public void fight()
+        {
+            Console.WriteLine("WAHAHAHAHA YOU CAN'T DEFEAT ME AND MY ROBOTS");
+            bool[] inverntory = new bool{keyboardshield, mousenunchuck, screwdriver, hdmichain, keybgun};
+            
+            int i = 0;
+            foreach (i in inventory.Lenght)
+            {
+                Console.WriteLine("What do you use now?");
+                
+                if (i == true) 
+                {
+                    Console.WriteLine("Keyboard Sheild");
+                    i++;
+           
+                else
+                {
+                    Console.WriteLine("You have already used that weapon he will bw expecting it.");
+                    Console.WriteLine("Best to use a different weapon to catch him off guard");
+                }
+            }
+
+        }
+        public static void Savegame(string game)
         {
 
             StreamWriter sw = new StreamWriter($@"{game}.txt");
