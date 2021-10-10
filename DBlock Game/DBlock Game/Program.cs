@@ -8,6 +8,8 @@ namespace DBlock_Game
 
         static void Main()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8; //prevents some ascii text from not showing
+
             Menu();
             IntroCutscene();
         }
@@ -39,7 +41,7 @@ namespace DBlock_Game
             //switch to occompany the menu options
             temp = Console.ReadLine();
             input = Convert.ToChar(temp);
-            switch()
+            switch(input)
             {
                 case '1':
                     IntroCutscene();
@@ -50,22 +52,18 @@ namespace DBlock_Game
                 case '3':
                     Enviroment.Exit;
                     break;
+                default:
+                    Menu(); //runs menu function again if input is not 1, 2, or 3
+                    break;
             }
             Console.Clear();
 
 
         }
-        public static Boolean keyboardshield = false;
-        public static Boolean mousenunchuck = false;
-        public static Boolean screwdriver = false;
-        public static Boolean hdmichain = false;
-        public static Boolean keybgun = false;
-
-        public static ConsoleColor Player = ConsoleColor.White;  // Using for textbox player/narrator dialogue
-        public static ConsoleColor Vaughn = ConsoleColor.Red;  // Using for textbox vaughn dialogue
-        public static ConsoleColor Joy = ConsoleColor.Magenta;  // Using for textbox joy dialogue
-
-
+        public static Boolean keyboardshield = false, mousenunchuck = false, screwdriver = false, hdmichain = false, keybgun = false; //inventory booleans (you can initialize multiple of the same datatype this way)
+        
+        public static ConsoleColor Player = ConsoleColor.White, Vaughn = ConsoleColor.Red, Joy = ConsoleColor.Magenta; //text color for player, vaughn, and joy
+     
 
         /** a Struct for desks if anyone needs to use one for their room */
         public struct Desk
@@ -734,7 +732,7 @@ namespace DBlock_Game
             string temp = Console.ReadLine();
             if (temp == "y")
             {
-                Main()
+                Main();
             }
 
             else
@@ -749,7 +747,8 @@ namespace DBlock_Game
             bool[] inverntory = new bool{keyboardshield, mousenunchuck, screwdriver, hdmichain, keybgun};
             // for loop to use each itam in the array
             int i = 0;
-            foreach (i in inventory.Lenght)
+
+            foreach (int i in inventory.Lenght)
             {
                 Console.WriteLine("What do you use now?");
 
