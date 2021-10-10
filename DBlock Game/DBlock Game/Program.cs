@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 
 namespace DBlock_Game
 {
@@ -10,12 +11,13 @@ namespace DBlock_Game
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8; //prevents some ascii text from not showing
 
+            //Savegame();
             Menu();
-            IntroCutscene();
         }
         //Menu screen ascii
         public static void Menu()
         {
+
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine(@"
 
@@ -39,18 +41,32 @@ namespace DBlock_Game
             Console.WriteLine("                                                         ║                        ║");
             Console.WriteLine("                                                         ╚════════════════════════╝");
             //switch to occompany the menu options
-            temp = Console.ReadLine();
-            input = Convert.ToChar(temp);
+
+            string temp = Console.ReadLine();
+            char input = Convert.ToChar(temp);
             switch(input)
             {
                 case '1':
+                    
                     IntroCutscene();
                     break;
                 case '2':
-                    Loadgame();
+                    if (File.Exists($@"save.txt"))
+                    {
+                        Loadgame();
+                        break;
+                    }
+                    else
+                    {
+                        TextBox("Save file not found", Player, false);
+                        Menu();
+                        break;
+                    }
+
+                    
                     break;
                 case '3':
-                    Enviroment.Exit;
+                    Environment.Exit(0);
                     break;
                 default:
                     Menu(); //runs menu function again if input is not 1, 2, or 3
@@ -60,7 +76,7 @@ namespace DBlock_Game
 
 
         }
-        public static Boolean keyboardshield = false, mousenunchuck = false, screwdriver = false, hdmichain = false, keybgun = false; //inventory booleans (you can initialize multiple of the same datatype this way)
+        public static Boolean keyboardshield = false, mousenunchuck = false, screwdriver = false, hdmichain = false; //inventory booleans (you can initialize multiple of the same datatype this way)
         
         public static ConsoleColor Player = ConsoleColor.White, Vaughn = ConsoleColor.Red, Joy = ConsoleColor.Magenta; //text color for player, vaughn, and joy
      
@@ -73,6 +89,23 @@ namespace DBlock_Game
             public string drawer3;
             public string topofdesk;
             public string note;
+        }
+
+        public struct Cabin
+        {
+            public string cabin1;
+            public string cabin2;
+            public string cabin3;
+            public string cabin4;
+        }
+
+        public struct desks
+        {
+            public string topdesk;
+            public string drawer1;
+            public string drawer2;
+            public string drawer3;
+            public string drawer4;
         }
 
         //public static string text;
@@ -113,6 +146,7 @@ namespace DBlock_Game
 
         public static void TextBox(string text, ConsoleColor color, bool readLineBool)
         {
+            Console.Clear();
 
             string dialouge;
             ConsoleColor textColor;
@@ -149,10 +183,6 @@ namespace DBlock_Game
                 Console.ReadLine();
                 Console.Clear();
             }
-            
-            
-
-
         }
 
         public static void NorthHallway()
@@ -166,16 +196,6 @@ namespace DBlock_Game
             TextBox("The hallway bends round the corner leading into the west hallway", Player, false);
             TextBox("What would you like to do \n" + "1: Joy Classroom\n2: Billboard\n3: Enter Other Classroom\n4: Move Through Hallway", Player, true);
             
-            
-            /*
-            int numericValue; //used for int check
-            bool isNumber;
-            do
-            {
-                temp = Console.ReadLine();
-                isNumber = int.TryParse(temp, out numericValue); //creates a bool that checks if temp is a number
-
-            } while (isNumber == false);*/
 
             bool fail = false;
 
@@ -188,19 +208,21 @@ namespace DBlock_Game
                         //try to enter this room but its locked
                         //later when you've collected the keycard you can enter this room
                         fail = false;
+
                         break;
                     case "2":
                         //you go look at the billboard
                         fail = false;
+
                         break;
                     case "3":
                         //enter the first coderoom
                         fail = false;
+
                         break;
                     case "4":
-                        //move to west hallway
                         fail = false;
-                        WestHallWay();
+                        WestHallWay();//move to west hallway
                         break;
                     default:
                         fail = true;
@@ -210,80 +232,120 @@ namespace DBlock_Game
             } while (fail == true);
         }
 
-        public static void CodeRoom1()
+
+        public static void NorthCode()
         {
-            /*
-            Console.WriteLine(" ");
-            Console.ReadLine();
-            Console.Clear();
-            */
-            string userAnswer;
+            string temp, search = "n";
+            int option, options;
 
-            //enter room info
-            Console.WriteLine("I enter room D202. Theres no one in here. ");
-            Console.ReadLine();
-            Console.Clear();
+            Cabin janitorscabin;
+            janitorscabin.cabin1 = "You have found a keyb gun";
+            janitorscabin.cabin2 = "You have found a mousenunchuck";
+            janitorscabin.cabin3 = "There is nothing in here";
+            janitorscabin.cabin4 = "You have found a hdmichain";
 
-            //look around?
+            desks janitorsdesk;
+            janitorsdesk.topdesk = "There a muffin and a cup of coffee";
+            janitorsdesk.drawer1 = "There is nothing in here";
+            janitorsdesk.drawer2 = "You have found a key";
+            janitorsdesk.drawer3 = "You have found a mug";
+            janitorsdesk.drawer4 = "You have found a lighter";
 
+            Console.WriteLine("Welcome to the janitors room");
+            Console.WriteLine("There is a desk in the middle of the room, two cabin on the left side, two cabin on the right side, a window overlooking the carpark and a picture on the wall.");
+            Console.WriteLine("What would you like to look at ");
+            temp = Console.ReadLine();
 
-
-            Console.Write("What would you like to do:");
-
-            userAnswer = Console.ReadLine(); //user answer
-
-            //view
-            Console.Write("What would you like to look at: ");
-            userAnswer = Console.ReadLine();
-            switch (userAnswer)
+            Console.WriteLine("options 1 2 3 4 5 6 7 8");
+            temp = Console.ReadLine();
+            option = Convert.ToInt32(temp);
+            do
             {
-                case "1":
-                case "whiteboard": //view whiteboard
-                    Console.WriteLine(" ");
-                    Console.ReadLine();
-                    Console.Clear();
-                    break;
+                switch (option)
+                {
+                    case 1:
+                        Console.WriteLine("You have looked at the poster, there appears to be a picture of the janitor's family photo");
+                        Console.WriteLine("Press enter to return");
+                        Console.ReadLine();
+                        break;
+                    case 2:
+                        Console.WriteLine(" Looking out the window it appears to be a bright day in the parking lot. The loud noise of construction workers distracts you from noticing anything useful");
+                        Console.WriteLine("Press enter to return");
+                        Console.ReadLine();
 
-                case "2":
-                case "room":
-                    Console.WriteLine("There isn't much out of the ordinary here. Its just a regular classroom. There are about 20 desks all facing a whiteboard");
-                    Console.WriteLine("Theres also a teachers desk at the front of the room");
-                    Console.ReadLine();
-                    Console.Clear();
-                    break;
+                        break;
+                    case 3:
+                        Console.WriteLine($"You take a closer look at the desk. {janitorsdesk.topdesk}");
+                        Console.WriteLine("What would you like to do?");
 
-                case "3":
-                case "teachers desk":
-                    Console.WriteLine(" ");
-                    Console.ReadLine();
-                    Console.Clear();
-                    break;
+                        do
+                        {
+                            while (search == "y")
+                            {
+                                Console.WriteLine("What would you like to search? \n 1: first drawer \n 2: second drawer \n 3: third drawer  \n 4: fouth drawer \n 5: first cabin on the right \n 6: second cabin on the right \n 7: first cabin on the left \n 8: second cabin on the left \n 9: leave");
+                                temp = Console.ReadLine();
+                                options = Convert.ToInt32(temp);
 
-                default:
-                    Console.WriteLine("didn't understand that command");
-                    break;
-            }
+                                switch (options)
+                                {
 
+                                    case 1:
+                                        Console.WriteLine("you search the first draw");
+                                        Console.WriteLine($"{janitorsdesk.drawer1}");
+                                        Console.WriteLine("Press enter to return");
+                                        Console.ReadLine();
+                                        break;
+                                    case 2:
+                                        Console.WriteLine("you search the second draw");
+                                        Console.WriteLine($"{janitorsdesk.drawer2}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        Console.ReadLine();
+                                        break;
+                                    case 3:
+                                        Console.WriteLine("you search the third draw");
+                                        Console.WriteLine($"{janitorsdesk.drawer3}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        Console.ReadLine();
+                                        break;
+                                    case 4:
+                                        Console.WriteLine("you search the fouth draw");
+                                        Console.WriteLine($"{janitorsdesk.drawer4}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 5:
+                                        Console.WriteLine("You search the first cabin on the right");
+                                        Console.WriteLine($"{janitorscabin.cabin1}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 6:
+                                        Console.WriteLine("You search the second cabin on the right");
+                                        Console.WriteLine($"{janitorscabin.cabin2}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 7:
+                                        Console.WriteLine("You search the first cabin on the left");
+                                        Console.WriteLine($"{janitorscabin.cabin3}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 8:
+                                        Console.WriteLine("You search the second cabin on the left");
+                                        Console.WriteLine($"{janitorscabin.cabin4}");
+                                        Console.WriteLine("Press spacebar to return");
+                                        break;
+                                    case 9:
+                                        search = "n";
+                                        break;
+                                }
+                            }
+                        } while (search == "y");
+                        break;
+                    case 4:
+                        break;
+                }
+            } while (option != 4);
 
-            //leave room
-            Console.WriteLine("I leave the room");
-            Console.ReadLine();
-            Console.Clear();
-
-            //help
-            Console.WriteLine("List of commands");
-            Console.WriteLine("When propted to, type these commands in and press enter");
-            Console.WriteLine("Search: ");
-            Console.WriteLine("View: view an area/object, view room is a good option when you're stuck");
-            Console.WriteLine("Use: ");
-            Console.WriteLine("Leave: Leave the room you're currently in");
-
-            Console.ReadLine();
-            Console.Clear();
-
-
-            Console.ReadLine();
         }
+
 
 
 
@@ -295,7 +357,7 @@ namespace DBlock_Game
          * still needing a method call to leave room
          * method calling for a help menu for player
          */
-        
+
         public static void JoysOffice()
         {
             int choice;
@@ -407,21 +469,7 @@ namespace DBlock_Game
             WestHallWay();
         }
 
-        public struct Cabin
-        {
-            public string cabin1;
-            public string cabin2;
-            public string cabin3;
-            public string cabin4;
-        }
-        public struct desks
-        {
-            public string topdesk;
-            public string drawer1;
-            public string drawer2;
-            public string drawer3;
-            public string drawer4;
-        }
+        
 
         public static void WestCode()
         /* a method for calling the classroom on the westwing. This room will have another code to the end boss room
@@ -576,17 +624,8 @@ namespace DBlock_Game
                     WestHallWay();
                     break;
                 case "3":
-                    TextBox("Would you like to save?", Player, true);
-                    temp = Console.ReadLine();
-                    Console.Clear();
-                    if (temp == y)
-                    {
-                        TextBox("Give your save a name", Player, true);
-                        temp = Console.ReadLine();
-                        Console.Clear();
-                        Savegame(temp);
-                    }
-                    else;
+                    Savegame();
+                    TextBox("Save Successful", Player, false);
                     break;
                     
             }
@@ -703,7 +742,7 @@ namespace DBlock_Game
             } while (option != 4);
 
         }
-        public void BreakRoom()
+        public static void BreakRoom()
         {
             //this will be the text when the room is entered
             Console.WriteLine("Vaughn join me MWAHAHAHHAA!!");
@@ -714,7 +753,7 @@ namespace DBlock_Game
             string temp = Console.ReadLine();
             if (temp == "1")
             {
-                fight();
+                Fight();
             }
             else
             {
@@ -723,7 +762,7 @@ namespace DBlock_Game
             }
 
         }
-        public void AltEnd()
+        public static void AltEnd()
         {
             Console.WriteLine("you take a sip of the gin vaughn gives you and you spend the rest of your days sipping gin in the teacher lounge vowing top always keep thier club a secret.");
             Thread.Sleep(500);
@@ -737,18 +776,21 @@ namespace DBlock_Game
 
             else
             {
-                Environment.Exit;
+                Environment.Exit(0);
             }
         }
-        public void fight()
+        public static void Fight()
         {
             Console.WriteLine("WAHAHAHAHA YOU CAN'T DEFEAT ME AND MY ROBOTS");
+
+            /*
+            
             //Andrews attempt at a bool array if you know how to fux this plz do ive never done of of these beore
-            bool[] inverntory = new bool{keyboardshield, mousenunchuck, screwdriver, hdmichain, keybgun};
+            bool[] inventory = new bool{keyboardshield, mousenunchuck, screwdriver, hdmichain};
             // for loop to use each itam in the array
             int i = 0;
-
-            foreach (int i in inventory.Lenght)
+            
+            foreach (int i in inventory.Length)
             {
                 Console.WriteLine("What do you use now?");
 
@@ -761,29 +803,69 @@ namespace DBlock_Game
                 }
            
                 
+            }*/
+
+            //liams code
+
+            //keyboardshield, mousenunchuck, screwdriver, hdmichain
+
+            
+
+            Console.WriteLine("random bullshit go!");
+
+            if(keyboardshield == true)
+            {
+                //keyboardshield dialouge
             }
+            if (mousenunchuck == true)
+            {
+                //mouse dialouge
+            }
+            if (screwdriver == true)
+            {
+                //screwdriver dialouge
+            }
+            if (hdmichain == true)
+            {
+                //hdmi dialouge
+            }
+
+
             // true ending
             Console.WriteLine("Throw cup of gin on vaughn");
             Menu();
 
         }
-        public static void Savegame(string game)
+        public static void Savegame()
         {
 
-            StreamWriter sw = new StreamWriter($@"{game}.txt");
+            StreamWriter sw = new StreamWriter($@"save.txt");
             sw.WriteLine($"{keyboardshield}");
             sw.WriteLine($"{mousenunchuck}");
             sw.WriteLine($"{screwdriver}");
             sw.WriteLine($"{hdmichain}");
-            sw.WriteLine($"{keybgun}");
 
             TextBox("you have successfully saved game", Player, false);
+            sw.Close();
         }
-        public static void Loadgame(string game)
+        public static void Loadgame()
         {
+            StreamReader sr = new StreamReader($@"save.txt");
 
+            keyboardshield = Convert.ToBoolean(sr.ReadLine());
+            mousenunchuck = Convert.ToBoolean(sr.ReadLine());
+            screwdriver = Convert.ToBoolean(sr.ReadLine());
+            hdmichain = Convert.ToBoolean(sr.ReadLine());
+
+
+            TextBox("You have successfully loaded your save", Player, false);
+            //Console.WriteLine($"{keyboardshield}, {mousenunchuck}, {screwdriver}, {hdmichain}");
+            //Console.ReadLine();
+            sr.Close();
+
+
+            SouthHallway();
         }
-    
     }
 }
 
