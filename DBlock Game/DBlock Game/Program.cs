@@ -745,6 +745,7 @@ namespace DBlock_Game
         public static void BreakRoom()
         {
             //this will be the text when the room is entered
+            TextBox("You have entered the Break Room", Player, false);
             Console.WriteLine("Vaughn join me MWAHAHAHHAA!!");
             Thread.Sleep(500);
             Console.WriteLine("Make your choice");
@@ -781,35 +782,8 @@ namespace DBlock_Game
         }
         public static void Fight()
         {
+            TextBox("You have entered the Classroom D212", Player, false);
             Console.WriteLine("WAHAHAHAHA YOU CAN'T DEFEAT ME AND MY ROBOTS");
-
-            /*
-            
-            //Andrews attempt at a bool array if you know how to fux this plz do ive never done of of these beore
-            bool[] inventory = new bool{keyboardshield, mousenunchuck, screwdriver, hdmichain};
-            // for loop to use each itam in the array
-            int i = 0;
-            
-            foreach (int i in inventory.Length)
-            {
-                Console.WriteLine("What do you use now?");
-
-                if (i == true)
-                {
-                    Console.WriteLine($"You searched your pockets and you found {i} and threw it at him");
-                    Thread.Sleep(1500);
-                    Console.WriteLine($"it didnt do anything");
-                    i++;
-                }
-           
-                
-            }*/
-
-            //liams code
-
-            //keyboardshield, mousenunchuck, screwdriver, hdmichain
-
-            
 
             Console.WriteLine("random bullshit go!");
 
