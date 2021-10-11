@@ -746,6 +746,17 @@ namespace DBlock_Game
         {
             //this will be the text when the room is entered
             TextBox("You have entered the Break Room", Player, false);
+            Thread.Sleep(1500)
+            Console.Clear();
+            TextBox("the room suddenly pauses and stares at  you", Player, true);
+            Thread.Sleep(1500)
+            Console.Clear();
+            TextBox("As you star back you realise that all of the polytech staff are here", Player, true);
+            Thread.Sleep(1500)
+            Console.Clear();
+            TextBox("AND THEY ARE JUST SITTING AROUND DRINKING SCAPEGRACE GIN!!!", Player, true);
+            Thread.Sleep(1500)
+            Console.Clear();
             Console.WriteLine("Vaughn join me MWAHAHAHHAA!!");
             Thread.Sleep(500);
             Console.WriteLine("Make your choice");
@@ -782,7 +793,7 @@ namespace DBlock_Game
         }
         public static void Fight()
         {
-            TextBox("You have entered the Classroom D212", Player, false);
+            
             Console.WriteLine("WAHAHAHAHA YOU CAN'T DEFEAT ME AND MY ROBOTS");
 
             Console.WriteLine("random bullshit go!");
@@ -790,23 +801,51 @@ namespace DBlock_Game
             if(keyboardshield == true)
             {
                 //keyboardshield dialouge
+                TextBox("You pick up the shield to block Vaugns Mech Punch.", Player, true);
+                Thread.Sleep(1500)
+                Console.Clear();
+                TextBox("But the punch breaks straight through.", Player, true);
+                Thread.Sleep(1500)
+                Console.Clear();
+
             }
             if (mousenunchuck == true)
             {
                 //mouse dialouge
+                TextBox("You dig around in your inventory and find the Mouse Nunchucks!!!", Player, true);
+                Thread.Sleep(1500)
+                Console.Clear();
+                TextBox("They break as you swing them because they arent real nunchucks.", Player, true);
+                Thread.Sleep(1500)
+                Console.Clear();
             }
             if (screwdriver == true)
             {
                 //screwdriver dialouge
+                TextBox("You have entered the Classroom D212.", Player, true);
+                Thread.Sleep(1500)
+                Console.Clear();
+                TextBox("You pick up the sheild to block Vaugns Mech Punch.", Player, true);
+                Thread.Sleep(1500)
+                Console.Clear();
             }
             if (hdmichain == true)
             {
                 //hdmi dialouge
+                TextBox("Its time for the big guns you reach deep into your inventory and grab yout trusty HDMi chain.", Player, true);
+                Thread.Sleep(1500)
+                Console.Clear();
+                TextBox("Turns out that HDMI chain wasnt so trusty afterall as Vaught breaks free with his robosuit.", Player, true);
+                Thread.Sleep(1500)
+                Console.Clear();
             }
 
-
             // true ending
-            Console.WriteLine("Throw cup of gin on vaughn");
+            TextBox("There is no running your back is against the wall, it looks like you are about to bite it.", Player, true);
+            TextBox("Somthing shiny from the corner of your eye catches your attention... its a full glass of GIN!!", Player, true);
+            TextBox("You quickly cease the glass and throw the contents onto Vaughns powersuit", Player, true);
+            TextBox("NOOOOOOOOOOOO MY SUITS CIRCUITS WILL FRY!!!!!!!", Vaughn, true);
+            TextBox("the suit snap crackles and pops as it begins to shut down", Player, true);
             Menu();
 
         }
