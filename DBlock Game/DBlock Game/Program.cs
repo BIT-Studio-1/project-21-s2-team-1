@@ -746,39 +746,41 @@ namespace DBlock_Game
         {
             //this will be the text when the room is entered
             TextBox("You have entered the Break Room", Player, false);
-            Thread.Sleep(1500)
-            Console.Clear();
             TextBox("the room suddenly pauses and stares at  you", Player, true);
-            Thread.Sleep(1500)
-            Console.Clear();
             TextBox("As you star back you realise that all of the polytech staff are here", Player, true);
-            Thread.Sleep(1500)
-            Console.Clear();
             TextBox("AND THEY ARE JUST SITTING AROUND DRINKING SCAPEGRACE GIN!!!", Player, true);
-            Thread.Sleep(1500)
-            Console.Clear();
-            Console.WriteLine("Vaughn join me MWAHAHAHHAA!!");
-            Thread.Sleep(500);
-            Console.WriteLine("Make your choice");
-            Console.WriteLine("PRESS 1 : Beat them?  ");
-            Console.WriteLine("PRESS 2 : Join them?  ");
+            TextBox("WHAT ARE YOU DOING HERE? HOW DID YOU GET IN THERE IS A LOCK FOR A REASON?.", Vaughn, true);
+            TextBox("You cannot leave here and let this get out that we have replaced ourselves with robot so that we can can just have fun all day.", Vaughn, true);
+            TextBox("Vaugh walks over to the table in the middle of the room and pours a glass and extends his arm out to you with a glass full of gin.", Player, true);
+            TextBox("Join us in taking over the Polytech or we will have to get rid of you MWAHAHAHHAA!!", Vaughn, true);
+            TextBox("Make your choice. \n PRESS 1 : Beat them.\n PRESS 2 : Join them.", Player, true);
             string temp = Console.ReadLine();
-            if (temp == "1")
+            int x = 0
+            while(x = 0) 
             {
-                Fight();
-            }
-            else
-            {
-                AltEnd();
+                if (temp == "1")
+                {
+                    Fight();
+                }
+                else if (temp == "2")
+                {
+                    AltEnd();
 
+                }
+                else
+                {
+                    TextBox("Sorry Invalid Input", Player, true);
+                }
             }
+          
 
         }
         public static void AltEnd()
         {
-            Console.WriteLine("you take a sip of the gin vaughn gives you and you spend the rest of your days sipping gin in the teacher lounge vowing top always keep thier club a secret.");
-            Thread.Sleep(500);
-            Console.Clear();
+            TextBox("You accept the glass of the crystal clear cup of Scapegrace gin from vaughs extended hand and take a small sip.", Player, true);
+            TextBox("As you seat yourself on one of the chairs in the room you look across and see a not so familiar face .", Player, true);
+            TextBox("ITS ANDREAS... HES BEEN IN HERE THE WHOLE TIME!!!", Player, true);
+            TextBox("The End.", Player, true);
             Console.WriteLine("Would you like to play again y/n");
             string temp = Console.ReadLine();
             if (temp == "y")
@@ -802,50 +804,36 @@ namespace DBlock_Game
             {
                 //keyboardshield dialouge
                 TextBox("You pick up the shield to block Vaugns Mech Punch.", Player, true);
-                Thread.Sleep(1500)
-                Console.Clear();
                 TextBox("But the punch breaks straight through.", Player, true);
-                Thread.Sleep(1500)
-                Console.Clear();
-
             }
             if (mousenunchuck == true)
             {
                 //mouse dialouge
                 TextBox("You dig around in your inventory and find the Mouse Nunchucks!!!", Player, true);
-                Thread.Sleep(1500)
-                Console.Clear();
                 TextBox("They break as you swing them because they arent real nunchucks.", Player, true);
-                Thread.Sleep(1500)
-                Console.Clear();
             }
             if (screwdriver == true)
             {
                 //screwdriver dialouge
-                TextBox("You have entered the Classroom D212.", Player, true);
-                Thread.Sleep(1500)
-                Console.Clear();
-                TextBox("You pick up the sheild to block Vaugns Mech Punch.", Player, true);
-                Thread.Sleep(1500)
-                Console.Clear();
+                TextBox("You whipp out the screwdriver from you back pocket.", Player, true);
+                TextBox("Its no very effective because Vaughns suit is held together by bolts not screws.", Player, true);
             }
             if (hdmichain == true)
             {
                 //hdmi dialouge
                 TextBox("Its time for the big guns you reach deep into your inventory and grab yout trusty HDMi chain.", Player, true);
-                Thread.Sleep(1500)
-                Console.Clear();
                 TextBox("Turns out that HDMI chain wasnt so trusty afterall as Vaught breaks free with his robosuit.", Player, true);
-                Thread.Sleep(1500)
-                Console.Clear();
             }
 
             // true ending
             TextBox("There is no running your back is against the wall, it looks like you are about to bite it.", Player, true);
             TextBox("Somthing shiny from the corner of your eye catches your attention... its a full glass of GIN!!", Player, true);
-            TextBox("You quickly cease the glass and throw the contents onto Vaughns powersuit", Player, true);
+            TextBox("You quickly cease the glass and throw the contents onto Vaughns powersuit.", Player, true);
             TextBox("NOOOOOOOOOOOO MY SUITS CIRCUITS WILL FRY!!!!!!!", Vaughn, true);
-            TextBox("the suit snap crackles and pops as it begins to shut down", Player, true);
+            TextBox("the suit snap crackles and pops as it begins to shut down.", Player, true);
+            TextBox("Vaughn has been defeated without his robit armor he is powerless.", Player, true);
+            TextBox("The teachers will now have to go back to thier old lives and continue wroking at the Otago Polytechnic.", Player, true);
+            TextBox("The End.", Player, true);
             Menu();
 
         }
