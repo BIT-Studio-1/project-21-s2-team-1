@@ -72,9 +72,13 @@ namespace DBlock_Game
         }
         public static void Inventory()
         {
+            Console.Clear();
+
+            Console.WriteLine("Inventory:");
+
             if (keyboardshield == true)
             {
-                Console.WriteLine("keyboard Shield");
+                Console.WriteLine("Keyboard Shield");
             }
             if (mousenunchuck == true)
             {
@@ -104,6 +108,13 @@ namespace DBlock_Game
             {
                 Console.WriteLine("Key Number ###1");
             }
+            if(joyCard == true)
+            {
+                Console.WriteLine("Joy's Keycard");
+            }
+
+            Console.WriteLine("\n\nPress enter to exit Inventory");
+            Console.ReadLine();
             //for the other switchws
             //case "inventory":
             //      Inventory();      
@@ -170,6 +181,8 @@ namespace DBlock_Game
 
             //now in north hallway
 
+            joyCard = true; //here for debugging
+
             NorthHallway();
 
         }
@@ -212,6 +225,244 @@ namespace DBlock_Game
             }
         }
 
+        public static void Help()
+        {
+            Console.Clear();
+            Console.WriteLine("Commands:\n");
+            Console.WriteLine("help: opens this menu");
+            Console.WriteLine("map:  opens the map");
+            Console.WriteLine("inv:  opens the inventory");
+
+            Console.ReadLine();
+        }
+
+        public static void Map(int room)
+        {
+            Console.Clear();
+            switch (room)
+            {
+                case 0: //north wing
+                    Console.WriteLine(@"
+                          ┌───────────────────┬────────────────────┐
+                          │                   │                    │
+                          │   Class Room 2    │    Class Room 1    │
+                          │                   │                    │
+                ┌─────────┼───────────────────┴────────────────────┤
+                │         │               You are here!            │
+                │  Joy's  │                North Wing              │
+                │ Office  │                ┌───────────────────────┤
+                │         │                │                       │
+                │         │                │                       │
+                ├─────────┤                │    Teacher BreakRoom  │
+                │         │    West Wing   │                       │
+                │  Class  │                │                       │
+                │  Room   │                │                       │
+                │    3    │                └───────────────────────┤
+                │         │                 South Wing             │
+                │         │                                        │
+                └─────────┼───────────────────┬────────────────────┤
+                          │                   │                    │
+                          │   Class Room 4    │    Class Room 5    │
+                          │                   │                    │
+                          └───────────────────┴────────────────────┘
+                ");
+                    break;
+
+                case 1: //west wing
+                    Console.WriteLine(@"
+                          ┌───────────────────┬────────────────────┐
+                          │                   │                    │
+                          │   Class Room 2    │    Class Room 1    │
+                          │                   │                    │
+                ┌─────────┼───────────────────┴────────────────────┤
+                │         │                                        │
+                │  Joy's  │                North Wing              │
+                │ Office  │                ┌───────────────────────┤
+                │         │                │                       │
+                │         │                │                       │
+                ├─────────┤  You are here! │    Teacher BreakRoom  │
+                │         │    West Wing   │                       │
+                │  Class  │                │                       │
+                │  Room   │                │                       │
+                │    3    │                └───────────────────────┤
+                │         │                 South Wing             │
+                │         │                                        │
+                └─────────┼───────────────────┬────────────────────┤
+                          │                   │                    │
+                          │   Class Room 4    │    Class Room 5    │
+                          │                   │                    │
+                          └───────────────────┴────────────────────┘
+                ");
+                    break;
+
+                case 2: //south wing
+                    Console.WriteLine(@"
+                          ┌───────────────────┬────────────────────┐
+                          │                   │                    │
+                          │   Class Room 2    │    Class Room 1    │
+                          │                   │                    │
+                ┌─────────┼───────────────────┴────────────────────┤
+                │         │                                        │
+                │  Joy's  │                North Wing              │
+                │ Office  │                ┌───────────────────────┤
+                │         │                │                       │
+                │         │                │                       │
+                ├─────────┤                │    Teacher BreakRoom  │
+                │         │    West Wing   │                       │
+                │  Class  │                │                       │
+                │  Room   │                │                       │
+                │    3    │                └───────────────────────┤
+                │         │                 South Wing             │
+                │         │                 You are here!          │
+                └─────────┼───────────────────┬────────────────────┤
+                          │                   │                    │
+                          │   Class Room 4    │    Class Room 5    │
+                          │                   │                    │
+                          └───────────────────┴────────────────────┘
+                ");
+                    break;
+
+                case 3: //north class
+                    Console.WriteLine(@"
+                          ┌───────────────────┬────────────────────┐
+                          │                   │                    │
+                          │   Class Room 2    │    Class Room 1    │
+                          │   You are here!   │                    │
+                ┌─────────┼───────────────────┴────────────────────┤
+                │         │                                        │
+                │  Joy's  │                North Wing              │
+                │ Office  │                ┌───────────────────────┤
+                │         │                │                       │
+                │         │                │                       │
+                ├─────────┤                │    Teacher BreakRoom  │
+                │         │    West Wing   │                       │
+                │  Class  │                │                       │
+                │  Room   │                │                       │
+                │    3    │                └───────────────────────┤
+                │         │                 South Wing             │
+                │         │                                        │
+                └─────────┼───────────────────┬────────────────────┤
+                          │                   │                    │
+                          │   Class Room 4    │    Class Room 5    │
+                          │                   │                    │
+                          └───────────────────┴────────────────────┘
+                ");
+                    break;
+
+                case 4: //joys office
+                    Console.WriteLine(@"
+                          ┌───────────────────┬────────────────────┐
+                          │                   │                    │
+                          │   Class Room 2    │    Class Room 1    │
+                          │                   │                    │
+                ┌─────────┼───────────────────┴────────────────────┤
+                │         │                                        │
+                │  Joy's  │                North Wing              │
+                │ Office  │                ┌───────────────────────┤
+                │ You are │                │                       │
+                │  here!  │                │                       │
+                ├─────────┤                │    Teacher BreakRoom  │
+                │         │    West Wing   │                       │
+                │  Class  │                │                       │
+                │  Room   │                │                       │
+                │    3    │                └───────────────────────┤
+                │         │                 South Wing             │
+                │         │                                        │
+                └─────────┼───────────────────┬────────────────────┤
+                          │                   │                    │
+                          │   Class Room 4    │    Class Room 5    │
+                          │                   │                    │
+                          └───────────────────┴────────────────────┘
+                ");
+                    break;
+
+                case 5: //west class
+                    Console.WriteLine(@"
+                          ┌───────────────────┬────────────────────┐
+                          │                   │                    │
+                          │   Class Room 2    │    Class Room 1    │
+                          │                   │                    │
+                ┌─────────┼───────────────────┴────────────────────┤
+                │         │                                        │
+                │  Joy's  │                North Wing              │
+                │ Office  │                ┌───────────────────────┤
+                │         │                │                       │
+                │         │                │                       │
+                ├─────────┤                │    Teacher BreakRoom  │
+                │         │    West Wing   │                       │
+                │  Class  │                │                       │
+                │  Room   │                │                       │
+                │    3    │                └───────────────────────┤
+                │ You are │                 South Wing             │
+                │  Here!  │                                        │
+                └─────────┼───────────────────┬────────────────────┤
+                          │                   │                    │
+                          │   Class Room 4    │    Class Room 5    │
+                          │                   │                    │
+                          └───────────────────┴────────────────────┘
+                ");
+                    break;
+
+                case 6: //south class
+                    Console.WriteLine(@"
+                          ┌───────────────────┬────────────────────┐
+                          │                   │                    │
+                          │   Class Room 2    │    Class Room 1    │
+                          │                   │                    │
+                ┌─────────┼───────────────────┴────────────────────┤
+                │         │                                        │
+                │  Joy's  │                North Wing              │
+                │ Office  │                ┌───────────────────────┤
+                │         │                │                       │
+                │         │                │                       │
+                ├─────────┤                │    Teacher BreakRoom  │
+                │         │    West Wing   │                       │
+                │  Class  │                │                       │
+                │  Room   │                │                       │
+                │    3    │                └───────────────────────┤
+                │         │                 South Wing             │
+                │         │                                        │
+                └─────────┼───────────────────┬────────────────────┤
+                          │                   │                    │
+                          │   Class Room 4    │    Class Room 5    │
+                          │   You are here!   │                    │
+                          └───────────────────┴────────────────────┘
+                ");
+                    break;
+
+                case 7: //janitor closet
+                    Console.WriteLine(@"
+                          ┌───────────────────┬────────────────────┐
+                          │                   │                    │
+                          │   Class Room 2    │    Class Room 1    │
+                          │                   │                    │
+                ┌─────────┼───────────────────┴────────────────────┤
+                │         │                                        │
+                │  Joy's  │                North Wing              │
+                │ Office  │                ┌───────────────────────┤
+                │         │                │                       │
+                │         │                │                       │
+                ├─────────┤                │    Teacher BreakRoom  │
+                │         │    West Wing   │                       │
+                │  Class  │                │                       │
+                │  Room   │                │                       │
+                │    3    │                └───────────────────────┤
+                │         │                 South Wing             │
+                │         │                                        │
+                └─────────┼───────────────────┬────────────────────┤
+                          │                   │                    │
+                          │   Class Room 4    │    Class Room 5    │
+                          │                   │    You are here!   │
+                          └───────────────────┴────────────────────┘
+                ");
+                    break;
+            }
+
+            
+
+            Console.ReadLine();
+        }
+
         public static void NorthHallway()
         {
             TextBox("I'm now in the the North hallway", Player, false);
@@ -223,7 +474,7 @@ namespace DBlock_Game
 
             do
             {
-                TextBox("What should I do now? \n" + "║1: Enter Joy's Classroom\n║2: Check Billboard\n║3: Enter Other Classroom\n║4: Move to West Hallway", Player, true);
+                TextBox("What should I do now? \n" + "║1: Enter Math Classroom\n║2: Check Billboard\n║3: Enter Other Classroom\n║4: Move to West Hallway", Player, true);
 
                 string temp = Console.ReadLine();
                 switch (temp)
@@ -249,6 +500,21 @@ namespace DBlock_Game
                     case "4":
                         fail = false;
                         WestHallWay();//move to west hallway
+                        break;
+
+                    case "map":
+                        fail = true;
+                        Map(0);
+                        break;
+
+                    case "inv":
+                        fail = true;
+                        Inventory();
+                        break;
+
+                    case "help":
+                        fail = true;
+                        Help();
                         break;
 
                     default:
@@ -289,6 +555,18 @@ namespace DBlock_Game
                         TextBox("This note seems important, I think I'll take it just incase", Player, false);
                         keycode3 = true;
                         break;
+
+                    case "map":
+                        Map(3);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
                 }
 
             } while (stay == true);
@@ -305,7 +583,7 @@ namespace DBlock_Game
         public static void JoysOffice()
         {
             int choice;
-            int choices;
+            string choices;
             string temp;
             string search = "n";
 
@@ -331,22 +609,21 @@ namespace DBlock_Game
                 TextBox("what would you like to do?", Player, false);
                 // options list for anyone that wants to test code later on
                 TextBox("what would you like to do?\n1:Poster\n2:Window\n3:Desk\n4:Leave", Player, true);
-                temp = Console.ReadLine();
+                choices = Console.ReadLine();
                 Console.Clear();
-                choices = Convert.ToInt32(temp);
                 // switch case to run through the multiple choices
                 switch (choices)
                 {
-                    case 1:
+                    case "1":
                         TextBox("You have Searched the poster, there appears to be a picture of vaughn and a robotic vaughn beside him", Player, false);
                         Console.ReadLine();
                         break;
-                    case 2:
+                    case "2":
                         TextBox(" Looking out the window it appears to be a bright day. The loud noise of construction workers distracts you from noticing anything useful", Player, false);
                         Console.ReadLine();
 
                         break;
-                    case 3:
+                    case "3":
                         TextBox($"You take a closer look at the desk. {joysdesk.topofdesk}", Player, false);
 
                         /** a do while loop asking if the player would like to search the area of the desk
@@ -365,18 +642,17 @@ namespace DBlock_Game
                                 TextBox("What would you like to search? \n 1: first draw \n 2: second draw" +
                                     "\n 3: third draw  \n 4: Note on desk \n 5: leave", Player, true);
                                 temp = Console.ReadLine();
-                                choice = Convert.ToInt32(temp);
                                 Console.Clear();
 
-                                switch (choice)
+                                switch (temp)
                                 {
-                                    case 1:
+                                    case "1":
                                         TextBox("you search the first draw", Player, false);
                                         TextBox($"{joysdesk.drawer1}", Player, false);
                                         keycode4 = true;
                                         Console.ReadLine();
                                         break;
-                                    case 2:
+                                    case "2":
                                         if (keyboardshield == true)
                                         {
                                             TextBox("You have already searched this draw", Player, false);
@@ -390,27 +666,53 @@ namespace DBlock_Game
                                             Console.ReadLine();
                                         }
                                         break;
-                                    case 3:
+                                    case "3":
                                         TextBox($"{joysdesk.drawer3}", Player, false);
                                         Console.ReadLine();
                                         break;
-                                    case 4:
+                                    case "4":
                                         TextBox($"{joysdesk.note}", Player, false);
                                         Console.ReadLine();
                                         break;
-                                    case 5:
+                                    case "5":
                                         search = "n";
                                         break;
+
+                                    case "map":
+                                        Map(4);
+                                        break;
+
+                                    case "inv":
+                                        Inventory();
+                                        break;
+
+                                    case "help":
+                                        Help();
+                                        break;
+
                                 }
+
                             }
                         } while (search == "y");
                         break;
-                    case 4:
-                        choices = 4;
+                    case "4":
+                        choices = "4";
 
                         break;
+
+                    case "map":
+                        Map(4);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
                 }
-            } while (choices != 4);
+            } while (choices != "4");
             WestHallWay();
         }
 
@@ -478,8 +780,32 @@ namespace DBlock_Game
                                                 TextBox($"You search third drawer", Player, false);
                                                 TextBox("inside theres a note telling the teachers to go to the bombay club meet up in the break room.", Player, false);
                                                 break;
+
+                                            case "map":
+                                                Map(5);
+                                                break;
+
+                                            case "inv":
+                                                Inventory();
+                                                break;
+
+                                            case "help":
+                                                Help();
+                                                break;
                                         }
                                     } while (stay == true);
+                                    break;
+
+                                case "map":
+                                    Map(5);
+                                    break;
+
+                                case "inv":
+                                    Inventory();
+                                    break;
+
+                                case "help":
+                                    Help();
                                     break;
                             }
                         } while (stay == true);
@@ -551,6 +877,18 @@ namespace DBlock_Game
                         fail = true;
                         break;
 
+                    case "map":
+                        Map(1);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
                     default:
                         fail = true;
                         break;
@@ -594,6 +932,18 @@ namespace DBlock_Game
                         WestHallWay();
                         break;
 
+                    case "map":
+                        Map(2);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
                     default:
                         fail = true;
                         break;
@@ -633,6 +983,7 @@ namespace DBlock_Game
                         TextBox("This note seems important, I think I'll take it just incase", Player, false);
                         joyCard = true;
                         break;
+
                 }
 
             } while (stay == true);
@@ -750,6 +1101,7 @@ namespace DBlock_Game
                         break;
                     case 4:
                         break;
+
                 }
             } while (option != 4);
 
