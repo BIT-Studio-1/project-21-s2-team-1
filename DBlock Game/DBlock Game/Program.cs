@@ -70,6 +70,45 @@ namespace DBlock_Game
 
 
         }
+        public static void Inventory()
+        {
+            if (keyboardshield == true)
+            {
+                Console.WriteLine("keyboard Shield");
+            }
+            if (mousenunchuck == true)
+            {
+                Console.WriteLine("Mouse Nunchuck");
+            }
+            if (screwdriver == true)
+            {
+                Console.WriteLine("Screwdriver");
+            }
+            if (hdmichain == true)
+            {
+                Console.WriteLine("HDMI Chain");
+            }
+            if (keycode1 == true)
+            {
+                Console.WriteLine("Key Number 0###");
+            }
+            if (keycode2 == true)
+            {
+                Console.WriteLine("Key Number #1##");
+            }
+            if (keycode3 == true)
+            {
+                Console.WriteLine("Key Number ##1#");
+            }
+            if (keycode4 == true)
+            {
+                Console.WriteLine("Key Number ###1");
+            }
+            //for the other switchws
+            //case "inventory":
+            //      Inventory();      
+            //break;
+        }
         public static bool keyboardshield = false, mousenunchuck = false, screwdriver = false, hdmichain = false; //inventory booleans (you can initialize multiple of the same datatype this way)
 
         public static bool keycode1 = false, keycode2 = false, keycode3 = false, keycode4 = false, joyCard = false;
