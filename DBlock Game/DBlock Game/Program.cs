@@ -805,6 +805,7 @@ namespace DBlock_Game
             TextBox("You accept the glass of the crystal clear cup of Scapegrace gin from vaughs extended hand and take a small sip.", Player, false);
             TextBox("As you seat yourself on one of the chairs in the room you look across and see a not so familiar face .", Player, false);
             TextBox("ITS ANDREAS... HES BEEN IN HERE THE WHOLE TIME!!!", Player, false);
+            TextBox("unfortunatly you spend all your time here and never leave and you fail your course.", Player, false);
             TextBox("The End.", Player, false);
             Main();
         }
@@ -862,6 +863,8 @@ namespace DBlock_Game
             TextBox("Vaughn has been defeated without his robit armor he is powerless.", Player, false);
 
             TextBox("The teachers will now have to go back to thier old lives and continue wroking at the Otago Polytechnic.", Player, false);
+
+            TextBox("you have succe.", Player, false);
 
             TextBox("The End.", Player, false);
 
