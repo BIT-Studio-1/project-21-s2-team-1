@@ -877,7 +877,100 @@ namespace DBlock_Game
         public static void Savegame()
         {
 
-            StreamWriter sw = new StreamWriter($@"save.txt");
+            string temp;
+            TextBox("Options 1:slot1  2: slot2  3:slot3  4:return", Player, false);
+            TextBox("What Slot would you like to save?", Player, true);
+            temp = Console.ReadLine();
+            StreamWriter sw = new StreamWriter($@"Save2.txt");
+            StreamReader sr = new StreamReader($@"Save2.txt");
+            String aLine = "";
+            string Save = "y";
+            switch (temp)
+            {
+                case "1":
+                    sr = new StreamReader($@"Save1.txt");
+                    while (!sr.EndOfStream || aLine == "true")
+                    {
+                        aLine = sr.ReadLine();
+                        if (aLine == "true")
+                        {
+                            TextBox($"You currently have a save do u want to continue  n = No", Player, true);
+                            temp = Console.ReadLine();
+                            switch (temp)
+                            {
+                                case "n":
+                                    Save = "n";
+                                    break;
+                                default:
+                                    Save = "y";
+                                    break;
+                            }
+                        }
+                        if (Save == "y")
+                        {
+                            sw = new StreamWriter($@"Save1.txt");
+                        }
+                    }
+
+                    break;
+                case "2":
+                    sr = new StreamReader($@"Save2.txt");
+                    while (!sr.EndOfStream || aLine == "true")
+                    {
+                        aLine = sr.ReadLine();
+                        if (aLine == "true")
+                        {
+                            TextBox($"You currently have a save do u want to continue n = No", Player, true);
+                            temp = Console.ReadLine();
+                            switch (temp)
+                            {
+                                case "n":
+                                    Save = "n";
+                                    break;
+                                default:
+                                    Save = "y";
+                                    break;
+                            }
+                        }
+                        if (Save == "y")
+                        {
+                            sw = new StreamWriter($@"Save2.txt");
+                        }
+                    }
+
+                    break;
+                case "3":
+                    sr = new StreamReader($@"Save3.txt");
+                    while (!sr.EndOfStream || aLine == "true")
+                    {
+                        aLine = sr.ReadLine();
+                        if (aLine == "true")
+                        {
+                            TextBox($"You currently have a save do u want to continue n = No", Player, true);
+                            temp = Console.ReadLine();
+                            switch (temp)
+                            {
+                                case "n":
+                                    Save = "n";
+                                    break;
+                                default:
+                                    Save = "y";
+                                    break;
+                            }
+                        }
+                        if (Save == "y")
+                        {
+                            sw = new StreamWriter($@"Save3.txt");
+                        }
+                    }
+
+                    break;
+                case "4":
+                    SouthHallway();
+                    break;
+
+            }
+
             sw.WriteLine($"{keyboardshield}");
             sw.WriteLine($"{mousenunchuck}");
             sw.WriteLine($"{screwdriver}");
@@ -890,13 +983,39 @@ namespace DBlock_Game
 
             TextBox("you have successfully saved game", Player, false);
             sw.Close();
+            sr.Close();
+
 
             SouthHallway();
         }
 
         public static void Loadgame()
         {
-            StreamReader sr = new StreamReader($@"save.txt");
+            string[] Names = new string[3];
+            string temp, gamestate = "";
+            for (int i = 0; i < Names.Length; i++)
+            {
+                Names[i] = $"Save{i}.=txt";
+            }
+            TextBox("what game would you like to load", Player, true);
+            do
+            {
+                temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+                        gamestate = Names[0];
+                        break;
+                    case "2":
+                        gamestate = Names[1];
+                        break;
+                    case "3":
+                        gamestate = Names[2];
+                        break;
+
+                }
+            } while (temp != "1" || temp != "2" || temp != "3");
+            StreamReader sr = new StreamReader($@"{gamestate}.txt");
 
             keyboardshield = Convert.ToBoolean(sr.ReadLine());
             mousenunchuck = Convert.ToBoolean(sr.ReadLine());
@@ -914,8 +1033,11 @@ namespace DBlock_Game
 
             SouthHallway();
         }
+
+
     }
 }
+
 
 
 
