@@ -660,10 +660,13 @@ namespace DBlock_Game
             janitorsdesk.drawer3 = "You have found a mug";
             janitorsdesk.drawer4 = "You have found a lighter";
 
-            Console.WriteLine("Welcome to the janitors room");
-            Console.WriteLine("There is a desk in the middle of the room, two cabin on the left side, two cabin on the right side, a window overlooking the carpark and a picture on the wall.");
-            Console.WriteLine("What would you like to look at ");
+           TextBox("Welcome to the janitors room",Player, false);
+            TextBox("There is a desk in the middle of the room, two cabin on the left side, two cabin on the right side, a window overlooking the carpark and a picture on the wall.",Player, false );
+            TextBox("What would you like to look at ",Player, false);
+            TextBox("what would you like to do?\n1:Poster\n2:Window\n3:Desk\n4:Leave", Player, true);
             temp = Console.ReadLine();
+            Console.Clear();
+            options = Convert.ToInt32(temp);
 
             Console.WriteLine("options 1 2 3 4 5 6 7 8");
             temp = Console.ReadLine();
@@ -673,25 +676,25 @@ namespace DBlock_Game
                 switch (option)
                 {
                     case 1:
-                        Console.WriteLine("You have looked at the poster, there appears to be a picture of the janitor's family photo");
-                        Console.WriteLine("Press enter to return");
+                        TextBox("You have looked at the poster, there appears to be a picture of the janitor's family photo",Player, false);
+                        TextBox("Press enter to return",Player,true);
                         Console.ReadLine();
                         break;
                     case 2:
-                        Console.WriteLine(" Looking out the window it appears to be a bright day in the parking lot. The loud noise of construction workers distracts you from noticing anything useful");
-                        Console.WriteLine("Press enter to return");
+                        TextBox(" Looking out the window it appears to be a bright day in the parking lot. The loud noise of construction workers distracts you from noticing anything useful",Player, false);
+                        TextBox("Press enter to return",Player,true);
                         Console.ReadLine();
 
                         break;
                     case 3:
-                        Console.WriteLine($"You take a closer look at the desk. {janitorsdesk.topdesk}");
-                        Console.WriteLine("What would you like to do?");
+                        TextBox($"You take a closer look at the desk. {janitorsdesk.topdesk}",Player, false);
+                        TextBox("What would you like to do?",Player, false);
 
                         do
                         {
                             while (search == "y")
                             {
-                                Console.WriteLine("What would you like to search? \n 1: first drawer \n 2: second drawer \n 3: third drawer  \n 4: fouth drawer \n 5: first cabin on the right \n 6: second cabin on the right \n 7: first cabin on the left \n 8: second cabin on the left \n 9: leave");
+                                TextBox("What would you like to search? \n 1: first drawer \n 2: second drawer \n 3: third drawer  \n 4: fouth drawer \n 5: first cabin on the right \n 6: second cabin on the right \n 7: first cabin on the left \n 8: second cabin on the left \n 9: leave", Player, false);
                                 temp = Console.ReadLine();
                                 options = Convert.ToInt32(temp);
 
@@ -699,15 +702,15 @@ namespace DBlock_Game
                                 {
 
                                     case 1:
-                                        Console.WriteLine("you search the first draw");
-                                        Console.WriteLine($"{janitorsdesk.drawer1}");
-                                        Console.WriteLine("Press enter to return");
+                                        TextBox("you search the first draw", Player, false);
+                                        TextBox($"{janitorsdesk.drawer1}", Player, false);
+                                        TextBox("Press enter to return", Player, true);
                                         Console.ReadLine();
                                         break;
                                     case 2:
-                                        Console.WriteLine("you search the second draw");
-                                        Console.WriteLine($"{janitorsdesk.drawer2}");
-                                        Console.WriteLine("Press spacebar to return");
+                                        TextBox("you search the second draw",Player, false);
+                                        TextBox($"{janitorsdesk.drawer2}",Player, false);
+                                        TextBox("Press spacebar to return", Player, true);
                                         Console.ReadLine();
                                         break;
                                     case 3:
