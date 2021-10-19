@@ -644,8 +644,8 @@ namespace DBlock_Game
 
         public static void Janitorsroom()
         {
-            string temp, search = "n";
-            int option, options;
+            string temp, search = "n",look = "n";
+            int option, options, choice;
 
             Cabin janitorscabin;
             janitorscabin.cabin1 = "You have found a keyb gun";
@@ -660,43 +660,92 @@ namespace DBlock_Game
             janitorsdesk.drawer3 = "You have found a mug";
             janitorsdesk.drawer4 = "You have found a lighter";
 
-           TextBox("Welcome to the janitors room",Player, false);
+            TextBox("Your in janitors room",Player, false);
             TextBox("There is a desk in the middle of the room, two cabin on the left side, two cabin on the right side, a window overlooking the carpark and a picture on the wall.",Player, false );
-            TextBox("What would you like to look at ",Player, false);
-            TextBox("what would you like to do?\n1:Poster\n2:Window\n3:Desk\n4:Leave", Player, true);
-            temp = Console.ReadLine();
-            Console.Clear();
-            options = Convert.ToInt32(temp);
-
-            Console.WriteLine("options 1 2 3 4 5 6 7 8");
-            temp = Console.ReadLine();
-            option = Convert.ToInt32(temp);
+            
             do
             {
+                TextBox("What would you like to look at?\n1:Poster\n2:Window\n3:Cabin\n4:Desk\n5:Leave", Player, true);
+                temp = Console.ReadLine();
+                Console.Clear();
+                option = Convert.ToInt32(temp);
                 switch (option)
                 {
                     case 1:
                         TextBox("You have looked at the poster, there appears to be a picture of the janitor's family photo",Player, false);
-                        TextBox("Press enter to return",Player,true);
+                        TextBox("Press spacebar to return",Player,false);
                         Console.ReadLine();
                         break;
                     case 2:
                         TextBox(" Looking out the window it appears to be a bright day in the parking lot. The loud noise of construction workers distracts you from noticing anything useful",Player, false);
-                        TextBox("Press enter to return",Player,true);
+                        TextBox("Press spacebar to return",Player,false);
                         Console.ReadLine();
-
                         break;
                     case 3:
-                        TextBox($"You take a closer look at the desk. {janitorsdesk.topdesk}",Player, false);
-                        TextBox("What would you like to do?",Player, false);
-
+                        TextBox("You take a closer look at the cabins", Player,false);
+                        TextBox("What would you like to do?", Player, false);
                         do
                         {
-                            while (search == "y")
+                            TextBox("would you like to look at the cabin (y or n)", Player, true);
+                            temp = Console.ReadLine();
+                            look = temp;
+                            Console.Clear();
+
+                            while (look.ToUpper() == "y")
                             {
-                                TextBox("What would you like to search? \n 1: first drawer \n 2: second drawer \n 3: third drawer  \n 4: fouth drawer \n 5: first cabin on the right \n 6: second cabin on the right \n 7: first cabin on the left \n 8: second cabin on the left \n 9: leave", Player, false);
+                                TextBox("What cabin would you like to look at first?1: first cabin  \n 2: second cabin  \n 3: third cabin  \n 4: fourth cabin \n 5: leave", Player, true);
+                                temp = Console.ReadLine();
+                                choice = Convert.ToInt32(temp);
+                                Console.Clear();
+                                switch (choice)
+                                {
+                                    case 1:
+                                        TextBox("you look at the first cabin", Player, false);
+                                        TextBox($"{janitorscabin.cabin1}", Player, false);
+                                        TextBox("Press spacebar to return", Player, false);
+                                        Console.ReadLine();
+                                        break;
+                                    case 2:
+                                        TextBox("you look at the second cabin", Player, false);
+                                        TextBox($"{janitorscabin.cabin2}", Player, false);
+                                        TextBox("Press spacebar to return", Player, false);
+                                        Console.ReadLine();
+                                        break;
+                                    case 3:
+                                        TextBox("you look at the third cabin", Player, false);
+                                        TextBox($"{janitorscabin.cabin3}", Player, false);
+                                        TextBox("Press spacebar to return", Player, false);
+                                        Console.ReadLine();
+                                        break;
+                                    case 4:
+                                        TextBox("you look at the fourth cabin", Player, false);
+                                        TextBox($"{janitorscabin.cabin4}", Player, false);
+                                        TextBox("Press spacebar to return", Player, false);
+                                        Console.ReadLine();
+                                        break;
+                                }
+                            }
+                        } while (look == "y");
+
+                        break;
+
+
+
+                    case 4:
+                        TextBox($"You take a closer look at the desk. {janitorsdesk.topdesk}",Player, false);
+                        TextBox("What would you like to do?",Player, false);
+                        do
+                        {
+                            TextBox("would you like to search this desk (y or n)", Player, true);
+                            temp = Console.ReadLine();
+                            search = temp;
+                            Console.Clear();
+                            while (search.ToUpper() == "y")
+                            {
+                                TextBox("What would you like to search? \n 1: first drawer \n 2: second drawer \n 3: third drawer  \n 4: fouth drawer \n 5: leave", Player, true);
                                 temp = Console.ReadLine();
                                 options = Convert.ToInt32(temp);
+                                Console.Clear();
 
                                 switch (options)
                                 {
@@ -725,33 +774,13 @@ namespace DBlock_Game
                                         TextBox("Press spacebar to return", Player, true);
                                         break;
                                     case 5:
-                                        TextBox("You search the first cabin on the right", Player, false);
-                                        TextBox($"{janitorscabin.cabin1}", Player, false);
-                                        TextBox("Press spacebar to return", Player, true);
-                                        break;
-                                    case 6:
-                                        TextBox("You search the second cabin on the right", Player, false);
-                                        TextBox($"{janitorscabin.cabin2}", Player, false);
-                                        TextBox("Press spacebar to return",Player, true);
-                                        break;
-                                    case 7:
-                                        TextBox("You search the first cabin on the left",Player, false);
-                                        TextBox($"{janitorscabin.cabin3}", Player, false);
-                                        TextBox("Press spacebar to return", Player, true);
-                                        break;
-                                    case 8:
-                                       TextBox("You search the second cabin on the left",Player, false);
-                                        TextBox($"{janitorscabin.cabin4}", Player, false);
-                                        TextBox("Press spacebar to return", Player, true);
-                                        break;
-                                    case 9:
                                         search = "n";
                                         break;
                                 }
                             }
                         } while (search == "y");
                         break;
-                    case 4:
+                    case 5:
                         break;
                 }
             } while (option != 4);
