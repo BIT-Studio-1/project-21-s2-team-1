@@ -576,7 +576,7 @@ namespace DBlock_Game
                 switch (temp)
                 {
                     case "1":
-                        //classroom 1 method
+                        SouthC();
                         fail = false;
                         break;
 
@@ -660,7 +660,7 @@ namespace DBlock_Game
             janitorsdesk.drawer3 = "You have found a mug";
             janitorsdesk.drawer4 = "You have found a lighter";
 
-            TextBox("Your in janitors room",Player, false);
+            TextBox("You have entered the janitors room",Player, false);
             TextBox("There is a desk in the middle of the room, two cabin on the left side, two cabin on the right side, a window overlooking the carpark and a picture on the wall.",Player, false );
             
             do
@@ -733,7 +733,6 @@ namespace DBlock_Game
 
                     case 4:
                         TextBox($"You take a closer look at the desk. {janitorsdesk.topdesk}",Player, false);
-                        TextBox("What would you like to do?",Player, false);
                         do
                         {
                             TextBox("would you like to search this desk (y or n)", Player, true);
@@ -786,8 +785,83 @@ namespace DBlock_Game
             } while (option != 4);
 
         }
+        public static void SouthC()
+        {
+            TextBox("You have entered Classroom D215", Player, false);
+            TextBox("You entered the room but the light is off ", Player, false);
+            bool stay = true;
+            do
+            {
+                TextBox("What would you like to do? \n1: Leave the room\n2: Turn the lights on", Player, true);
+                string temp = Console.ReadLine();
+                Console.Clear();
 
-        public static void BreakRoom()
+                switch (temp)
+                {
+                    case "1":
+                        stay = false;
+                        break;
+
+                    case "2":
+                        TextBox("You have turned on the lights", Player, false);
+                        TextBox("In the room There is a desk in front of ", Player, false);
+                        do
+                        {
+                            TextBox("What would you like to do? \n1: Leave the room\n2: search desk", Player, true);
+                            temp = Console.ReadLine();
+                            switch (temp)
+                            {
+                                case "1":
+                                    stay = false;
+                                    break;
+                                case "2":
+                                    TextBox("You decide to take a look at the desk", Player, false);
+                                    TextBox("On top of the desk there is a computer there with a black screen and the desk has four drawers", Player, false);
+                                    do
+                                    {
+                                        TextBox("What would you like to do? \n1: Leave the room \n2: Search first drawer \n3: Search second drawer \n4: Search third drawer\n5: Serch the fourth drawer", Player, true);
+                                        temp = Console.ReadLine();
+
+                                        switch (temp)
+                                        {
+                                            case "1":
+                                                stay = false;
+                                                break;
+                                            case "2":
+                                                TextBox("You search first drawer", Player, false);
+                                                TextBox("Inside theres a microscope and a pencil", Player, false);
+                                                TextBox("I think I'll just leave them there", Player, false);
+                                                break;
+                                            case "3":
+                                                TextBox("You search second drawer", Player, false);
+                                                TextBox("There is nothing inside", Player, false);
+                                                keycode2 = true;
+                                                break;
+                                            case "4":
+                                                TextBox($"You search third drawer", Player, false);
+                                                TextBox("Inside there is a rotten egg", Player, false);
+                                                TextBox("I think I'll just leave them there", Player, false);
+                                                break;
+                                            case "5":
+                                                TextBox($"You search third drawer", Player, false);
+                                                TextBox("There is nothing inside ", Player, false);
+                                                TextBox("I think I'll just leave them there", Player, false);
+                                                break;
+                                        }
+                                    } while (stay == true);
+                                    break;
+                            }
+                        } while (stay == true);
+                        break;
+                }
+
+            } while (stay == true);
+
+            TextBox("I turn the lights back off and leave the classroom", Player, false);
+        }
+
+
+                public static void BreakRoom()
         {
             //this will be the text when the room is entered
             TextBox("You have entered the Break Room", Player, false);
@@ -1061,10 +1135,13 @@ namespace DBlock_Game
             sr.Close();
 
             SouthHallway();
+
+           
+            }
         }
 
 
-    }
+    
 }
 
 
