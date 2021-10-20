@@ -654,7 +654,7 @@ namespace DBlock_Game
             janitorscabin.cabin4 = "You have found a hdmichain";
 
             Desks janitorsdesk;
-            janitorsdesk.topdesk = "There a muffin and a cup of coffee";
+            janitorsdesk.topdesk = "There a muffin and a cup of coffee and a computer beside it with a black screen";
             janitorsdesk.drawer1 = "There is nothing in here";
             janitorsdesk.drawer2 = "You have found a key";
             janitorsdesk.drawer3 = "You have found a mug";
@@ -691,9 +691,9 @@ namespace DBlock_Game
                             look = temp;
                             Console.Clear();
 
-                            while (look.ToUpper() == "y")
+                            while (look.ToLower() == "y")
                             {
-                                TextBox("What cabin would you like to look at first?1: first cabin  \n 2: second cabin  \n 3: third cabin  \n 4: fourth cabin \n 5: leave", Player, true);
+                                TextBox("What cabin would you like to look at first? \n1: first cabin  \n 2: second cabin  \n 3: third cabin  \n 4: fourth cabin \n 5: leave", Player, true);
                                 temp = Console.ReadLine();
                                 choice = Convert.ToInt32(temp);
                                 Console.Clear();
@@ -723,6 +723,9 @@ namespace DBlock_Game
                                         TextBox("Press spacebar to return", Player, false);
                                         Console.ReadLine();
                                         break;
+                                    case 5:
+                                        look = "n";
+                                        break;
                                 }
                             }
                         } while (look == "y");
@@ -733,13 +736,14 @@ namespace DBlock_Game
 
                     case 4:
                         TextBox($"You take a closer look at the desk. {janitorsdesk.topdesk}",Player, false);
+                     
                         do
                         {
                             TextBox("would you like to search this desk (y or n)", Player, true);
                             temp = Console.ReadLine();
                             search = temp;
                             Console.Clear();
-                            while (search.ToUpper() == "y")
+                            while (search.ToLower() == "y")
                             {
                                 TextBox("What would you like to search? \n 1: first drawer \n 2: second drawer \n 3: third drawer  \n 4: fouth drawer \n 5: leave", Player, true);
                                 temp = Console.ReadLine();
@@ -783,6 +787,8 @@ namespace DBlock_Game
                         break;
                 }
             } while (option != 4);
+            TextBox("I leave the classroom", Player, false);
+            SouthHallway();
 
         }
         public static void SouthC()
@@ -845,7 +851,6 @@ namespace DBlock_Game
                                             case "5":
                                                 TextBox($"You search third drawer", Player, false);
                                                 TextBox("There is nothing inside ", Player, false);
-                                                TextBox("I think I'll just leave them there", Player, false);
                                                 break;
                                         }
                                     } while (stay == true);
@@ -857,7 +862,9 @@ namespace DBlock_Game
 
             } while (stay == true);
 
-            TextBox("I turn the lights back off and leave the classroom", Player, false);
+            TextBox("I'll just leave the light on and leave the classroom", Player, false);
+            TextBox("I leave the classroom", Player, false);
+            SouthHallway();
         }
 
 
