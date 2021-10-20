@@ -9,6 +9,8 @@ namespace DBlock_Game
 
         static void Main()
         {
+            Console.WindowHeight = 30;
+            Console.WindowWidth = 145;
             Console.OutputEncoding = System.Text.Encoding.UTF8; //prevents some ascii text from not showing
 
             Menu();
