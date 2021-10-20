@@ -644,7 +644,7 @@ namespace DBlock_Game
 
         public static void Janitorsroom()
         {
-            string temp, search = "n",look = "n";
+            string temp, search = "n", look = "n";
             int option, options, choice;
 
             Cabin janitorscabin;
@@ -660,9 +660,9 @@ namespace DBlock_Game
             janitorsdesk.drawer3 = "You have found a mug";
             janitorsdesk.drawer4 = "You have found a lighter";
 
-            TextBox("You have entered the janitors room",Player, false);
-            TextBox("There is a desk in the middle of the room, two cabin on the left side, two cabin on the right side, a window overlooking the carpark and a picture on the wall.",Player, false );
-            
+            TextBox("You have entered the janitors room", Player, false);
+            TextBox("There is a desk in the middle of the room, two cabin on the left side, two cabin on the right side, a window overlooking the carpark and a picture on the wall.", Player, false);
+
             do
             {
                 TextBox("What would you like to look at?\n1:Poster\n2:Window\n3:Cabin\n4:Desk\n5:Leave", Player, true);
@@ -672,17 +672,17 @@ namespace DBlock_Game
                 switch (option)
                 {
                     case 1:
-                        TextBox("You have looked at the poster, there appears to be a picture of the janitor's family photo",Player, false);
-                        TextBox("Press spacebar to return",Player,false);
+                        TextBox("You have looked at the poster, there appears to be a picture of the janitor's family photo", Player, false);
+                        TextBox("Press spacebar to return", Player, false);
                         Console.ReadLine();
                         break;
                     case 2:
-                        TextBox(" Looking out the window it appears to be a bright day in the parking lot. The loud noise of construction workers distracts you from noticing anything useful",Player, false);
-                        TextBox("Press spacebar to return",Player,false);
+                        TextBox(" Looking out the window it appears to be a bright day in the parking lot. The loud noise of construction workers distracts you from noticing anything useful", Player, false);
+                        TextBox("Press spacebar to return", Player, false);
                         Console.ReadLine();
                         break;
                     case 3:
-                        TextBox("You take a closer look at the cabins", Player,false);
+                        TextBox("You take a closer look at the cabins", Player, false);
                         TextBox("What would you like to do?", Player, false);
                         do
                         {
@@ -735,8 +735,8 @@ namespace DBlock_Game
 
 
                     case 4:
-                        TextBox($"You take a closer look at the desk. {janitorsdesk.topdesk}",Player, false);
-                     
+                        TextBox($"You take a closer look at the desk. {janitorsdesk.topdesk}", Player, false);
+
                         do
                         {
                             TextBox("would you like to search this desk (y or n)", Player, true);
@@ -760,15 +760,15 @@ namespace DBlock_Game
                                         Console.ReadLine();
                                         break;
                                     case 2:
-                                        TextBox("you search the second draw",Player, false);
-                                        TextBox($"{janitorsdesk.drawer2}",Player, false);
+                                        TextBox("you search the second draw", Player, false);
+                                        TextBox($"{janitorsdesk.drawer2}", Player, false);
                                         TextBox("Press spacebar to return", Player, true);
                                         Console.ReadLine();
                                         break;
                                     case 3:
-                                       TextBox("you search the third draw",Player,false);
-                                       TextBox($"{janitorsdesk.drawer3}",Player,false);
-                                       TextBox("Press spacebar to return",Player,true);
+                                        TextBox("you search the third draw", Player, false);
+                                        TextBox($"{janitorsdesk.drawer3}", Player, false);
+                                        TextBox("Press spacebar to return", Player, true);
                                         Console.ReadLine();
                                         break;
                                     case 4:
