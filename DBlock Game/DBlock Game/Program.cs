@@ -159,6 +159,8 @@ namespace DBlock_Game
 
         public static void IntroCutscene()
         {
+            loading();
+
             TextBox("Today is october 1st, a friday. Its currently about 7:50am, I really don't like these 8am days.", Player, false);
 
             TextBox("I make my way to my math class and take my seat near the back. Most people are here already", Player, false);
@@ -467,6 +469,7 @@ namespace DBlock_Game
 
         public static void NorthHallway()
         {
+            loading();
             TextBox("I'm now in the the North hallway", Player, false);
             TextBox("Theres a billboard infront of me with various flyers and notes on it.", Player, false);
             TextBox("Theres also another classroom to my right", Player, false);
@@ -528,7 +531,7 @@ namespace DBlock_Game
 
         public static void NorthCode()
         {
-
+            loading();
             TextBox("You have entered the Classroom D211", Player, false);
             TextBox("You enter the room but no ones here", Player, false);
             TextBox("", Player, false);
@@ -584,6 +587,7 @@ namespace DBlock_Game
 
         public static void JoysOffice()
         {
+            loading();
             int choice;
             string choices;
             string temp;
@@ -723,7 +727,7 @@ namespace DBlock_Game
          * a do while loop will be used to give player the room layout and if they want to search or leave room
          */
         {
-
+            loading();
             TextBox("You have entered the Classroom D212", Player, false);
             TextBox("You enter the room and the blinds are shut", Player, false);
             TextBox("There is nothing put darkness as far as you can see", Player, false);
@@ -822,6 +826,7 @@ namespace DBlock_Game
 
         public static void WestHallWay()
         {
+            loading();
             TextBox("You enter the west hallway you have another 2 rooms you can enter.", Player, false);
             TextBox("There is a keypad that you have never noticed before beside a vending machine you normally get your lunch from.", Player, false);
             TextBox("there is Joys office first room to the right as you move down \n There is the last classroom for this hallway 2nd room to the right", Player, false);
@@ -901,6 +906,7 @@ namespace DBlock_Game
 
         public static void SouthHallway()
         {
+            loading();
             TextBox("You have entered the Southern hall way", Player, false);
             TextBox("You see another vending machine at the end of the hall way as well as a 2 more classrooms", Player, false);
             TextBox("Looking at the vending machine it doesnt look normal but appears to be able to save game in some way", Player, false);
@@ -956,6 +962,7 @@ namespace DBlock_Game
 
         public static void SouthCode()
         {
+            loading();
 
             TextBox("You have entered the Classroom D211", Player, false);
             TextBox("You enter the room but no ones here", Player, false);
@@ -997,6 +1004,7 @@ namespace DBlock_Game
 
         public static void Janitorsroom()
         {
+            loading();
             string temp, search = "n", look = "n";
             int option, options, choice;
 
@@ -1147,6 +1155,7 @@ namespace DBlock_Game
 
         public static void SouthC()
         {
+            loading();
             TextBox("You have entered Classroom D215", Player, false);
             TextBox("You entered the room but the light is off ", Player, false);
             bool stay = true;
@@ -1223,6 +1232,7 @@ namespace DBlock_Game
 
         public static void BreakRoom()
         {
+            loading();
             //this will be the text when the room is entered
             TextBox("You have entered the Break Room", Player, false);
 
@@ -1268,6 +1278,7 @@ namespace DBlock_Game
 
         public static void AltEnd()
         {
+            loading();
             TextBox("You accept the glass of the crystal clear cup of Scapegrace gin from vaughs extended hand and take a small sip.", Player, false);
             TextBox("As you seat yourself on one of the chairs in the room you look across and see a not so familiar face .", Player, false);
             TextBox("ITS ANDREAS... HES BEEN IN HERE THE WHOLE TIME!!!", Player, false);
@@ -1278,6 +1289,7 @@ namespace DBlock_Game
 
         public static void Fight()
         {
+            loading();
             TextBox("Vaughn: Ah so you have chosen to fight!", Vaughn, false);
             TextBox("Vaughn: WAHAHAHAHA YOU CAN'T DEFEAT ME AND MY ROBOTS", Vaughn, false);
 
@@ -1489,7 +1501,6 @@ namespace DBlock_Game
             keycode2 = Convert.ToBoolean(sr.ReadLine());
             keycode3 = Convert.ToBoolean(sr.ReadLine());
             keycode4 = Convert.ToBoolean(sr.ReadLine());
-
 
             TextBox("You have successfully loaded your save", Player, false);
             sr.Close();
