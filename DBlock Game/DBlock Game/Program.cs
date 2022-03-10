@@ -1347,6 +1347,100 @@ namespace DBlock_Game
             Menu();
         }
 
+        public static void Death()
+        {
+            Random rand = new Random();
+            string player;
+            string comp;
+            bool run =  true:
+
+            for (int i = 0; i < 4; i++)
+            {
+                player = "";
+                comp = "";
+                int pscore = 0;
+                int cscore = 0;
+
+                while (player != "PAPER" && player != "SCISSORS" && player != "ROCK")
+                {
+                    TextBox("you have to play paper,scisors,rock to win its a best out of 3.", Player, false);
+                    TextBox("Press 1 for paper, Press 2 for scissors, Press 3 for rock.", Player, false);
+
+                    string temp = Console.ReadLine();
+                    player = temp.ToUpper();
+                }
+
+
+                int num = rand.Next(1, 4);
+
+                switch (num)
+                {
+                    case 1:
+                        comp = "PAPER";
+                        break;
+                    case 2:
+                        comp = "SCISSORS";
+                        break;
+                    case 3:
+                        comp = "ROCK";
+                        break;
+                }
+
+                switch (player)
+                {
+                    case "PAPER":
+                        if (comp == "PAPER")
+                        {
+                            pscore++;
+                            cscore++;
+                        }
+                        else if (comp == "SCISSORS")
+                        {
+                            cscore++;
+                        }
+                        else
+                        {
+                            pscore++;
+                        }
+                        break;
+
+                    case "SCISSORS":
+                        if (comp == "SCISSORS")
+                        {
+                            pscore++;
+                            cscore++;
+                        }
+                        else if (comp == "ROCK")
+                        {
+                            cscore++;
+                        }
+                        else
+                        {
+                            pscore++;
+                        }
+                        break;
+
+                    case "ROCK":
+                        if (comp == "ROCK")
+                        {
+                            pscore++;
+                            cscore++;
+                        }
+                        else if (comp == "PAPER")
+                        {
+                            cscore++;
+                        }
+                        else
+                        {
+                            pscore++;
+                        }
+                        break;
+
+                }
+            }
+
+        }
+
         public static void Savegame()
         {
 
