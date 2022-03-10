@@ -1558,6 +1558,150 @@ namespace DBlock_Game
             Thread.Sleep(500);
             Console.Clear();
         }
+        /**
+        * template for the hallways jus need rooms attached to the case statements
+        */
+        public void westHallway_Basement()
+        {
+                loading();
+                TextBox("You have entered the west hall way", Player, false);
+                bool fail = false;
+            do
+            {
+                TextBox("What should I do now? \n" + "║1: Enter  \n║2: Enter  \n║3: Move north hallway \n║4: Move to West Hallway", Player, true);
+                string temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+                        
+                        break;
+
+                    case "2":
+                        
+                        break;
+
+                    case "3":
+                        northHallway_Basement();
+                        break;
+
+                    case "4":
+                        southHallway_Basement();
+                        break;
+
+                    case "map":
+                        Map(2);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                } 
+            } while (fail == true);
+        }
+        /**
+        * template for the hallways jus need rooms attached to the case statements
+        */
+        public void northHallway_Basement()
+        {
+            loading();
+            TextBox("You have entered the north hall way", Player, false);
+            bool fail = false;
+            do
+            {
+                TextBox("What should I do now? \n" + "║1: Enter  \n║2: Enter  \n║3:  \n║4: Move to West Hallway", Player, true);
+                string temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+
+                        break;
+
+                    case "2":
+
+                        break;
+
+                    case "3":
+
+                        break;
+
+                    case "4":
+                        westHallway_Basement();
+                        break;
+
+                    case "map":
+                        Map(2);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                }
+            } while (fail == true);
+        }
+        /**
+         * template for the hallways jus need rooms attached to the case statements
+         */
+        public void southHallway_Basement()
+        {
+            loading();
+            TextBox("You have entered the south hall way", Player, false);
+            bool fail = false;
+            do
+            {
+                TextBox("What should I do now? \n" + "║1:  \n║2: Enter  \n║3: \n║4: Move to West Hallway", Player, true);
+                string temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+
+                        break;
+
+                    case "2":
+
+                        break;
+
+                    case "3":
+
+                        break;
+
+                    case "4":
+                        WestHallWay();
+                        break;
+
+                    case "map":
+                        Map(2);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                }
+            } while (fail == true);
+        }
     }
 }
 
