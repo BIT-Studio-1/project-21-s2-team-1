@@ -185,6 +185,8 @@ namespace DBlock_Game
 
             //now in north hallway
 
+            joyCard = true; //here for debugging
+
             NorthHallway();
 
         }
@@ -475,17 +477,8 @@ namespace DBlock_Game
                 switch (temp)
                 {
                     case "1":
-                        if(joyCard == false)
-                        {
-                            TextBox("The room is locked, I wonder of vaughn is still in there", Player, false);
-                            fail = true;
-                        }
-                        else
-                        {
-                            fail = false;
-                            NorthHomeroom();
-                        }
-                        
+                        TextBox("The room is locked, I wonder of vaughn is still in there", Player, false);
+                        fail = true;
                         break;
 
                     case "2":
@@ -493,7 +486,6 @@ namespace DBlock_Game
                         TextBox("In the corner of the board is a note numbers on it that read 0###. This might help me figure out whats going on with the teachers", Player, false);
                         TextBox("I take the note of the wall and put it in my pocket", Player, false);
                         keycode1 = true;
-                        joyCard = true;
                         fail = true; //if fail is true, the loop is ran again, taking us back to the hallway without the extra dialouge
                         break;
 
@@ -577,28 +569,6 @@ namespace DBlock_Game
             } while (stay == true);
 
             TextBox("I leave the classroom", Player, false);
-            NorthHallway();
-        }
-
-        public static void NorthHomeroom()
-        {
-            loading();
-
-            TextBox("I try opening the door but it wont budge", Player, false);
-            TextBox("I then try opening the door with the keycard I just found", Player, false);
-            TextBox("The door slowly creeks open", Player, false);
-
-            TextBox("I walk inside", Player, false);
-
-            TextBox("Vaughn: what are you doing in here?!", Vaughn, false);
-
-            TextBox("I ask what just happened with joy", Player, false);
-
-            TextBox("Vaughn: thats not important, don't worry about it", Vaughn, false);
-            TextBox("I doubt that, but I leave anyway", Player, false);
-
-            joyCard = false;
-
             NorthHallway();
         }
 
@@ -1009,6 +979,10 @@ namespace DBlock_Game
 
                     case "3":
                         TextBox("I start inspecting the whiteboard, hoping to find something interesting. But the only thing here is github notes", Player, false);
+                        TextBox("I turn around to go look elsewhere, but at the corner of my eye I see a small sticky note", Player, false);
+                        TextBox("I go to look at the note, the note has a number on it and 3 #'s. ##1#", Player, false);
+                        TextBox("This note seems important, I think I'll take it just incase", Player, false);
+                        joyCard = true;
                         break;
 
                 }
