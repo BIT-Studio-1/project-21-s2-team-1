@@ -1352,14 +1352,13 @@ namespace DBlock_Game
             Random rand = new Random();
             string player;
             string comp;
-            bool run =  true:
+            int pscore = 0;
+            int cscore = 0;
 
             for (int i = 0; i < 4; i++)
             {
                 player = "";
                 comp = "";
-                int pscore = 0;
-                int cscore = 0;
 
                 while (player != "PAPER" && player != "SCISSORS" && player != "ROCK")
                 {
@@ -1437,7 +1436,14 @@ namespace DBlock_Game
                         break;
 
                 }
+
             }
+
+            if( cscore > pscore)
+            {
+                Loadgame();
+            }
+
 
         }
 
