@@ -1275,7 +1275,14 @@ namespace DBlock_Game
                 }
             }
         }
-
+        public static void KylesRoom()
+        {
+            Console.WriteLine("You enter the dark room, someone has turned the light off");
+            Console.WriteLine("Searching for a light switch you hear a growling sound in the distance");
+            Console.WriteLine("Your fingers flick over the light switch and the lights flicker on....");
+            Console.WriteLine("");
+            Console.WriteLine("You almost scream with what you see before you");
+        }
         public static void AltEnd()
         {
             loading();
