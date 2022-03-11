@@ -1287,6 +1287,27 @@ namespace DBlock_Game
             Main();
         }
 
+        public static void ZACSBASMENTROOM()    // This is not meant to be connected to anything at the moment
+        {
+        
+            // The game is optional. If you choose to play you can get a chance to progress in the game, however you can also lose progress and maybe even die
+            // I will give a warning that it is probably not worth playing...
+
+            // PROMOPT: What drink do you choose:
+            //          [1] Smirnoff
+            //          [2] Goon Bag
+            //          [3] Irn Bru
+            //          [4] Nitro
+            //          [5] 
+            //          [6]
+
+            // if you choose 1 you get hungover and you have to sleep for a while, if you choose 2 you instantly die and the program closes, if you choose
+            // three you get extra energy. 
+        
+        
+        
+        }
+
         public static void Fight()
         {
             loading();
