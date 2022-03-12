@@ -6,6 +6,8 @@ namespace DBlock_Game
 {
     class Program
     {
+        private int playerLocation;
+        private int enemyLocation;
 
         static void Main()
         {
@@ -1563,29 +1565,35 @@ namespace DBlock_Game
         */
         public void westHallway_Basement()
         {
+            enemyLocation = 5;
+            playerLocation = 0;
                 loading();
                 TextBox("You have entered the west hall way", Player, false);
+            TextBox("You hear a screeching noise coming from behind and a robot saying trepassers will be terminated ", Player, false);
+            TextBox("You see a couple of lockers and a table that you could possibly hide under", Player, false);
+            TextBox("How would you like to procede??", Player, true);
                 bool fail = false;
             do
             {
-                TextBox("What should I do now? \n" + "║1: Enter  \n║2: Enter  \n║3: Move north hallway \n║4: Move to West Hallway", Player, true);
+                TextBox("What should I do now? \n" + "║1: Go under table \n║2: go in locker  \n║3: Move north hallway \n║4: Move to West Hallway", Player, true);
                 string temp = Console.ReadLine();
                 switch (temp)
                 {
                     case "1":
-                        
+                        enemyLocation -= 1;  
                         break;
-
                     case "2":
-                        
+                        enemyLocation -= 1;
                         break;
 
                     case "3":
                         northHallway_Basement();
+                        enemyLocation -= 2;
                         break;
 
                     case "4":
                         southHallway_Basement();
+                        enemyLocation -= 2;
                         break;
 
                     case "map":
