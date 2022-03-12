@@ -10,6 +10,7 @@ namespace DBlock_Game
         private int enemyLocation;
         private string enemyInfo;
         private Random random;
+        private int chance =2;
 
         static void Main()
         {
@@ -1585,21 +1586,30 @@ namespace DBlock_Game
                 switch (temp)
                 {
                     case "1":
-                        enemyLocation -= 1;
-
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation,enemyLocation);
+                        chance = 2;
+                        westHallway_Basement();
                         break;
                     case "2":
-                        enemyLocation -= 1;
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        westHallway_Basement();
                         break;
 
                     case "3":
+                        enemyMovement(2);
+                        surviveCheck(playerLocation, enemyLocation);
                         northHallway_Basement();
-                        enemyLocation -= 2;
                         break;
 
                     case "4":
+                        enemyMovement(2);
+                        surviveCheck(playerLocation,enemyLocation);
                         southHallway_Basement();
-                        enemyLocation -= 2;
                         break;
 
                     case "map":
@@ -1722,12 +1732,34 @@ namespace DBlock_Game
         }
         public void surviveCheck(int player, int enemy)
         {
-            if (enemy == player)
+            if ((enemy == player) || (enemy < player))
             {
-                if(random.Next(2) == 1)
+                if(random.Next(chance) > 0)
                 {
-                    TextBox("you have successfully hid", Player, false);
+                    TextBox("you have successfully gotten away", Player, false);
+                    enemyLocation = 5;
                 }
+                else
+                {
+                    TextBox("You have died",Player, false);
+                    Menu();
+                }
+            }
+            switch (enemy)
+            {
+                case 5:
+                    enemyInfo = " It seems like the robot is ages away";
+                    break;
+                case 4:
+                    enemyInfo = " It sounds like it is moving closer towards you.";
+                    break;
+                case 3:
+                    enemyInfo = " You can hear the cogs turning in the machine";
+                    break;
+                default:
+                    enemyInfo = " You can feel the heat coming off this machine";
+                    break;
+
             }
         }
     }
