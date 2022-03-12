@@ -195,23 +195,15 @@ namespace DBlock_Game
         {
             Console.Clear();
 
-            string dialouge;
-            ConsoleColor textColor;
-            bool isReadLine;
-
-            dialouge = text;
-            textColor = color;
-            isReadLine = readLineBool;
-
             Console.ForegroundColor = ConsoleColor.White;
 
             Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
 
             Console.Write("║");
-            Console.ForegroundColor = textColor;
+            Console.ForegroundColor = color;
 
-            Console.Write($"{dialouge}");
-            for (int i = 0; i < 117 - dialouge.Length; i++)
+            Console.Write($"{text}");
+            for (int i = 0; i < 117 - text.Length; i++)
                 Console.Write(" ");
 
             Console.ForegroundColor = ConsoleColor.White;
@@ -222,7 +214,7 @@ namespace DBlock_Game
             Console.WriteLine("║                                                                                                                     ║");
             Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
 
-            if (isReadLine == false)
+            if (readLineBool == false)
             {
                 Console.ReadLine();
                 Console.Clear();
@@ -1228,6 +1220,52 @@ namespace DBlock_Game
             TextBox("I'll just leave the light on and leave the classroom", Player, false);
             TextBox("I leave the classroom", Player, false);
             SouthHallway();
+        }
+
+        public static void Elevator()
+        {
+            loading();
+            TextBox("I decide to enter the elevator.", Player, false);
+            TextBox("I walk inside and close the door behind me.", Player, false);
+
+            bool fail = false;
+
+            do
+            {
+                TextBox("What floor do I want to go to?\n║1: Top Floor \n║2: Ground Floor \n║3: Basement", Player, true);
+                string temp = Console.ReadLine();
+
+                switch (temp)
+                {
+                    case "1":
+                        fail = false;
+                        //top floor method
+                        break;
+
+                    case "2":
+                        fail = false;
+                        WestHallWay();
+                        break;
+
+                    case "3":
+                        fail = false;
+                        //basement floor method
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                }
+
+            } while (fail == true);
         }
 
         public static void BreakRoom()
