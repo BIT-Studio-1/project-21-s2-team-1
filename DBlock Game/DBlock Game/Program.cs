@@ -1285,7 +1285,27 @@ namespace DBlock_Game
             TextBox("The Sphinx points towards a table with three pieces of parchment ", Player, false);
             TextBox("There is a shelf with random objects on one side of the room and a small dressing table with a figurine on it to the right", Player, false);
 
+
+           //This is the text if the player checks the shelf
+            TextBox("The shelf contains a few items dusty plain items but three are weirdly gold and dust free", Player, false);
+            TextBox("A golden candle..", Player, false);
+            TextBox("A golden egg", Player, false);
+            TextBox("A tiny golden piano", Player, false);
+            TextBox("You dont know their purpose yet but they seem important", Player, false);
+
+            //This is the text if the player checks the small table
+            TextBox("Its a tiny figure of Hamish Smith", Player, false);
+            TextBox("It looks cool but probably not relevant to this room", Player, false);
+      
+           //This is the text if the player checks the three pieces of parchment
+            TextBox("You stare down at the three pieces of parchment", Player, false);
+            TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
+            TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
+         
+
         }
+
+     
         public static void AltEnd()
         {
             loading();
