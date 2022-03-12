@@ -1277,6 +1277,9 @@ namespace DBlock_Game
         }
         public static void KylesRoom()
         {
+
+            string temp;
+            char userinput;
             loading();
             TextBox("You push open the door to the room and are met with a blinding light", Player, false);
             TextBox("A voice bellows at you with tremendous force...", Player, false);
@@ -1284,28 +1287,78 @@ namespace DBlock_Game
             TextBox("You step forward and the light dims down, revealing a giant Sphinx with Donnas face", Player, false);
             TextBox("The Sphinx points towards a table with three pieces of parchment ", Player, false);
             TextBox("There is a shelf with random objects on one side of the room and a small dressing table with a figurine on it to the right", Player, false);
+            TextBox("What will you do? Press S to explore the shelf, T to explore the small tabel and P to look at the riddles", Player, false);
 
 
-           //This is the text if the player checks the shelf
-            TextBox("The shelf contains a few items dusty plain items but three are weirdly gold and dust free", Player, false);
-            TextBox("A golden candle..", Player, false);
-            TextBox("A golden egg", Player, false);
-            TextBox("A tiny golden piano", Player, false);
-            TextBox("You dont know their purpose yet but they seem important", Player, false);
+            temp = Console.ReadLine();
+            userinput = Convert.ToChar(temp);
 
-            //This is the text if the player checks the small table
-            TextBox("Its a tiny figure of Hamish Smith", Player, false);
-            TextBox("It looks cool but probably not relevant to this room", Player, false);
-      
-           //This is the text if the player checks the three pieces of parchment
-            TextBox("You stare down at the three pieces of parchment", Player, false);
-            TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
-            TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
-         
+            switch (userinput)
+            {
+
+                case 's':
+                    TextBox("The shelf contains a few items dusty plain items but three are weirdly gold and dust free", Player, false);
+                    TextBox("A golden candle..", Player, false);
+                    TextBox("A golden egg", Player, false);
+                    TextBox("A tiny golden piano", Player, false);
+                    TextBox("You dont know their purpose yet but they seem important", Player, false);
+                    break;
+
+                case 'S':
+                    TextBox("The shelf contains a few items dusty plain items but three are weirdly gold and dust free", Player, false);
+                    TextBox("A golden candle..", Player, false);
+                    TextBox("A golden egg", Player, false);
+                    TextBox("A tiny golden piano", Player, false);
+                    TextBox("You dont know their purpose yet but they seem important", Player, false);
+                    break;
+                
+                case 'T':
+                    TextBox("Its a tiny figure of Hamish Smith", Player, false);
+                    TextBox("It looks cool but probably not relevant to this room", Player, false);
+                    break;
+
+                case 't':
+                    TextBox("Its a tiny figure of Hamish Smith", Player, false);
+                    TextBox("It looks cool but probably not relevant to this room", Player, false);
+                    break;
+                
+                case 'P':
+                    TextBox("You stare down at the three pieces of parchment", Player, false);
+                    TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
+                    TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
+                    KylesRoomRiddles();
+                    break;
+                
+                case 'p':
+                    TextBox("You stare down at the three pieces of parchment", Player, false);
+                    TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
+                    TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
+                    KylesRoomRiddles();
+                    break;
+
+
+
+                default:
+                    TextBox("Wrong input silly", Player, false);
+                    Thread.Sleep(1000);
+                    temp = "";
+                    KylesRoom();
+                    break;
+            }
+
+
+
 
         }
+        public static void KylesRoomRiddles()
+        {
+            TextBox("Nothing here yet you silly goose", Player, false);
 
+        }
      
+
+
+
         public static void AltEnd()
         {
             loading();
