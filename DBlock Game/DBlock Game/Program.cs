@@ -1277,11 +1277,14 @@ namespace DBlock_Game
         }
         public static void KylesRoom()
         {
-            Console.WriteLine("You enter the dark room, someone has turned the light off");
-            Console.WriteLine("Searching for a light switch you hear a growling sound in the distance");
-            Console.WriteLine("Your fingers flick over the light switch and the lights flicker on....");
-            Console.WriteLine("");
-            Console.WriteLine("You almost scream with what you see before you");
+            loading();
+            TextBox("You push open the door to the room and are met with a blinding light", Player, false);
+            TextBox("A voice bellows at you with tremendous force...", Player, false);
+            TextBox("YOU HAVE ENTERED MY ROOM MORTAL, NOW ANSWER MY QUESTIONS THREE OR FACE YOUR DOOM!!", Player, false);
+            TextBox("You step forward and the light dims down, revealing a giant Sphinx with Donnas face", Player, false);
+            TextBox("The Sphinx points towards a table with three pieces of parchment ", Player, false);
+            TextBox("There is a shelf with random objects on one side of the room and a small dressing table with a figurine on it to the right", Player, false);
+
         }
         public static void AltEnd()
         {
