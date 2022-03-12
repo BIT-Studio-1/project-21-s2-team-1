@@ -8,6 +8,8 @@ namespace DBlock_Game
     {
         private int playerLocation;
         private int enemyLocation;
+        private string enemyInfo;
+        private Random random;
 
         static void Main()
         {
@@ -1567,9 +1569,12 @@ namespace DBlock_Game
         {
             enemyLocation = 5;
             playerLocation = 0;
+            enemyInfo = "You hear a screeching noise coming from behind and a robot saying trepassers will be terminated ";
+            random = new Random();
+
                 loading();
                 TextBox("You have entered the west hall way", Player, false);
-            TextBox("You hear a screeching noise coming from behind and a robot saying trepassers will be terminated ", Player, false);
+            TextBox(enemyInfo, Player, false);
             TextBox("You see a couple of lockers and a table that you could possibly hide under", Player, false);
             TextBox("How would you like to procede??", Player, true);
                 bool fail = false;
@@ -1580,7 +1585,8 @@ namespace DBlock_Game
                 switch (temp)
                 {
                     case "1":
-                        enemyLocation -= 1;  
+                        enemyLocation -= 1;
+
                         break;
                     case "2":
                         enemyLocation -= 1;
@@ -1709,6 +1715,20 @@ namespace DBlock_Game
                         break;
                 }
             } while (fail == true);
+        }
+        public void enemyMovement(int movement)
+        {
+            enemyLocation -= movement;
+        }
+        public void surviveCheck(int player, int enemy)
+        {
+            if (enemy == player)
+            {
+                if(random.Next(2) == 1)
+                {
+                    TextBox("you have successfully hid", Player, false);
+                }
+            }
         }
     }
 }
