@@ -1350,28 +1350,133 @@ namespace DBlock_Game
 
 
         }
-        public static void FirstRiddle()
+        public static void TheRiddles()
         {
-            TextBox("", Player, false);
-            TextBox("", Player, false);
-            TextBox("", Player, false);
+            string temp;
+          
+            int WrongAnswer = 0;
+            TextBox("You pick up the first riddle, it reads:", Player, false);
+            TextBox("What has to be broken before you can use it?", Player, false);
+            TextBox("what is your answer?", Player, false);
+            temp = Console.ReadLine();
+          
+            //This is a case/switch statement for the player to write an answer
+            switch (temp)
+            {
+
+                case "Egg":
+                    TextBox("Correct!", Player, false);
+         
+                    break;
+
+                case "EGG":
+                    TextBox("Correct!", Player, false);
+
+                    break;
+
+                case "egg":
+                    TextBox("Correct!", Player, false);
+
+                    break;
+
+                case "eGG":
+                    TextBox("Correct!", Player, false);
+                    break;
+              
+
+                default:
+                    TextBox("Wrong!", Player, false);
+                    Thread.Sleep(1000);
+                    WrongAnswer++;
+                    break;
+            }
+                     
+            TextBox("You pick up the second riddle, it reads:", Player, false);
+            TextBox("I’m tall when I’m young, and I’m short when I’m old. What am I?", Player, false);
+            TextBox("what is your answer?", Player, false);
+
+            temp = Console.ReadLine();
+
+            //This is a case/switch statement for the player to write an answer
+            switch (temp)
+            {
+
+                case "Candle":
+                    TextBox("Correct!", Player, false);
+
+                    break;
+
+                case "CANDLE":
+                    TextBox("Correct!", Player, false);
+
+                    break;
+
+                case "candle":
+                    TextBox("Correct!", Player, false);
+
+                    break;
+
+                case "cANDLE":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+
+                default:
+                    TextBox("Wrong!", Player, false);
+                    Thread.Sleep(1000);
+                    WrongAnswer++;
+                    break;
+            }
+
+
+            TextBox("You pick up the third riddle, it reads:", Player, false);
+            TextBox("What has many keys but can’t open a single lock?", Player, false);
+            TextBox("what is your answer?", Player, false);
+
+            temp = Console.ReadLine();
+
+            //This is a case/switch statement for the player to write an answer
+            switch (temp)
+            {
+
+                case "Piano":
+                    TextBox("Correct!", Player, false);
+
+                    break;
+
+                case "PIANO":
+                    TextBox("Correct!", Player, false);
+
+                    break;
+
+                case "piano":
+                    TextBox("Correct!", Player, false);
+
+                    break;
+
+                case "pIANO":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+
+                default:
+                    TextBox("Wrong!", Player, false);
+                    Thread.Sleep(1000);
+                    WrongAnswer++;
+                    break;
+            }
+
+            TextBox("You pick up the third riddle, it reads:", Player, false);
+
+
+
+
+
 
         }
-        public static void SecondRiddle()
-        {
-            TextBox("", Player, false);
-            TextBox("", Player, false);
-            TextBox("", Player, false);
 
-        }
 
-         public static void ThirdRiddle()
-        {
-            TextBox("", Player, false);
-            TextBox("", Player, false);
-            TextBox("", Player, false);
 
-        }
 
 
 
