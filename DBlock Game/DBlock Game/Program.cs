@@ -1326,14 +1326,14 @@ namespace DBlock_Game
                     TextBox("You stare down at the three pieces of parchment", Player, false);
                     TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
                     TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
-                    FirstRiddle();
+                    TheRiddles();
                     break;
                 
                 case 'p':
                     TextBox("You stare down at the three pieces of parchment", Player, false);
                     TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
                     TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
-                    FirstRiddle();
+                    TheRiddles();
                     break;
 
 
@@ -1467,11 +1467,19 @@ namespace DBlock_Game
             }
 
             TextBox("You pick up the third riddle, it reads:", Player, false);
+            if (WrongAnswer <1)
+            {
+                TextBox("You have too many wrong answers!!", Player, false);
+                KylesRoom();
 
-
-
-
-
+            }
+            else
+            TextBox("You have passed the riddles test..", Player, false);
+            TextBox("The Sphinx shrinks away into a pile of sand.", Player, false);
+            TextBox("You see the shine of a small vial containing purple liquid", Player, false);
+            TextBox("The vial is labeled V..U..HN  you cant make out the full name..", Player, false);
+            TextBox("You put the vial in your pocket", Player, false);
+            TextBox("Does this go in anything? A drink perhaps?", Player, false);
 
         }
 
