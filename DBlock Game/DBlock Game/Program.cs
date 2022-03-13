@@ -1366,23 +1366,51 @@ namespace DBlock_Game
 
                 case "Egg":
                     TextBox("Correct!", Player, false);
-         
-                    break;
+                     break;
+
+                case "A Egg":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "An Egg":
+                    TextBox("Correct!", Player, false);
+                     break;
 
                 case "EGG":
                     TextBox("Correct!", Player, false);
-
                     break;
+
+                case "A EGG":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "AN EGG":
+                    TextBox("Correct!", Player, false);
+                     break;
 
                 case "egg":
                     TextBox("Correct!", Player, false);
+                     break;
 
-                    break;
+                case "a egg":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "an egg":
+                    TextBox("Correct!", Player, false);
+                     break;
 
                 case "eGG":
                     TextBox("Correct!", Player, false);
                     break;
-              
+                
+                case "A eGG":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "aN eGG":
+                    TextBox("Correct!", Player, false);
+                    break;
 
                 default:
                     TextBox("Wrong!", Player, false);
@@ -1403,23 +1431,35 @@ namespace DBlock_Game
 
                 case "Candle":
                     TextBox("Correct!", Player, false);
+                     break;
 
+                case "A Candle":
+                    TextBox("Correct!", Player, false);
                     break;
 
                 case "CANDLE":
                     TextBox("Correct!", Player, false);
+                    break;
 
+                case "A CANDLE":
+                    TextBox("Correct!", Player, false);
                     break;
 
                 case "candle":
                     TextBox("Correct!", Player, false);
+                    break;
 
+                case "a candle":
+                    TextBox("Correct!", Player, false);
                     break;
 
                 case "cANDLE":
                     TextBox("Correct!", Player, false);
                     break;
 
+                case "a cANDLE":
+                    TextBox("Correct!", Player, false);
+                    break;
 
                 default:
                     TextBox("Wrong!", Player, false);
@@ -1441,23 +1481,35 @@ namespace DBlock_Game
 
                 case "Piano":
                     TextBox("Correct!", Player, false);
+                    break;
 
+                case "A Piano":
+                    TextBox("Correct!", Player, false);
                     break;
 
                 case "PIANO":
                     TextBox("Correct!", Player, false);
+                    break;
 
+                case "A PIANO":
+                    TextBox("Correct!", Player, false);
                     break;
 
                 case "piano":
                     TextBox("Correct!", Player, false);
+                    break;
 
+                case "a piano":
+                    TextBox("Correct!", Player, false);
                     break;
 
                 case "pIANO":
                     TextBox("Correct!", Player, false);
                     break;
 
+                case "a pIANO":
+                    TextBox("Correct!", Player, false);
+                    break;
 
                 default:
                     TextBox("Wrong!", Player, false);
