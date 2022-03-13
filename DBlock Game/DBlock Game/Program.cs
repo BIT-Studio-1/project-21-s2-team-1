@@ -1648,11 +1648,19 @@ namespace DBlock_Game
                 switch (temp)
                 {
                     case "1":
-
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        northHallway_Basement();
                         break;
 
                     case "2":
-
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        northHallway_Basement();
                         break;
 
                     case "3":
@@ -1660,6 +1668,7 @@ namespace DBlock_Game
                         break;
 
                     case "4":
+                        surviveCheck(playerLocation,enemyLocation);
                         westHallway_Basement();
                         break;
 
@@ -1688,19 +1697,30 @@ namespace DBlock_Game
         {
             loading();
             TextBox("You have entered the south hall way", Player, false);
+            TextBox(enemyInfo, Player, false);
+            TextBox("You see a ridiculously large school bag and a bathroom that you could possibly hide in", Player, false);
+            TextBox("How would you like to procede??", Player, true);
             bool fail = false;
             do
             {
-                TextBox("What should I do now? \n" + "║1:  \n║2: Enter  \n║3: \n║4: Move to West Hallway", Player, true);
+                TextBox("What should I do now? \n" + "║1:hide in a school bag \n║2: hide in bathrooms  \n║3: \n║4: Move to West Hallway", Player, true);
                 string temp = Console.ReadLine();
                 switch (temp)
                 {
                     case "1":
-
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        southHallway_Basement();
                         break;
 
                     case "2":
-
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        southHallway_Basement();
                         break;
 
                     case "3":
