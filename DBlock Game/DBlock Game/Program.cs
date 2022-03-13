@@ -1277,7 +1277,7 @@ namespace DBlock_Game
         }
         public static void KylesRoom()
         {
-
+            //This section is the text a player gets from entering the room and sets up the choices 
             string temp;
             char userinput;
             loading();
@@ -1292,7 +1292,7 @@ namespace DBlock_Game
 
             temp = Console.ReadLine();
             userinput = Convert.ToChar(temp);
-
+            //This is a case/switch statement for the player to choose an option to explore the room or just do the riddles 
             switch (userinput)
             {
 
@@ -1353,6 +1353,7 @@ namespace DBlock_Game
         public static void KylesRoomRiddles()
         {
             TextBox("Nothing here yet you silly goose", Player, false);
+
 
         }
      
