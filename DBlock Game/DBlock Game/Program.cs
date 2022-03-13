@@ -1326,14 +1326,14 @@ namespace DBlock_Game
                     TextBox("You stare down at the three pieces of parchment", Player, false);
                     TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
                     TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
-                    KylesRoomRiddles();
+                    FirstRiddle();
                     break;
                 
                 case 'p':
                     TextBox("You stare down at the three pieces of parchment", Player, false);
                     TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
                     TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
-                    KylesRoomRiddles();
+                    FirstRiddle();
                     break;
 
 
@@ -1350,13 +1350,30 @@ namespace DBlock_Game
 
 
         }
-        public static void KylesRoomRiddles()
+        public static void FirstRiddle()
         {
-            TextBox("Nothing here yet you silly goose", Player, false);
-
+            TextBox("", Player, false);
+            TextBox("", Player, false);
+            TextBox("", Player, false);
 
         }
-     
+        public static void SecondRiddle()
+        {
+            TextBox("", Player, false);
+            TextBox("", Player, false);
+            TextBox("", Player, false);
+
+        }
+
+         public static void ThirdRiddle()
+        {
+            TextBox("", Player, false);
+            TextBox("", Player, false);
+            TextBox("", Player, false);
+
+        }
+
+
 
 
 
