@@ -472,22 +472,27 @@ namespace DBlock_Game
 
             do
             {
-                TextBox("What should I say? \n" + "║1: What are you doing\n║2: What happened with joy earlier?", Player, true);
+                TextBox("What should I say? \n" + "║1: What are you doing?\n║2: What happened with joy earlier?", Player, true);
 
                 string temp = Console.ReadLine();
                 switch (temp)
                 {
                     case "1":
-                        TextBox("The room is locked, I wonder of vaughn is still in there", Player, false);
-                        fail = true;
+                        TextBox("Player: What are you doing?", Player, false);
+                        TextBox("Vaughn: I could ask you the same, why are you in here?", Vaughn, false);
+                        TextBox("Player: The door was unlocked.", Player, false);
+                        TextBox("Vaughn: Oh I thought I locked that.", Vaughn, false);
+
+                        fail = false;
                         break;
 
                     case "2":
-                        TextBox("I go up an look at the billboard, theres lots of random flyers I don't care about", Player, false);
-                        TextBox("In the corner of the board is a note numbers on it that read 0###. This might help me figure out whats going on with the teachers", Player, false);
-                        TextBox("I take the note of the wall and put it in my pocket", Player, false);
-                        keycode1 = true;
-                        fail = true; //if fail is true, the loop is ran again, taking us back to the hallway without the extra dialouge
+                        TextBox("Player: What are you doing?", Player, false);
+                        TextBox("Vaughn: I could ask you the same, why are you in here?", Vaughn, false);
+                        TextBox("Player: The door was unlocked.", Player, false);
+                        TextBox("Vaughn: Oh I thought I locked that.", Vaughn, false);
+
+                        fail = false;
                         break;
 
                     case "help":
@@ -501,7 +506,49 @@ namespace DBlock_Game
                 }
             } while (fail == true);
 
-            
+            do
+            {
+                TextBox("What should I say? \n" + "║1: What are you doing?\n║2: What happened with joy earlier?", Player, true);
+
+                string temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+                        TextBox("2Player: What are you doing?", Player, false);
+                        TextBox("Vaughn: I could ask you the same, why are you in here?", Vaughn, false);
+                        TextBox("Player: The door was unlocked.", Player, false);
+                        TextBox("Vaughn: Oh I thought I locked that.", Vaughn, false);
+
+                        fail = false;
+                        break;
+
+                    case "2":
+                        TextBox("2Player: What are you doing?", Player, false);
+                        TextBox("Vaughn: I could ask you the same, why are you in here?", Vaughn, false);
+                        TextBox("Player: The door was unlocked.", Player, false);
+                        TextBox("Vaughn: Oh I thought I locked that.", Vaughn, false);
+
+                        fail = false;
+                        break;
+
+                    case "help":
+                        fail = true;
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                }
+            } while (fail == true);
+
+            TextBox("3Player: What are you doing?", Player, false);
+            TextBox("3Vaughn: I could ask you the same, why are you in here?", Vaughn, false);
+            TextBox("3Player: The door was unlocked.", Player, false);
+            TextBox("3Vaughn: Oh I thought I locked that.", Vaughn, false);
+            TextBox("leave room", Player, false);
+
+            NorthHallway();
         }
 
         public static void NorthHallway()
@@ -516,14 +563,14 @@ namespace DBlock_Game
 
             do
             {
-                TextBox("What should I do now? \n" + "║1: Enter Math Classroom\n║2: Check Billboard\n║3: Enter Other Classroom\n║4: Move to West Hallway", Player, true);
+                TextBox("What should I do now? \n" + "║1: Enter Joy's Classroom\n║2: Check Billboard\n║3: Enter Other Classroom\n║4: Move to West Hallway", Player, true);
 
                 string temp = Console.ReadLine();
                 switch (temp)
                 {
                     case "1":
-                        TextBox("The room is locked, I wonder of vaughn is still in there", Player, false);
-                        fail = true;
+                        fail = false;
+                        JoysClassroom();
                         break;
 
                     case "2":
