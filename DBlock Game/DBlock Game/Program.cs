@@ -1363,10 +1363,14 @@ namespace DBlock_Game
             int pscore = 0;
             int cscore = 0;
 
+            // the paper,scissors,rock game
+
             for (int i = 0; i < 4; i++)
             {
                 player = "";
                 comp = "";
+
+                // while loop that check the inputs the values are clear
 
                 while (player != "PAPER" && player != "SCISSORS" && player != "ROCK")
                 {
@@ -1374,13 +1378,25 @@ namespace DBlock_Game
                     TextBox("Press 1 for paper, Press 2 for scissors, Press 3 for rock.", Player,true);
 
                     string temp = Console.ReadLine();
-                    player = temp.ToUpper();
+                    switch (temp)
+                    {
+                        case "1":
+                            player = "PAPER";
+                            break;
+                        case "2":
+                            player = "SCISSORS";
+                            break;
+                        case "3":
+                            player = "ROCK";
+                            break;
+                    }
+
                 }
 
+                // the computers choice
+                int num2 = rand.Next(1, 4);
 
-                int num = rand.Next(1, 4);
-
-                switch (num)
+                switch (num2)
                 {
                     case 1:
                         comp = "PAPER";
@@ -1393,6 +1409,7 @@ namespace DBlock_Game
                         break;
                 }
 
+                // 
                 switch (player)
                 {
                     case "PAPER":
@@ -1400,14 +1417,17 @@ namespace DBlock_Game
                         {
                             pscore++;
                             cscore++;
+                            TextBox("Its a draw you both score a point.", Player, false);
                         }
                         else if (comp == "SCISSORS")
                         {
                             cscore++;
+                            TextBox("Vaugh won he gains a point.", Player, false);
                         }
                         else
                         {
                             pscore++;
+                            TextBox("You won you gain a point", Player, false);
                         }
                         break;
 
@@ -1416,14 +1436,17 @@ namespace DBlock_Game
                         {
                             pscore++;
                             cscore++;
+                            TextBox("Its a draw you both score a point.", Player, false);
                         }
                         else if (comp == "ROCK")
                         {
                             cscore++;
+                            TextBox("Vaugh won he gains a point.", Player, false);
                         }
                         else
                         {
                             pscore++;
+                            TextBox("You won you gain a point", Player, false);
                         }
                         break;
 
@@ -1432,14 +1455,17 @@ namespace DBlock_Game
                         {
                             pscore++;
                             cscore++;
+                            TextBox("Its a draw you both score a point.", Player, false);
                         }
                         else if (comp == "PAPER")
                         {
                             cscore++;
+                            TextBox("Vaugh won he gains a point.", Player, false);
                         }
                         else
                         {
                             pscore++;
+                            TextBox("You won you gain a point", Player, false);
                         }
                         break;
 
@@ -1447,6 +1473,7 @@ namespace DBlock_Game
 
             }
 
+            //this takes them back to the load save if they fail
             if( cscore > pscore)
             {
                 Loadgame();
