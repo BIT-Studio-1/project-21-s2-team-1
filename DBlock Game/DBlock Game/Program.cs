@@ -1573,8 +1573,8 @@ namespace DBlock_Game
             enemyInfo = "You hear a screeching noise coming from behind and a robot saying trepassers will be terminated ";
             random = new Random();
 
-                loading();
-                TextBox("You have entered the west hall way", Player, false);
+            loading();
+            TextBox("You have entered the west hall way", Player, false);
             TextBox(enemyInfo, Player, false);
             TextBox("You see a couple of lockers and a table that you could possibly hide under", Player, false);
             TextBox("How would you like to procede??", Player, true);
@@ -1637,10 +1637,13 @@ namespace DBlock_Game
         {
             loading();
             TextBox("You have entered the north hall way", Player, false);
+            TextBox(enemyInfo, Player, false);
+            TextBox("You see a couple of bins and a table that you could possibly hide behind", Player, false);
+            TextBox("How would you like to procede??", Player, true);
             bool fail = false;
             do
             {
-                TextBox("What should I do now? \n" + "║1: Enter  \n║2: Enter  \n║3:  \n║4: Move to West Hallway", Player, true);
+                TextBox("What should I do now? \n" + "║1: behind bins  \n║2: under table  \n║3:  \n║4: Move to West Hallway", Player, true);
                 string temp = Console.ReadLine();
                 switch (temp)
                 {
@@ -1661,7 +1664,7 @@ namespace DBlock_Game
                         break;
 
                     case "map":
-                        Map(2);
+                        Map(3);
                         break;
 
                     case "inv":
@@ -1709,7 +1712,7 @@ namespace DBlock_Game
                         break;
 
                     case "map":
-                        Map(2);
+                        Map(1);
                         break;
 
                     case "inv":
