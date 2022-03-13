@@ -459,6 +459,51 @@ namespace DBlock_Game
             Console.ReadLine();
         }
 
+        public static void JoysClassroom()
+        {
+            //TextBox("", Player, false);
+
+            loading();
+            TextBox("enter room", Player, false);
+            TextBox("vaughn is there", Player, false);
+            TextBox("he turns and looks at me", Player, false);
+
+            bool fail = false;
+
+            do
+            {
+                TextBox("What should I say? \n" + "║1: What are you doing\n║2: What happened with joy earlier?", Player, true);
+
+                string temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+                        TextBox("The room is locked, I wonder of vaughn is still in there", Player, false);
+                        fail = true;
+                        break;
+
+                    case "2":
+                        TextBox("I go up an look at the billboard, theres lots of random flyers I don't care about", Player, false);
+                        TextBox("In the corner of the board is a note numbers on it that read 0###. This might help me figure out whats going on with the teachers", Player, false);
+                        TextBox("I take the note of the wall and put it in my pocket", Player, false);
+                        keycode1 = true;
+                        fail = true; //if fail is true, the loop is ran again, taking us back to the hallway without the extra dialouge
+                        break;
+
+                    case "help":
+                        fail = true;
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                }
+            } while (fail == true);
+
+            
+        }
+
         public static void NorthHallway()
         {
             loading();
