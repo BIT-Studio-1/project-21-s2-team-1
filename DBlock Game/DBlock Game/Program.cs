@@ -1336,7 +1336,15 @@ namespace DBlock_Game
 
             TextBox("the suit snap crackles and pops as it begins to shut down.", Player, false);
 
-            TextBox("Vaughn has been defeated without his robit armor he is powerless.", Player, false);
+            TextBox("Vaughn has been defeated without his robot armor he is powerless.", Player, false);
+
+            TextBox("This is it you have Vaughn defenceless", Player, false);
+
+            TextBox("You may have  beaten my armor but will you beat me in the acent tradtion.", Vaughn, false);
+
+            TextBox("OF PAPER, SCISSORS, ROCK!!!!.", Player, false);
+
+            Death();
 
             TextBox("The teachers will now have to go back to thier old lives and continue wroking at the Otago Polytechnic.", Player, false);
 
@@ -1363,7 +1371,7 @@ namespace DBlock_Game
                 while (player != "PAPER" && player != "SCISSORS" && player != "ROCK")
                 {
                     TextBox("you have to play paper,scisors,rock to win its a best out of 3.", Player, false);
-                    TextBox("Press 1 for paper, Press 2 for scissors, Press 3 for rock.", Player, false);
+                    TextBox("Press 1 for paper, Press 2 for scissors, Press 3 for rock.", Player,true);
 
                     string temp = Console.ReadLine();
                     player = temp.ToUpper();
