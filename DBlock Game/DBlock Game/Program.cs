@@ -1565,6 +1565,9 @@ namespace DBlock_Game
         }
         /**
         * template for the hallways jus need rooms attached to the case statements
+        * westhallway coneccts the other two hallways. has a couple of places to hide in to increase chances of survival
+        * use the enemyinfo method to give a player an update on where the enemey is.
+        * uses the survival check to see if a plaer lives or dies and resets the enemies location.
         */
         public void westHallway_Basement()
         {
@@ -1749,10 +1752,18 @@ namespace DBlock_Game
                 }
             } while (fail == true);
         }
+        /*
+         * enemymovement method. gets passed an integer to be used for how far the enemy moves
+         */
         public void enemyMovement(int movement)
         {
             enemyLocation -= movement;
         }
+        /*
+         * survive check method.
+         * checks if a player has survived or died.
+         * uses a switch statement for updating the player on the position of the enemy
+         */
         public void surviveCheck(int player, int enemy)
         {
             if ((enemy == player) || (enemy < player))
