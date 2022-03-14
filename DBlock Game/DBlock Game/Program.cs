@@ -1289,22 +1289,6 @@ namespace DBlock_Game
 
         public static void ZACSBASMENTROOM()    // This is not meant to be connected to anything at the moment
         {
-
-            // The game is optional. If you choose to play you can get a chance to progress in the game, however you can also lose progress and maybe even die
-            // I will give a warning that it is probably not worth playing...
-
-            // PROMOPT: What drink do you choose:
-            //          [1] Smirnoff
-            //          [2] Goon Bag
-            //          [3] Irn Bru
-            //          [4] Nitro
-
-
-            // if you choose 1 you get hungover and you have to sleep for a while, if you choose 2 you instantly die and the program closes, if you choose
-            // three you get extra energy. 
-
-
-
             Console.WriteLine("                  Welcome to room ---. ");
             Console.WriteLine("This game is optional, be warned as if you choose wrong");
             Console.WriteLine("you could lose all of your progress, however choose right");
@@ -1316,38 +1300,58 @@ namespace DBlock_Game
 
 
             int yourChoice = Convert.ToInt32(Console.ReadLine());
-
+            Console.Clear();
             //= Console.ReadLine();
 
             switch (yourChoice)
             {
                 case 1:
-                    Console.WriteLine("1");
+                    Console.WriteLine("You have choosen to play... there is no going back now");
+
+
+
+                    Console.WriteLine("welcome to hgame");
+                    Console.WriteLine("[1] ---- ");
+                    Console.WriteLine("[2] ---- ");
+                    Console.WriteLine("[3] ---- ");
+                    Console.WriteLine("[4] ---- ");
+                    Console.WriteLine("[5] ---- ");// Menu();
+                    Console.ReadLine();
+
+
+
+                    int yourChoice2 = Convert.ToInt32(Console.ReadLine());
+
+
+                    switch (yourChoice2)
+                    {
+                        case 1:
+                            //
+                            Console.WriteLine("first choice");
+                            Console.ReadLine();
+                            break;
+                        case 2:
+                            Console.WriteLine("2");
+                            // Put the code to leave room here
+                            break;
+
+                    }
+
+                    Console.ReadLine();
+
                     break;
                 case 2:
-                    Console.WriteLine("2");
-                    break;
-                case 3:
-                    Console.WriteLine("3");
+                    Console.WriteLine("you have choosen not to play");
+                    // Put the code to leave room here
                     break;
 
             }
 
 
 
-            Console.WriteLine("Here are you choices");
-            Console.WriteLine("[1] ---- ");
-            Console.WriteLine("[2] ---- ");
-            Console.WriteLine("[3] ---- ");
-            Console.WriteLine("[4] ---- ");
-            Console.WriteLine("[5] ---- ");
-
-            Console.ReadLine();
-
-
-
-
         }
+
+    
 
         public static void Fight()
         {
