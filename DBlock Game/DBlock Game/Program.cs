@@ -1591,6 +1591,64 @@ namespace DBlock_Game
             Main();
         }
 
+        public static void ZACSBASMENTROOM()    // This is not meant to be connected to anything at the moment
+        {
+
+            Console.WriteLine("                  Welcome to room ---. ");
+            Console.WriteLine("This game is optional, be warned as if you choose wrong");
+            Console.WriteLine("you could lose all of your progress, however choose right");
+            Console.WriteLine("and you could progress\n");
+
+            Console.WriteLine("Do you wish to play?");
+            Console.WriteLine("[1] Yes!  [2] Nah");
+
+
+
+            int yourChoice = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            //= Console.ReadLine();
+
+            switch (yourChoice)
+            {
+                case 1:
+                    Console.WriteLine("You have choosen to play Russian Roulette");
+
+
+                    Random rand = new Random();
+                    int Shot = 1;
+                    Shot = rand.Next(1, 7);
+
+                    Console.WriteLine("Russian Roulette");
+
+                    Console.ReadLine();
+
+                    if (Shot == 4)
+                    {
+                        Console.WriteLine("u died ");
+                    }
+
+                    if (Shot != 4)
+                    {
+                        Console.WriteLine("u alive ");
+                    }
+                    Console.ReadLine();
+
+
+
+                    break;
+                case 2:
+                    Console.WriteLine("You have choosen to leave the room");
+                    // Put the code to leave room here
+                    break;
+
+            }
+
+
+
+        }
+
+    
+
         public static void Fight()
         {
             loading();
