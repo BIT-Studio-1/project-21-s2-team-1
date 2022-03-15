@@ -1289,6 +1289,7 @@ namespace DBlock_Game
 
         public static void ZACSBASMENTROOM()    // This is not meant to be connected to anything at the moment
         {
+
             Console.WriteLine("                  Welcome to room ---. ");
             Console.WriteLine("This game is optional, be warned as if you choose wrong");
             Console.WriteLine("you could lose all of your progress, however choose right");
@@ -1306,42 +1307,33 @@ namespace DBlock_Game
             switch (yourChoice)
             {
                 case 1:
-                    Console.WriteLine("You have choosen to play... there is no going back now");
+                    Console.WriteLine("You have choosen to play Russian Roulette");
 
 
+                    Random rand = new Random();
+                    int Shot = 1;
+                    Shot = rand.Next(1, 7);
 
-                    Console.WriteLine("welcome to hgame");
-                    Console.WriteLine("[1] ---- ");
-                    Console.WriteLine("[2] ---- ");
-                    Console.WriteLine("[3] ---- ");
-                    Console.WriteLine("[4] ---- ");
-                    Console.WriteLine("[5] ---- ");// Menu();
+                    Console.WriteLine("Russian Roulette");
+
                     Console.ReadLine();
 
-
-
-                    int yourChoice2 = Convert.ToInt32(Console.ReadLine());
-
-
-                    switch (yourChoice2)
+                    if (Shot == 4)
                     {
-                        case 1:
-                            //
-                            Console.WriteLine("first choice");
-                            Console.ReadLine();
-                            break;
-                        case 2:
-                            Console.WriteLine("2");
-                            // Put the code to leave room here
-                            break;
-
+                        Console.WriteLine("u died ");
                     }
 
+                    if (Shot != 4)
+                    {
+                        Console.WriteLine("u alive ");
+                    }
                     Console.ReadLine();
+
+
 
                     break;
                 case 2:
-                    Console.WriteLine("you have choosen not to play");
+                    Console.WriteLine("You have choosen to leave the room");
                     // Put the code to leave room here
                     break;
 
