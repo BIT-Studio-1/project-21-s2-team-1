@@ -14,7 +14,6 @@ namespace DBlock_Game
             Console.WindowWidth = 145;
             Console.OutputEncoding = System.Text.Encoding.UTF8; //prevents some ascii text from not showing
 
-                deathAnimation();
                 Menu();
         }
         //Menu screen ascii
