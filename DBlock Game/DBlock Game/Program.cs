@@ -9,11 +9,13 @@ namespace DBlock_Game
 
         static void Main()
         {
+
             Console.WindowHeight = 30;
             Console.WindowWidth = 145;
             Console.OutputEncoding = System.Text.Encoding.UTF8; //prevents some ascii text from not showing
 
-            Menu();
+                deathAnimation();
+                Menu();
         }
         //Menu screen ascii
         public static void Menu()
@@ -1693,6 +1695,65 @@ namespace DBlock_Game
                                                                                                       ");
             Thread.Sleep(500);
             Console.Clear();
+        }
+
+        public static void deathAnimation()
+        {
+            int i = 400;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(@"
+                    
+                                    ▓██   ██▓ ▒█████   █    ██    
+                                     ▒██  ██▒▒██▒  ██▒ ██  ▓██▒  
+                                      ▒██ ██░▒██░  ██▒▓██  ▒██░  
+                                      ░ ▐██▓░▒██   ██░▓▓█  ░██░  
+                                      ░ ██▒▓░░ ████▓▒░▒▒█████▓    
+                                       ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒   
+                                     ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░    
+                                     ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░    
+                                     ░ ░         ░ ░     ░        
+                                     ░ ░                                
+
+`                   ");
+            Thread.Sleep(i);
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(@"
+                    
+                                ▓██   ██▓ ▒█████   █    ██      █████▒▄▄▄       ██▓ ██▓    ▓█████ ▓█████▄ 
+                                 ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▓██   ▒▒████▄    ▓██▒▓██▒    ▓█   ▀ ▒██▀ ██▌
+                                  ▒██ ██░▒██░  ██▒▓██  ▒██░   ▒████ ░▒██  ▀█▄  ▒██▒▒██░    ▒███   ░██   █▌
+                                  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▒  ░░██▄▄▄▄██ ░██░▒██░    ▒▓█  ▄ ░▓█▄   ▌
+                                  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒█░    ▓█   ▓██▒░██░░██████▒░▒████▒░▒████▓ 
+                                   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒ ░    ▒▒   ▓▒█░░▓  ░ ▒░▓  ░░░ ▒░ ░ ▒▒▓  ▒ 
+                                 ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░       ▒   ▒▒ ░ ▒ ░░ ░ ▒  ░ ░ ░  ░ ░ ▒  ▒ 
+                                 ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░     ░   ▒    ▒ ░  ░ ░      ░    ░ ░  ░ 
+                                 ░ ░         ░ ░     ░                     ░  ░ ░      ░  ░   ░  ░   ░    
+                                 ░ ░                                                               ░      
+
+`                   ");
+            Thread.Sleep(i);
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine(@"
+                    
+                                ▓██   ██▓ ▒█████   █    ██      █████▒▄▄▄       ██▓ ██▓    ▓█████ ▓█████▄ 
+                                 ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▓██   ▒▒████▄    ▓██▒▓██▒    ▓█   ▀ ▒██▀ ██▌
+                                  ▒██ ██░▒██░  ██▒▓██  ▒██░   ▒████ ░▒██  ▀█▄  ▒██▒▒██░    ▒███   ░██   █▌
+                                  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▒  ░░██▄▄▄▄██ ░██░▒██░    ▒▓█  ▄ ░▓█▄   ▌
+                                  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒█░    ▓█   ▓██▒░██░░██████▒░▒████▒░▒████▓ 
+                                   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒ ░    ▒▒   ▓▒█░░▓  ░ ▒░▓  ░░░ ▒░ ░ ▒▒▓  ▒ 
+                                 ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░       ▒   ▒▒ ░ ▒ ░░ ░ ▒  ░ ░ ░  ░ ░ ▒  ▒ 
+                                 ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░     ░   ▒    ▒ ░  ░ ░      ░    ░ ░  ░ 
+                                 ░ ░         ░ ░     ░                     ░  ░ ░      ░  ░   ░  ░   ░    
+                                 ░ ░                                                               ░      
+                                                        PRESS ANY KEY TO CONTINUE
+`                   ");
+            Thread.Sleep(i);
+            Console.ReadLine();
         }
     }
 }
