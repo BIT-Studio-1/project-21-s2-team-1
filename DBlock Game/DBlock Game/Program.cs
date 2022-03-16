@@ -1418,6 +1418,7 @@ namespace DBlock_Game
                             pscore++;
                             cscore++;
                             TextBox("Its a draw you both score a point.", Player, false);
+                            TextBox($"Its a " + pscore + "draw you both score a point.", Player, false);
                         }
                         else if (comp == "SCISSORS")
                         {
@@ -1476,6 +1477,7 @@ namespace DBlock_Game
             //this takes them back to the load save if they fail
             if( cscore > pscore)
             {
+
                 Menu();
             }
 
