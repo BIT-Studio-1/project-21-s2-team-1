@@ -487,10 +487,10 @@ namespace DBlock_Game
                         break;
 
                     case "2":
-                        TextBox("Player: What are you doing?", Player, false);
-                        TextBox("Vaughn: I could ask you the same, why are you in here?", Vaughn, false);
-                        TextBox("Player: The door was unlocked.", Player, false);
-                        TextBox("Vaughn: Oh I thought I locked that.", Vaughn, false);
+                        TextBox("Player: What happened with joy earlier?", Player, false);
+                        TextBox("Vaughn: Thats not important?", Vaughn, false);
+                        TextBox("Player: She collapsed in the middle of class.", Player, false);
+                        TextBox("Vaughn: Yeah teaching math can do that to a person", Vaughn, false);
 
                         fail = false;
                         break;
