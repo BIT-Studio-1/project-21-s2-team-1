@@ -1409,7 +1409,7 @@ namespace DBlock_Game
                         break;
                 }
 
-                // 
+                //the actual game
                 switch (player)
                 {
                     case "PAPER":
@@ -1476,9 +1476,8 @@ namespace DBlock_Game
             //this takes them back to the load save if they fail
             if( cscore > pscore)
             {
-                Loadgame();
+                Menu();
             }
-
 
         }
 
