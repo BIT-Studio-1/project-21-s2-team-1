@@ -1646,7 +1646,7 @@ namespace DBlock_Game
         }
 
         public static void loading()
-        {
+        { 
             int i = 400;
             for (int x = 0; x < 2; x++)
             {
@@ -1698,6 +1698,7 @@ namespace DBlock_Game
 
         public static void deathAnimation()
         {
+            // full animation for dying
             int i = 400;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkRed;
