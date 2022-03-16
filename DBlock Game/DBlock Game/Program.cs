@@ -6,10 +6,9 @@ namespace DBlock_Game
 {
     class Program
     {
-        private int playerLocation;
-        private int enemyLocation;
-        private string enemyInfo;
-        private Random random;
+        private int playerLocation = 0;
+        private int enemyLocation = 5;
+        private string enemyInfo = "You hear a screeching noise coming from behind and a robot saying trepassers will be terminated ";
         private int chance =2;
 
         static void Main()
@@ -1569,13 +1568,8 @@ namespace DBlock_Game
         * use the enemyinfo method to give a player an update on where the enemey is.
         * uses the survival check to see if a plaer lives or dies and resets the enemies location.
         */
-        public void westHallway_Basement()
+        public void WestHallway_Basement()
         {
-            enemyLocation = 5;
-            playerLocation = 0;
-            enemyInfo = "You hear a screeching noise coming from behind and a robot saying trepassers will be terminated ";
-            random = new Random();
-
             loading();
             TextBox("You have entered the west hall way", Player, false);
             TextBox(enemyInfo, Player, false);
@@ -1584,7 +1578,7 @@ namespace DBlock_Game
                 bool fail = false;
             do
             {
-                TextBox("What should I do now? \n" + "║1: Go under table \n║2: go in locker  \n║3: Move north hallway \n║4: Move to West Hallway", Player, true);
+                TextBox("What should I do now? \n" + "║1: Go under table \n║2: go in locker  \n║3: Move north hallway \n║4: Move to West Hallway \n ||5: Go back to elevator ", Player, true);
                 string temp = Console.ReadLine();
                 switch (temp)
                 {
@@ -1593,26 +1587,30 @@ namespace DBlock_Game
                         enemyMovement(1);
                         surviveCheck(playerLocation,enemyLocation);
                         chance = 2;
-                        westHallway_Basement();
+                        WestHallway_Basement();
                         break;
                     case "2":
                         chance = 5;
                         enemyMovement(1);
                         surviveCheck(playerLocation, enemyLocation);
                         chance = 2;
-                        westHallway_Basement();
+                        WestHallway_Basement();
                         break;
 
                     case "3":
                         enemyMovement(2);
                         surviveCheck(playerLocation, enemyLocation);
-                        northHallway_Basement();
+                        NorthHallway_Basement();
                         break;
 
                     case "4":
                         enemyMovement(2);
                         surviveCheck(playerLocation,enemyLocation);
-                        southHallway_Basement();
+                        SouthHallway_Basement();
+                        break;
+
+                    case "5":
+                        Elevator();
                         break;
 
                     case "map":
@@ -1636,7 +1634,7 @@ namespace DBlock_Game
         /**
         * template for the hallways jus need rooms attached to the case statements
         */
-        public void northHallway_Basement()
+        public void NorthHallway_Basement()
         {
             loading();
             TextBox("You have entered the north hall way", Player, false);
@@ -1646,7 +1644,7 @@ namespace DBlock_Game
             bool fail = false;
             do
             {
-                TextBox("What should I do now? \n" + "║1: behind bins  \n║2: under table  \n║3:  \n║4: Move to West Hallway", Player, true);
+                TextBox("What should I do now? \n" + "║1: behind bins  \n║2: under table  \n║3:Enter north basement room  \n║4: Move to West Hallway", Player, true);
                 string temp = Console.ReadLine();
                 switch (temp)
                 {
@@ -1655,7 +1653,7 @@ namespace DBlock_Game
                         enemyMovement(1);
                         surviveCheck(playerLocation, enemyLocation);
                         chance = 2;
-                        northHallway_Basement();
+                        NorthHallway_Basement();
                         break;
 
                     case "2":
@@ -1663,16 +1661,16 @@ namespace DBlock_Game
                         enemyMovement(1);
                         surviveCheck(playerLocation, enemyLocation);
                         chance = 2;
-                        northHallway_Basement();
+                        NorthHallway_Basement();
                         break;
 
                     case "3":
-
+                        ZACSBASEMENTROOM();
                         break;
 
                     case "4":
                         surviveCheck(playerLocation,enemyLocation);
-                        westHallway_Basement();
+                        WestHallway_Basement();
                         break;
 
                     case "map":
@@ -1696,7 +1694,7 @@ namespace DBlock_Game
         /**
          * template for the hallways jus need rooms attached to the case statements
          */
-        public void southHallway_Basement()
+        public void SouthHallway_Basement()
         {
             loading();
             TextBox("You have entered the south hall way", Player, false);
@@ -1706,7 +1704,7 @@ namespace DBlock_Game
             bool fail = false;
             do
             {
-                TextBox("What should I do now? \n" + "║1:hide in a school bag \n║2: hide in bathrooms  \n║3: \n║4: Move to West Hallway", Player, true);
+                TextBox("What should I do now? \n" + "║1:hide in a school bag \n║2: hide in bathrooms  \n║3: Enter Southern Room \n║4: Move to West Hallway", Player, true);
                 string temp = Console.ReadLine();
                 switch (temp)
                 {
@@ -1715,7 +1713,7 @@ namespace DBlock_Game
                         enemyMovement(1);
                         surviveCheck(playerLocation, enemyLocation);
                         chance = 2;
-                        southHallway_Basement();
+                        SouthHallway_Basement();
                         break;
 
                     case "2":
@@ -1723,11 +1721,11 @@ namespace DBlock_Game
                         enemyMovement(1);
                         surviveCheck(playerLocation, enemyLocation);
                         chance = 2;
-                        southHallway_Basement();
+                        SouthHallway_Basement();
                         break;
 
                     case "3":
-
+                        KylesRoom();
                         break;
 
                     case "4":
@@ -1766,6 +1764,7 @@ namespace DBlock_Game
          */
         public void surviveCheck(int player, int enemy)
         {
+            Random random = new Random();
             if ((enemy == player) || (enemy < player))
             {
                 if(random.Next(chance) > 0)
