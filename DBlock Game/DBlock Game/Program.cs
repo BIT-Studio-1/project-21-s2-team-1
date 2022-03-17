@@ -508,25 +508,27 @@ namespace DBlock_Game
 
             do
             {
-                TextBox("What should I say? \n" + "║1: What are you doing?\n║2: What happened with joy earlier?", Player, true);
+                TextBox("What should I ask next? \n" + "║1: What are you planning?\n║2: What's your favorite beverage?", Player, true);
 
                 string temp = Console.ReadLine();
                 switch (temp)
                 {
                     case "1":
-                        TextBox("2Player: What are you doing?", Player, false);
-                        TextBox("Vaughn: I could ask you the same, why are you in here?", Vaughn, false);
-                        TextBox("Player: The door was unlocked.", Player, false);
-                        TextBox("Vaughn: Oh I thought I locked that.", Vaughn, false);
+                        TextBox("2Player: What are you planning?", Player, false);
+                        TextBox("Vaughn: I was planning on getting lunch in a bit", Vaughn, false);
+                        TextBox("Vaughn: Other than my schedule is pretty open.", Vaughn, false);
+                        TextBox("Vaughn: Why do you ask?", Vaughn, false);
+                        TextBox("Player: Oh nevermind", Player, false);
 
                         fail = false;
                         break;
 
                     case "2":
-                        TextBox("2Player: What are you doing?", Player, false);
-                        TextBox("Vaughn: I could ask you the same, why are you in here?", Vaughn, false);
-                        TextBox("Player: The door was unlocked.", Player, false);
-                        TextBox("Vaughn: Oh I thought I locked that.", Vaughn, false);
+                        TextBox("Player: What's your favorite beverage", Player, false);
+                        TextBox("Vaughn: My favorite beverage?", Vaughn, false);
+                        TextBox("Vaughn: I could always go for a nice glass of scapegrace gin.", Vaughn, false);
+                        TextBox("Vaughn: Why do you ask??", Vaughn, false);
+                        TextBox("Player: I'm just curious", Player, false);
 
                         fail = false;
                         break;
