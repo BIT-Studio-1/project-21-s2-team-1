@@ -156,7 +156,7 @@ namespace DBlock_Game
         }
 
         //public static string text;
-
+        
         public static void IntroCutscene()
         {
             loading();
@@ -186,6 +186,7 @@ namespace DBlock_Game
             //now in north hallway
 
             joyCard = true; //here for debugging
+            KylesRoom();
 
             NorthHallway();
 
@@ -1316,8 +1317,7 @@ namespace DBlock_Game
         public static void KylesRoom()
         {
             //This section is the text a player gets from entering the room and sets up the choices 
-            string temp;
-            char userinput;
+           
             loading();
             TextBox("You push open the door to the room and are met with a blinding light", Player, false);
             TextBox("A voice bellows at you with tremendous force...", Player, false);
@@ -1325,11 +1325,17 @@ namespace DBlock_Game
             TextBox("You step forward and the light dims down, revealing a giant Sphinx with Donnas face", Player, false);
             TextBox("The Sphinx points towards a table with three pieces of parchment ", Player, false);
             TextBox("There is a shelf with random objects on one side of the room and a small dressing table with a figurine on it to the right", Player, false);
+            RoomExplore();
+        }
+            public static void RoomExplore()
+        {  
+            string temp;
+            char userinput;
             TextBox("What will you do? Press L to leave the room, S to explore the shelf, T to explore the small tabel and P to look at the riddles", Player, false);
 
-
-            temp = Console.ReadLine();
-            userinput = Convert.ToChar(temp);
+            //Console.ReadLine().ToUpper();
+             temp =Console.ReadLine();
+             userinput = Convert.ToChar(temp);                     
             //This is a case/switch statement for the player to choose an option to explore the room or just do the riddles 
             switch (userinput)
             {
@@ -1340,6 +1346,7 @@ namespace DBlock_Game
                     TextBox("A golden egg", Player, false);
                     TextBox("A tiny golden piano", Player, false);
                     TextBox("You dont know their purpose yet but they seem important", Player, false);
+                    RoomExplore();
                     break;
 
                 case 'S':
@@ -1348,25 +1355,29 @@ namespace DBlock_Game
                     TextBox("A golden egg", Player, false);
                     TextBox("A tiny golden piano", Player, false);
                     TextBox("You dont know their purpose yet but they seem important", Player, false);
+                    RoomExplore();
                     break;
                 
                 case 'T':
                     TextBox("Its a tiny figure of Hamish Smith", Player, false);
                     TextBox("It looks cool but probably not relevant to this room", Player, false);
+                    RoomExplore();
                     break;
 
                 case 't':
                     TextBox("Its a tiny figure of Hamish Smith", Player, false);
                     TextBox("It looks cool but probably not relevant to this room", Player, false);
+                    RoomExplore();
                     break;
-                
+
                 case 'P':
                     TextBox("You stare down at the three pieces of parchment", Player, false);
                     TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
                     TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
                     TheRiddles();
+                    RoomExplore();
                     break;
-                
+
                 case 'p':
                     TextBox("You stare down at the three pieces of parchment", Player, false);
                     TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
@@ -1407,8 +1418,9 @@ namespace DBlock_Game
             TextBox("You pick up the first riddle, it reads:", Player, false);
             TextBox("What has to be broken before you can use it?", Player, false);
             TextBox("what is your answer?", Player, false);
+            //Console.ReadLine().ToUpper();
             temp = Console.ReadLine();
-          
+
             //This is a case/switch statement for the player to write an answer
             switch (temp)
             {
