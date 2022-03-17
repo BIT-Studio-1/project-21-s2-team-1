@@ -1325,7 +1325,7 @@ namespace DBlock_Game
             TextBox("You step forward and the light dims down, revealing a giant Sphinx with Donnas face", Player, false);
             TextBox("The Sphinx points towards a table with three pieces of parchment ", Player, false);
             TextBox("There is a shelf with random objects on one side of the room and a small dressing table with a figurine on it to the right", Player, false);
-            TextBox("What will you do? Press S to explore the shelf, T to explore the small tabel and P to look at the riddles", Player, false);
+            TextBox("What will you do? Press L to leave the room, S to explore the shelf, T to explore the small tabel and P to look at the riddles", Player, false);
 
 
             temp = Console.ReadLine();
@@ -1373,6 +1373,17 @@ namespace DBlock_Game
                     TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
                     TheRiddles();
                     break;
+
+                case 'L':
+                    TextBox("You yeet yourself back into the basement hallway", Player, false);
+                    // WestHallway_Basement(); to be uncommented once  WestHallway_Basement has been pushed to main
+                    break;
+
+                case 'l':
+                    TextBox("You yeet yourself back into the basement hallway", Player, false);
+                    // WestHallway_Basement(); to be uncommented once  WestHallway_Basement has been pushed to main
+                    break;
+
 
 
 
@@ -1570,6 +1581,11 @@ namespace DBlock_Game
             TextBox("The vial is labeled V..U..HN  you cant make out the full name..", Player, false);
             TextBox("You put the vial in your pocket", Player, false);
             TextBox("Does this go in anything? A drink perhaps?", Player, false);
+            TextBox("You leave the room", Player, false);
+            // WestHallway_Basement(); to be uncommented once  WestHallway_Basement has been pushed to main
+
+
+
 
         }
 
