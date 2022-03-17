@@ -1332,10 +1332,9 @@ namespace DBlock_Game
             string temp;
             char userinput;
             TextBox("What will you do? Press L to leave the room, S to explore the shelf, T to explore the small tabel and P to look at the riddles", Player, false);
-
-            //Console.ReadLine().ToUpper();
-             temp =Console.ReadLine();
-             userinput = Convert.ToChar(temp);                     
+            temp = Console.ReadLine();
+            userinput = Convert.ToChar(temp);
+           
             //This is a case/switch statement for the player to choose an option to explore the room or just do the riddles 
             switch (userinput)
             {
@@ -1387,16 +1386,12 @@ namespace DBlock_Game
 
                 case 'L':
                     TextBox("You yeet yourself back into the basement hallway", Player, false);
-                    // WestHallway_Basement(); to be uncommented once  WestHallway_Basement has been pushed to main
+                    WestHallway_Basement();
                     break;
 
                 case 'l':
                     TextBox("You yeet yourself back into the basement hallway", Player, false);
-                    // WestHallway_Basement(); to be uncommented once  WestHallway_Basement has been pushed to main
-                    break;
-
-
-
+                    WestHallway_Basement(); 
 
                 default:
                     TextBox("Wrong input silly", Player, false);
@@ -1405,10 +1400,6 @@ namespace DBlock_Game
                     KylesRoom();
                     break;
             }
-
-
-
-
         }
         public static void TheRiddles()
         {
@@ -1418,7 +1409,6 @@ namespace DBlock_Game
             TextBox("You pick up the first riddle, it reads:", Player, false);
             TextBox("What has to be broken before you can use it?", Player, false);
             TextBox("what is your answer?", Player, false);
-            //Console.ReadLine().ToUpper();
             temp = Console.ReadLine();
 
             //This is a case/switch statement for the player to write an answer
@@ -1483,7 +1473,6 @@ namespace DBlock_Game
             TextBox("You pick up the second riddle, it reads:", Player, false);
             TextBox("I’m tall when I’m young, and I’m short when I’m old. What am I?", Player, false);
             TextBox("what is your answer?", Player, false);
-
             temp = Console.ReadLine();
 
             //This is a case/switch statement for the player to write an answer
@@ -1594,7 +1583,7 @@ namespace DBlock_Game
             TextBox("You put the vial in your pocket", Player, false);
             TextBox("Does this go in anything? A drink perhaps?", Player, false);
             TextBox("You leave the room", Player, false);
-            // WestHallway_Basement(); to be uncommented once  WestHallway_Basement has been pushed to main
+            WestHallway_Basement(); 
 
 
 
