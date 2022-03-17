@@ -6,6 +6,10 @@ namespace DBlock_Game
 {
     class Program
     {
+        private int playerLocation = 0;
+        private int enemyLocation = 5;
+        private string enemyInfo = "You hear a screeching noise coming from behind and a robot saying trepassers will be terminated ";
+        private int chance =2;
 
         static void Main()
         {
@@ -1919,6 +1923,239 @@ namespace DBlock_Game
                                                                                                       ");
             Thread.Sleep(500);
             Console.Clear();
+        }
+        /**
+        * template for the hallways jus need rooms attached to the case statements
+        * westhallway coneccts the other two hallways. has a couple of places to hide in to increase chances of survival
+        * use the enemyinfo method to give a player an update on where the enemey is.
+        * uses the survival check to see if a plaer lives or dies and resets the enemies location.
+        */
+        public void WestHallway_Basement()
+        {
+            loading();
+            TextBox("You have entered the west hall way", Player, false);
+            TextBox(enemyInfo, Player, false);
+            TextBox("You see a couple of lockers and a table that you could possibly hide under", Player, false);
+            TextBox("How would you like to procede??", Player, true);
+                bool fail = false;
+            do
+            {
+                TextBox("What should I do now? \n" + "║1: Go under table \n║2: go in locker  \n║3: Move north hallway \n║4: Move to West Hallway \n ||5: Go back to elevator ", Player, true);
+                string temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation,enemyLocation);
+                        chance = 2;
+                        WestHallway_Basement();
+                        break;
+                    case "2":
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        WestHallway_Basement();
+                        break;
+
+                    case "3":
+                        enemyMovement(2);
+                        surviveCheck(playerLocation, enemyLocation);
+                        NorthHallway_Basement();
+                        break;
+
+                    case "4":
+                        enemyMovement(2);
+                        surviveCheck(playerLocation,enemyLocation);
+                        SouthHallway_Basement();
+                        break;
+
+                    case "5":
+                        Elevator();
+                        break;
+
+                    case "map":
+                        Map(2);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                } 
+            } while (fail == true);
+        }
+        /**
+        * template for the hallways jus need rooms attached to the case statements
+        */
+        public void NorthHallway_Basement()
+        {
+            loading();
+            TextBox("You have entered the north hall way", Player, false);
+            TextBox(enemyInfo, Player, false);
+            TextBox("You see a couple of bins and a table that you could possibly hide behind", Player, false);
+            TextBox("How would you like to procede??", Player, true);
+            bool fail = false;
+            do
+            {
+                TextBox("What should I do now? \n" + "║1: behind bins  \n║2: under table  \n║3:Enter north basement room  \n║4: Move to West Hallway", Player, true);
+                string temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        NorthHallway_Basement();
+                        break;
+
+                    case "2":
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        NorthHallway_Basement();
+                        break;
+
+                    case "3":
+                        ZACSBASEMENTROOM();
+                        break;
+
+                    case "4":
+                        surviveCheck(playerLocation,enemyLocation);
+                        WestHallway_Basement();
+                        break;
+
+                    case "map":
+                        Map(3);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                }
+            } while (fail == true);
+        }
+        /**
+         * template for the hallways jus need rooms attached to the case statements
+         */
+        public void SouthHallway_Basement()
+        {
+            loading();
+            TextBox("You have entered the south hall way", Player, false);
+            TextBox(enemyInfo, Player, false);
+            TextBox("You see a ridiculously large school bag and a bathroom that you could possibly hide in", Player, false);
+            TextBox("How would you like to procede??", Player, true);
+            bool fail = false;
+            do
+            {
+                TextBox("What should I do now? \n" + "║1:hide in a school bag \n║2: hide in bathrooms  \n║3: Enter Southern Room \n║4: Move to West Hallway", Player, true);
+                string temp = Console.ReadLine();
+                switch (temp)
+                {
+                    case "1":
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        SouthHallway_Basement();
+                        break;
+
+                    case "2":
+                        chance = 5;
+                        enemyMovement(1);
+                        surviveCheck(playerLocation, enemyLocation);
+                        chance = 2;
+                        SouthHallway_Basement();
+                        break;
+
+                    case "3":
+                        KylesRoom();
+                        break;
+
+                    case "4":
+                        WestHallWay();
+                        break;
+
+                    case "map":
+                        Map(1);
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                }
+            } while (fail == true);
+        }
+        /*
+         * enemymovement method. gets passed an integer to be used for how far the enemy moves
+         */
+        public void enemyMovement(int movement)
+        {
+            enemyLocation -= movement;
+        }
+        /*
+         * survive check method.
+         * checks if a player has survived or died.
+         * uses a switch statement for updating the player on the position of the enemy
+         */
+        public void surviveCheck(int player, int enemy)
+        {
+            Random random = new Random();
+            if ((enemy == player) || (enemy < player))
+            {
+                if(random.Next(chance) > 0)
+                {
+                    TextBox("you have successfully gotten away", Player, false);
+                    enemyLocation = 5;
+                }
+                else
+                {
+                    TextBox("You have died",Player, false);
+                    Menu();
+                }
+            }
+            switch (enemy)
+            {
+                case 5:
+                    enemyInfo = " It seems like the robot is ages away";
+                    break;
+                case 4:
+                    enemyInfo = " It sounds like it is moving closer towards you.";
+                    break;
+                case 3:
+                    enemyInfo = " You can hear the cogs turning in the machine";
+                    break;
+                default:
+                    enemyInfo = " You can feel the heat coming off this machine";
+                    break;
+
+            }
         }
     }
 }
