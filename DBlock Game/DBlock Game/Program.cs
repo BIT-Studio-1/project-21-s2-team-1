@@ -1290,8 +1290,9 @@ namespace DBlock_Game
         public static void ZACSBASMENTROOM()    // This is not meant to be connected to anything at the moment
         {
 
-            Console.WriteLine("                  Welcome to room ---. ");
-            Console.WriteLine("This game is optional, be warned as if you choose wrong");
+            Console.WriteLine("you have entered the room, inside you see a man sitting at a table holding a revolver...");
+
+            Console.WriteLine(" * This game is optional, be warned as if you choose wrong");
             Console.WriteLine("you could lose all of your progress, however choose right");
             Console.WriteLine("and you could progress\n");
 
@@ -1302,12 +1303,11 @@ namespace DBlock_Game
 
             int yourChoice = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
-            //= Console.ReadLine();
 
             switch (yourChoice)
             {
                 case 1:
-                    Console.WriteLine("You have choosen to play Russian Roulette");
+                    Console.WriteLine("You have choosen to play Russian Roulette! There is no opting out now");
 
 
                     Random rand = new Random();
@@ -1334,7 +1334,7 @@ namespace DBlock_Game
                     break;
                 case 2:
                     Console.WriteLine("You have choosen to leave the room");
-                    // Put the code to leave room here
+                    Main();
                     break;
 
             }
