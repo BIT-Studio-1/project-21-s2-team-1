@@ -464,9 +464,9 @@ namespace DBlock_Game
             //TextBox("", Player, false);
 
             loading();
-            TextBox("enter room", Player, false);
-            TextBox("vaughn is there", Player, false);
-            TextBox("he turns and looks at me", Player, false);
+            TextBox("I slowly open the door and walk inside.", Player, false);
+            TextBox("Vaughn at the front of the room, crouched over something.", Player, false);
+            TextBox("He turns around and notices me.", Player, false);
 
             bool fail = false;
 
@@ -514,7 +514,7 @@ namespace DBlock_Game
                 switch (temp)
                 {
                     case "1":
-                        TextBox("2Player: What are you planning?", Player, false);
+                        TextBox("Player: What are you planning?", Player, false);
                         TextBox("Vaughn: I was planning on getting lunch in a bit", Vaughn, false);
                         TextBox("Vaughn: Other than my schedule is pretty open.", Vaughn, false);
                         TextBox("Vaughn: Why do you ask?", Vaughn, false);
@@ -544,11 +544,12 @@ namespace DBlock_Game
                 }
             } while (fail == true);
 
-            TextBox("3Player: What are you doing?", Player, false);
-            TextBox("3Vaughn: I could ask you the same, why are you in here?", Vaughn, false);
-            TextBox("3Player: The door was unlocked.", Player, false);
-            TextBox("3Vaughn: Oh I thought I locked that.", Vaughn, false);
-            TextBox("leave room", Player, false);
+            TextBox("Player: You're not going to get away with this", Player, false);
+            TextBox("Vaughn: I not sure what you mean,", Vaughn, false);
+            TextBox("Vaughn: But you're interupping something.", Vaughn, false);
+            TextBox("Vaughn: Now head back to your class.", Vaughn, false);
+            TextBox("I'm not going to get any more questions from him", Player, false);
+            TextBox("While I leave I hear the door lock behind me", Player, false);
 
             NorthHallway();
         }
@@ -572,7 +573,16 @@ namespace DBlock_Game
                 {
                     case "1":
                         fail = false;
-                        JoysClassroom();
+                        if (joyCard)
+                        {
+                            JoysClassroom();
+                        }
+                        else
+                        {
+                            TextBox("Vaughn locked the door behind me", Player, false);
+                            fail = true;
+                        }
+                        
                         break;
 
                     case "2":
