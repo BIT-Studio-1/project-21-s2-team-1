@@ -2158,7 +2158,7 @@ namespace DBlock_Game
                         break;
 
                     case "3":
-                        ZACSBASEMENTROOM();
+                        ZacBasementRoom();
                         break;
 
                     case "4":
