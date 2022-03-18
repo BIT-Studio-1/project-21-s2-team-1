@@ -1418,17 +1418,19 @@ namespace DBlock_Game
                             pscore++;
                             cscore++;
                             TextBox("Its a draw you both score a point.", Player, false);
-                            TextBox($"Its a " + pscore + "draw you both score a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
                         }
                         else if (comp == "SCISSORS")
                         {
                             cscore++;
                             TextBox("Vaugh won he gains a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
                         }
                         else
                         {
                             pscore++;
                             TextBox("You won you gain a point", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
                         }
                         break;
 
@@ -1438,16 +1440,19 @@ namespace DBlock_Game
                             pscore++;
                             cscore++;
                             TextBox("Its a draw you both score a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
                         }
                         else if (comp == "ROCK")
                         {
                             cscore++;
                             TextBox("Vaugh won he gains a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
                         }
                         else
                         {
                             pscore++;
                             TextBox("You won you gain a point", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
                         }
                         break;
 
@@ -1457,16 +1462,19 @@ namespace DBlock_Game
                             pscore++;
                             cscore++;
                             TextBox("Its a draw you both score a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
                         }
                         else if (comp == "PAPER")
                         {
                             cscore++;
                             TextBox("Vaugh won he gains a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
                         }
                         else
                         {
                             pscore++;
                             TextBox("You won you gain a point", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
                         }
                         break;
 
@@ -1477,7 +1485,6 @@ namespace DBlock_Game
             //this takes them back to the load save if they fail
             if( cscore > pscore)
             {
-
                 Menu();
             }
 
