@@ -196,23 +196,15 @@ namespace DBlock_Game
         {
             Console.Clear();
 
-            string dialouge;
-            ConsoleColor textColor;
-            bool isReadLine;
-
-            dialouge = text;
-            textColor = color;
-            isReadLine = readLineBool;
-
             Console.ForegroundColor = ConsoleColor.White;
 
             Console.WriteLine("╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗");
 
             Console.Write("║");
-            Console.ForegroundColor = textColor;
+            Console.ForegroundColor = color;
 
-            Console.Write($"{dialouge}");
-            for (int i = 0; i < 117 - dialouge.Length; i++)
+            Console.Write($"{text}");
+            for (int i = 0; i < 117 - text.Length; i++)
                 Console.Write(" ");
 
             Console.ForegroundColor = ConsoleColor.White;
@@ -223,7 +215,7 @@ namespace DBlock_Game
             Console.WriteLine("║                                                                                                                     ║");
             Console.WriteLine("╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝");
 
-            if (isReadLine == false)
+            if (readLineBool == false)
             {
                 Console.ReadLine();
                 Console.Clear();
@@ -1231,6 +1223,52 @@ namespace DBlock_Game
             SouthHallway();
         }
 
+        public static void Elevator()
+        {
+            loading();
+            TextBox("I decide to enter the elevator.", Player, false);
+            TextBox("I walk inside and close the door behind me.", Player, false);
+
+            bool fail = false;
+
+            do
+            {
+                TextBox("What floor do I want to go to?\n║1: Top Floor \n║2: Ground Floor \n║3: Basement", Player, true);
+                string temp = Console.ReadLine();
+
+                switch (temp)
+                {
+                    case "1":
+                        fail = false;
+                        //top floor method
+                        break;
+
+                    case "2":
+                        fail = false;
+                        WestHallWay();
+                        break;
+
+                    case "3":
+                        fail = false;
+                        //basement floor method
+                        break;
+
+                    case "inv":
+                        Inventory();
+                        break;
+
+                    case "help":
+                        Help();
+                        break;
+
+                    default:
+                        fail = true;
+                        break;
+                }
+
+            } while (fail == true);
+        }
+
         public static void BreakRoom()
         {
             loading();
@@ -1276,6 +1314,272 @@ namespace DBlock_Game
                 }
             }
         }
+        public static void KylesRoom()
+        {
+            //This section is the text a player gets from entering the room and sets up the choices 
+            string temp;
+            char userinput;
+            loading();
+            TextBox("You push open the door to the room and are met with a blinding light", Player, false);
+            TextBox("A voice bellows at you with tremendous force...", Player, false);
+            TextBox("YOU HAVE ENTERED MY ROOM MORTAL, NOW ANSWER MY QUESTIONS THREE OR FACE YOUR DOOM!!", Player, false);
+            TextBox("You step forward and the light dims down, revealing a giant Sphinx with Donnas face", Player, false);
+            TextBox("The Sphinx points towards a table with three pieces of parchment ", Player, false);
+            TextBox("There is a shelf with random objects on one side of the room and a small dressing table with a figurine on it to the right", Player, false);
+            TextBox("What will you do? Press S to explore the shelf, T to explore the small tabel and P to look at the riddles", Player, false);
+
+
+            temp = Console.ReadLine();
+            userinput = Convert.ToChar(temp);
+            //This is a case/switch statement for the player to choose an option to explore the room or just do the riddles 
+            switch (userinput)
+            {
+
+                case 's':
+                    TextBox("The shelf contains a few items dusty plain items but three are weirdly gold and dust free", Player, false);
+                    TextBox("A golden candle..", Player, false);
+                    TextBox("A golden egg", Player, false);
+                    TextBox("A tiny golden piano", Player, false);
+                    TextBox("You dont know their purpose yet but they seem important", Player, false);
+                    break;
+
+                case 'S':
+                    TextBox("The shelf contains a few items dusty plain items but three are weirdly gold and dust free", Player, false);
+                    TextBox("A golden candle..", Player, false);
+                    TextBox("A golden egg", Player, false);
+                    TextBox("A tiny golden piano", Player, false);
+                    TextBox("You dont know their purpose yet but they seem important", Player, false);
+                    break;
+                
+                case 'T':
+                    TextBox("Its a tiny figure of Hamish Smith", Player, false);
+                    TextBox("It looks cool but probably not relevant to this room", Player, false);
+                    break;
+
+                case 't':
+                    TextBox("Its a tiny figure of Hamish Smith", Player, false);
+                    TextBox("It looks cool but probably not relevant to this room", Player, false);
+                    break;
+                
+                case 'P':
+                    TextBox("You stare down at the three pieces of parchment", Player, false);
+                    TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
+                    TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
+                    TheRiddles();
+                    break;
+                
+                case 'p':
+                    TextBox("You stare down at the three pieces of parchment", Player, false);
+                    TextBox("The Donna Sphinx looks down at you expectantly", Player, false);
+                    TextBox("You pick up the first piece of parchment and read the riddle..", Player, false);
+                    TheRiddles();
+                    break;
+
+
+
+                default:
+                    TextBox("Wrong input silly", Player, false);
+                    Thread.Sleep(1000);
+                    temp = "";
+                    KylesRoom();
+                    break;
+            }
+
+
+
+
+        }
+        public static void TheRiddles()
+        {
+            string temp;
+          
+            int WrongAnswer = 0;
+            TextBox("You pick up the first riddle, it reads:", Player, false);
+            TextBox("What has to be broken before you can use it?", Player, false);
+            TextBox("what is your answer?", Player, false);
+            temp = Console.ReadLine();
+          
+            //This is a case/switch statement for the player to write an answer
+            switch (temp)
+            {
+
+                case "Egg":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "A Egg":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "An Egg":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "EGG":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "A EGG":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "AN EGG":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "egg":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "a egg":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "an egg":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "eGG":
+                    TextBox("Correct!", Player, false);
+                    break;
+                
+                case "A eGG":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "aN eGG":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                default:
+                    TextBox("Wrong!", Player, false);
+                    Thread.Sleep(1000);
+                    WrongAnswer++;
+                    break;
+            }
+                     
+            TextBox("You pick up the second riddle, it reads:", Player, false);
+            TextBox("I’m tall when I’m young, and I’m short when I’m old. What am I?", Player, false);
+            TextBox("what is your answer?", Player, false);
+
+            temp = Console.ReadLine();
+
+            //This is a case/switch statement for the player to write an answer
+            switch (temp)
+            {
+
+                case "Candle":
+                    TextBox("Correct!", Player, false);
+                     break;
+
+                case "A Candle":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "CANDLE":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "A CANDLE":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "candle":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "a candle":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "cANDLE":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "a cANDLE":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                default:
+                    TextBox("Wrong!", Player, false);
+                    Thread.Sleep(1000);
+                    WrongAnswer++;
+                    break;
+            }
+
+
+            TextBox("You pick up the third riddle, it reads:", Player, false);
+            TextBox("What has many keys but can’t open a single lock?", Player, false);
+            TextBox("what is your answer?", Player, false);
+
+            temp = Console.ReadLine();
+
+            //This is a case/switch statement for the player to write an answer
+            switch (temp)
+            {
+
+                case "Piano":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "A Piano":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "PIANO":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "A PIANO":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "piano":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "a piano":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "pIANO":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                case "a pIANO":
+                    TextBox("Correct!", Player, false);
+                    break;
+
+                default:
+                    TextBox("Wrong!", Player, false);
+                    Thread.Sleep(1000);
+                    WrongAnswer++;
+                    break;
+            }
+
+            TextBox("You pick up the third riddle, it reads:", Player, false);
+            if (WrongAnswer <1)
+            {
+                TextBox("You have too many wrong answers!!", Player, false);
+                KylesRoom();
+
+            }
+            else
+            TextBox("You have passed the riddles test..", Player, false);
+            TextBox("The Sphinx shrinks away into a pile of sand.", Player, false);
+            TextBox("You see the shine of a small vial containing purple liquid", Player, false);
+            TextBox("The vial is labeled V..U..HN  you cant make out the full name..", Player, false);
+            TextBox("You put the vial in your pocket", Player, false);
+            TextBox("Does this go in anything? A drink perhaps?", Player, false);
+
+        }
+
+
+
+
+
+
+
 
         public static void AltEnd()
         {
@@ -1287,6 +1591,64 @@ namespace DBlock_Game
             TextBox("The End.", Player, false);
             Main();
         }
+
+        public static void ZACSBASMENTROOM()    // This is not meant to be connected to anything at the moment
+        {
+
+            Console.WriteLine("                  Welcome to room ---. ");
+            Console.WriteLine("This game is optional, be warned as if you choose wrong");
+            Console.WriteLine("you could lose all of your progress, however choose right");
+            Console.WriteLine("and you could progress\n");
+
+            Console.WriteLine("Do you wish to play?");
+            Console.WriteLine("[1] Yes!  [2] Nah");
+
+
+
+            int yourChoice = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+            //= Console.ReadLine();
+
+            switch (yourChoice)
+            {
+                case 1:
+                    Console.WriteLine("You have choosen to play Russian Roulette");
+
+
+                    Random rand = new Random();
+                    int Shot = 1;
+                    Shot = rand.Next(1, 7);
+
+                    Console.WriteLine("Russian Roulette");
+
+                    Console.ReadLine();
+
+                    if (Shot == 4)
+                    {
+                        Console.WriteLine("u died ");
+                    }
+
+                    if (Shot != 4)
+                    {
+                        Console.WriteLine("u alive ");
+                    }
+                    Console.ReadLine();
+
+
+
+                    break;
+                case 2:
+                    Console.WriteLine("You have choosen to leave the room");
+                    // Put the code to leave room here
+                    break;
+
+            }
+
+
+
+        }
+
+    
 
         public static void Fight()
         {
