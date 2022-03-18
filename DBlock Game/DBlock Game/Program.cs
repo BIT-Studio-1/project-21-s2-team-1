@@ -1287,7 +1287,7 @@ namespace DBlock_Game
             Main();
         }
 
-        public static void ZACSBASMENTROOM()    // This is not meant to be connected to anything at the moment
+        public static void ZacBasementRoom()    // This is not meant to be connected to anything at the moment
         {
 
             Console.WriteLine("you have entered the room, inside you see a man sitting at a table holding a revolver...");
