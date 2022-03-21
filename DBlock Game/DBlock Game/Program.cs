@@ -1850,7 +1850,15 @@ namespace DBlock_Game
 
             TextBox("the suit snap crackles and pops as it begins to shut down.", Player, false);
 
-            TextBox("Vaughn has been defeated without his robit armor he is powerless.", Player, false);
+            TextBox("Vaughn has been defeated without his robot armor he is powerless.", Player, false);
+
+            TextBox("This is it you have Vaughn defenceless", Player, false);
+
+            TextBox("You may have  beaten my armor but will you beat me in the acent tradtion.", Vaughn, false);
+
+            TextBox("OF PAPER, SCISSORS, ROCK!!!!.", Player, false);
+
+            Death();
 
             TextBox("The teachers will now have to go back to thier old lives and continue wroking at the Otago Polytechnic.", Player, false);
 
@@ -1859,6 +1867,141 @@ namespace DBlock_Game
             TextBox("The End.", Player, false);
 
             Menu();
+        }
+
+        public static void Death()
+        {
+            Random rand = new Random();
+            string player;
+            string comp;
+            int pscore = 0;
+            int cscore = 0;
+
+            // the paper,scissors,rock game
+
+            for (int i = 0; i < 4; i++)
+            {
+                player = "";
+                comp = "";
+
+                // while loop that check the inputs the values are clear
+
+                while (player != "PAPER" && player != "SCISSORS" && player != "ROCK")
+                {
+                    TextBox("you have to play paper,scisors,rock to win its a best out of 3.", Player, false);
+                    TextBox("Press 1 for paper, Press 2 for scissors, Press 3 for rock.", Player,true);
+
+                    string temp = Console.ReadLine();
+                    switch (temp)
+                    {
+                        case "1":
+                            player = "PAPER";
+                            break;
+                        case "2":
+                            player = "SCISSORS";
+                            break;
+                        case "3":
+                            player = "ROCK";
+                            break;
+                    }
+
+                }
+
+                // the computers choice
+                int num2 = rand.Next(1, 4);
+
+                switch (num2)
+                {
+                    case 1:
+                        comp = "PAPER";
+                        break;
+                    case 2:
+                        comp = "SCISSORS";
+                        break;
+                    case 3:
+                        comp = "ROCK";
+                        break;
+                }
+
+                //the actual game
+                switch (player)
+                {
+                    case "PAPER":
+                        if (comp == "PAPER")
+                        {
+                            pscore++;
+                            cscore++;
+                            TextBox("Its a draw you both score a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
+                        }
+                        else if (comp == "SCISSORS")
+                        {
+                            cscore++;
+                            TextBox("Vaugh won he gains a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
+                        }
+                        else
+                        {
+                            pscore++;
+                            TextBox("You won you gain a point", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
+                        }
+                        break;
+
+                    case "SCISSORS":
+                        if (comp == "SCISSORS")
+                        {
+                            pscore++;
+                            cscore++;
+                            TextBox("Its a draw you both score a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
+                        }
+                        else if (comp == "ROCK")
+                        {
+                            cscore++;
+                            TextBox("Vaugh won he gains a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
+                        }
+                        else
+                        {
+                            pscore++;
+                            TextBox("You won you gain a point", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
+                        }
+                        break;
+
+                    case "ROCK":
+                        if (comp == "ROCK")
+                        {
+                            pscore++;
+                            cscore++;
+                            TextBox("Its a draw you both score a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
+                        }
+                        else if (comp == "PAPER")
+                        {
+                            cscore++;
+                            TextBox("Vaugh won he gains a point.", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
+                        }
+                        else
+                        {
+                            pscore++;
+                            TextBox("You won you gain a point", Player, false);
+                            TextBox($"You have " + pscore + "points.\n Vaughn has " + cscore + " points", Player, false);
+                        }
+                        break;
+
+                }
+
+            }
+
+            //this takes them back to the load save if they fail
+            if( cscore > pscore)
+            {
+                Menu();
+            }
+
         }
 
         public static void Savegame()
